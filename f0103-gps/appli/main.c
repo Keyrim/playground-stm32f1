@@ -15,6 +15,7 @@
 #include "GPS.h"
 #include "branchements.h"
 #include "compas.h"
+#include "sub.h"
 
 Compass_t mon_compas ;
 
@@ -35,9 +36,9 @@ int main(void)
 
 	//Init du compas
 	//COMPAS_init(FALSE, &mon_compas);
-	I2C_Init(I2C1, 400000);
-	sub_test_i2c();
-
+	//I2C_Init(I2C1, 400000);
+	//sub_test_i2c();
+	sub_test_gps(TRUE, TRUE);
 	while(1)	//boucle de tâche de fond
 	{
 

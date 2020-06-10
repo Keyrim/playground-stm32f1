@@ -11,6 +11,6 @@
 
 //Uart stuff
 #define UART_GPS UART1_ID
-#define UART_OUTPUT	UART2_ID
+#define UART_OUTPUT	UART3_ID
 
 #endif /* BRANCHEMENTS_H_ */

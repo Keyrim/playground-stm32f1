@@ -142,6 +142,7 @@ int main(void)
 	//------------------Init serial 2
 	UART_init(UART_TELEMETRIE,57600);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);
+	printf("test");
 
 	//Init du gps, on passe sur une fréquence de 5hz sur l'envoit de données et d'autre trucs
 	GPS_congif(UART_GPS);

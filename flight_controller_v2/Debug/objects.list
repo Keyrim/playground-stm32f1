@@ -8,6 +8,7 @@
 "appli/lib_perso/ppm.o"
 "appli/lib_perso/state_machine.o"
 "appli/lib_perso/telemetrie.o"
+"appli/lib_perso/uart_lib.o"
 "appli/sub/sub_clignotement_led.o"
 "appli/sub/sub_parachute.o"
 "appli/sub/sub_send_data.o"

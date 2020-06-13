@@ -27,6 +27,7 @@
 #include "WS2812S.h"
 #include "lib_perso/state_machine.h"
 #include "global.h"
+#include "lib_perso/uart_lib.h"
 
 
 
@@ -35,6 +36,10 @@
 //Security
 #define SECURITY_IS_OK	ppm_is_ok
 #define EVERY_IS_OK ((uint8_t)( 2 * ppm_is_ok +  gps_is_ok))
+
+//Uart
+uart_struct_e uart_telem ;
+
 
 //Gps
 gps_datas_t gps ;
@@ -139,8 +144,8 @@ int main(void)
 
 	//On laisse du temps à tout le monde pour bien démarer
 	HAL_Delay(300);
-	//------------------Init serial 2
-	UART_init(UART_TELEMETRIE,57600);
+	//------------------Init serial uart
+	uart_init(&uart_telem, UART_TELEMETRIE, 57600, 10);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);
 	printf("test");
 

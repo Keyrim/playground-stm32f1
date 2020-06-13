@@ -10,7 +10,8 @@ C_SRCS += \
 ../appli/lib_perso/pid.c \
 ../appli/lib_perso/ppm.c \
 ../appli/lib_perso/state_machine.c \
-../appli/lib_perso/telemetrie.c 
+../appli/lib_perso/telemetrie.c \
+../appli/lib_perso/uart_lib.c 
 
 OBJS += \
 ./appli/lib_perso/GPS.o \
@@ -19,7 +20,8 @@ OBJS += \
 ./appli/lib_perso/pid.o \
 ./appli/lib_perso/ppm.o \
 ./appli/lib_perso/state_machine.o \
-./appli/lib_perso/telemetrie.o 
+./appli/lib_perso/telemetrie.o \
+./appli/lib_perso/uart_lib.o 
 
 C_DEPS += \
 ./appli/lib_perso/GPS.d \
@@ -28,7 +30,8 @@ C_DEPS += \
 ./appli/lib_perso/pid.d \
 ./appli/lib_perso/ppm.d \
 ./appli/lib_perso/state_machine.d \
-./appli/lib_perso/telemetrie.d 
+./appli/lib_perso/telemetrie.d \
+./appli/lib_perso/uart_lib.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

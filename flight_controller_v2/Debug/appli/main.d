@@ -61,7 +61,8 @@ appli/main.o: ../appli/main.c \
  ../appli/lib_perso\telemetrie.h \
  C:/Users/Théo/Documents/GitHub/STM32/flight_controller_v2/lib/bsp/stm32f1_adc.h \
  ../appli/sub/sub_action.h ../appli/lib_perso/GPS.h ../appli/WS2812S.h \
- ../appli/config.h ../appli/lib_perso/state_machine.h ../appli/global.h
+ ../appli/config.h ../appli/lib_perso/state_machine.h ../appli/global.h \
+ ../appli/lib_perso/uart_lib.h
 
 C:/Users/Théo/Documents/GitHub/STM32/flight_controller_v2/lib/hal/inc/stm32f1xx_hal.h:
 
@@ -202,3 +203,5 @@ C:/Users/Théo/Documents/GitHub/STM32/flight_controller_v2/lib/bsp/stm32f1_adc.h:
 ../appli/lib_perso/state_machine.h:
 
 ../appli/global.h:
+
+../appli/lib_perso/uart_lib.h:

@@ -50,7 +50,10 @@ appli/main.o: ../appli/main.c \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_gpio.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/macro_types.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/systick.h \
- ../appli/wiring.h ../appli/uart_lib.h
+ ../appli/wiring.h ../appli/uart_lib.h \
+ C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/MPU6050/stm32f1_mpu6050.h \
+ C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_i2c.h \
+ ../appli/complementary_filter.h ../appli/id_vers_drone.h
 
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal.h:
 
@@ -157,3 +160,11 @@ C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/systick.h:
 ../appli/wiring.h:
 
 ../appli/uart_lib.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/MPU6050/stm32f1_mpu6050.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_i2c.h:
+
+../appli/complementary_filter.h:
+
+../appli/id_vers_drone.h:

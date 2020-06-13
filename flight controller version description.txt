@@ -1,0 +1,33 @@
+
+		Détails des différentes version du flight controller
+
+Dernière version "fiable" mdr : 	2
+Version en cours de dev :		2.1
+
+Version 1 :
+	Ajouts
+		Drone vole
+		Télémétrie présente 
+		Tension de la batterie mesuré
+
+Version 2 :
+	AJout:
+		Ruban leds
+		Safety feature : ppm_is_ok batterie_is_ok gps_is_ok
+		Ajout du "free time"
+		Lecture du gps
+		Mise en place gestion des subs
+		Sub parachute
+		Gestion lecture du gps
+	Modifs:
+		Amélioration de la télémétrie 
+		Gestion des moteurs non blocante
+
+Version 2.1
+	Ajouts:
+	Modifs:
+		Télémétrie : On remplit un buffer qui est vidé à interval de temps régulier pour optimizer le truc 
+		
+		
+		
+		

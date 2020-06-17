@@ -1,4 +1,6 @@
-appli/main.o: ../appli/main.c \
+appli/sub_transmit_receive.o: ../appli/sub_transmit_receive.c \
+ ../appli/sub.h ../appli/uart_lib.h \
+ C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_uart.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal_conf.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal_rcc.h \
@@ -42,18 +44,17 @@ appli/main.o: ../appli/main.c \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_ll_usb.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal_hcd.h \
- C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_uart.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/macro_types.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/appli/config.h \
- C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_sys.h \
- C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_uart.h \
- C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_gpio.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/macro_types.h \
  C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/systick.h \
- ../appli/wiring.h ../appli/uart_lib.h \
- C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/MPU6050/stm32f1_mpu6050.h \
- C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_i2c.h \
- ../appli/complementary_filter.h ../appli/IDs.h ../appli/sub.h
+ ../appli/IDs.h
+
+../appli/sub.h:
+
+../appli/uart_lib.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_uart.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal.h:
 
@@ -141,32 +142,12 @@ C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_h
 
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/hal/inc/stm32f1xx_hal_hcd.h:
 
-C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_uart.h:
-
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/macro_types.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/appli/config.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_sys.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_uart.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_gpio.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/macro_types.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/systick.h:
 
-../appli/wiring.h:
-
-../appli/uart_lib.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/MPU6050/stm32f1_mpu6050.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/f103-ground_station/lib/bsp/stm32f1_i2c.h:
-
-../appli/complementary_filter.h:
-
 ../appli/IDs.h:
-
-../appli/sub.h:

@@ -34,9 +34,9 @@ void COMP_FILTER_update_angles(COMP_FILTER_angles_e* angles){
 	double acc_total = sqrt((angles->x_acc * angles->x_acc ) + (angles->y_acc * angles->y_acc) + (angles->z_acc * angles->z_acc));
 	if(acc_total != 0  ){
 		if(absolu(angles->x_acc) <= absolu(acc_total))
-			acc_angles.x =   asin(angles->x_acc / acc_total ) * (double)57.32;
+			acc_angles.x = - asin(angles->x_acc / acc_total ) * (double)57.32;
 		if(absolu(angles->y_acc) <= absolu(acc_total))
-			acc_angles.y = - asin(angles->y_acc / acc_total ) * (double)57.32;
+			acc_angles.y =   asin(angles->y_acc / acc_total ) * (double)57.32;
 	}
 
 	//If it is the first reading we do, we initialize
@@ -63,10 +63,8 @@ void COMP_FILTER_update_angles(COMP_FILTER_angles_e* angles){
 
 		//Complementary filter
 		//acc_x used with gyY makes sense dw (it really does btw)
-		//-2 et +8 car en posant au sol à plat j'ai 2 et -8
-		angles->x = angles->alpha * angles->x + (angles->y_acc ) * ((double)1 - angles->alpha);
-		angles->y = angles->alpha * angles->y + (angles->x_acc - 2) * ((double)1 - angles->alpha);
-		//printf("Gx %f Ax \n", filtered_angles->x);
+		angles->x = angles->alpha * angles->x + (acc_angles.y ) * ((double)1 - angles->alpha);
+		angles->y = angles->alpha * angles->y + (acc_angles.x ) * ((double)1 - angles->alpha);
 
 	}
 }

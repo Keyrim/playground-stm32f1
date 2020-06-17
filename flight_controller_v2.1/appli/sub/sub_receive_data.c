@@ -5,45 +5,67 @@
  *      Author: Théo
  */
 
-#define ID_ATTENTE 0
-#define ID_STOP_MOTORS 1
-#define ID_PITCH_ROLL 2
-
 
 #include "sub_action.h"
+#include "../IDs.h"
+
+//Macro pratique
+#define SAVE_AND_INCREASE buffer[compteur] = c ;compteur++ ;
+
+typedef enum {
+	ATTENTE,
+	RECEIVING
+}sub_receive_e;
 
 void sub_receive_data(uint8_t c, uint8_t * state_flying, double * consigne_roll_base, double * consigne_pitch_base){
-	static uint8_t state = ID_ATTENTE ;
-	static uint8_t index = 0 ;
-	static uint8_t buffer[10] = {0};
-	if(state == ID_ATTENTE)
-		state = c ;
-	switch(state){
-		case ID_ATTENTE :
-			//on n'est pas censé arrivé là
-			state = c ;
-			break;
-		case ID_STOP_MOTORS:
-			*state_flying = 0 ;
-			state = ID_ATTENTE ;
-			break;
+	//Fonctionnement : on démarre en attente de donnée,
+	//Quand on reçoit on récupère l'id et on passe en lecture "receiving", on traite la donnée en fonction de son id
 
-		case ID_PITCH_ROLL :
-			//Si index nul, on vient d'arriver et le caractère corespond juste à l'id
-			if(index)
-				buffer[index] = c ;
-			//Dans tous les cas on augmente l'index
-			index ++ ;
-			//Ici on veut juste deux données donc si on est à trois on se casse
-			if(index == 3){
-				*consigne_roll_base = (double)buffer[1] - 90 ;
-				*consigne_pitch_base = (double)buffer[2] - 90 ;
-				index = 0 ;
-				state = ID_ATTENTE ;
+	static sub_receive_e state = ATTENTE ;
+	static uint8_t id = 0 ;
+	static uint8_t compteur = 0 ;
+	static uint8_t buffer[5] = {0};
+
+
+	switch(state){
+		case ATTENTE :
+			compteur = 0 ;
+			id = c ;
+			state = RECEIVING ;
+			break;
+		case RECEIVING:
+			switch(id){
+				case ID_DRONE_CONSIGNE :
+					//Si on a reçu une consigne, on a que un octect à gérer donc pas besoin de compteur
+					switch(c){
+						case SUB_ID_DRONE_CONSIGNE_STOP_MOTEUR :
+							*state_flying = 0 ; // correspond à on_the_ground
+							break;
+						default:
+							break;
+					}
+					state = ATTENTE ;
+					break;
+				case ID_DRONE_PITCH_ROLL_BASE:
+					//On save la valeur et incrémente le compteur
+					SAVE_AND_INCREASE ;
+					//Si le compteur == 2, on a nos deux valeurs
+					if(compteur == 2){
+						*consigne_roll_base = (double)buffer[0] - 90 ;
+						*consigne_pitch_base = (double)buffer[1] - 90 ;
+						state = ATTENTE ;
+					}
+
+					break;
+				default:
+					//Si on comprend pas on passe en attente
+					state = ATTENTE ;
+					break;
 			}
 			break;
 		default:
-			state = ID_ATTENTE ;
+			//Ya aucun moyen on arrive là mais au cas où
+			state = ATTENTE ;
 			break;
 
 	}

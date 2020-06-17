@@ -61,17 +61,17 @@ void sub_send_data(uart_struct_e * uart_telem , double acc_z_, uint8_t every_is_
 
 		//state_global et v_bat
 		state_global.nb_octet = 2 ;
-		state_global.periode = 25 ; // 250
+		state_global.periode = 250 ; // 250
 		batterie.nb_octet	= 2;
-		batterie.periode = 25 ;  // 250
+		batterie.periode = 250 ;  // 250
 
 		//moteurs
 		moteurs.nb_octet 	= 5 ;
-		moteurs.periode		= 10 ;
+		moteurs.periode		= 100 ;
 
 		//Every is ok
 		every_is_ok.nb_octet = 2 ;
-		every_is_ok.periode = 25 ;
+		every_is_ok.periode = 250 ;
 
 
 		first_call = FALSE;
@@ -81,33 +81,33 @@ void sub_send_data(uart_struct_e * uart_telem , double acc_z_, uint8_t every_is_
 	//On place les if dans l'ordre de priorité d'envoit
 	int32_t compteur_octet = NB_OCTECT_MAX ;
 
-	if(compteur % latitude.periode == 0 || latitude.to_send){
-		if(compteur_octet >= latitude.nb_octet){
-			TELEMETRIE_send_lat(latitude_, uart_telem);
-			compteur_octet -= latitude.nb_octet ;
-			latitude.to_send = FALSE ;
-		}
-		else
-			latitude.to_send = TRUE ;
-	}
-	if(compteur % longitude.periode == 0 || longitude.to_send){
-		if(compteur_octet >= longitude.nb_octet){
-			TELEMETRIE_send_long(longitude_, uart_telem);
-			compteur_octet -= longitude.nb_octet ;
-			longitude.to_send = FALSE ;
-		}
-		else
-			longitude.to_send = TRUE ;
-	}
-	if(compteur % acc_z.periode == 0 || acc_z.to_send){
-		if(compteur_octet >= acc_z.nb_octet){
-			TELEMETRIE_send_acc_z(acc_z_, uart_telem);
-			compteur_octet -= acc_z.nb_octet ;
-			acc_z.to_send = FALSE ;
-		}
-		else
-			acc_z.to_send = TRUE ;
-	}
+//	if(compteur % latitude.periode == 0 || latitude.to_send){
+//		if(compteur_octet >= latitude.nb_octet){
+//			TELEMETRIE_send_lat(latitude_, uart_telem);
+//			compteur_octet -= latitude.nb_octet ;
+//			latitude.to_send = FALSE ;
+//		}
+//		else
+//			latitude.to_send = TRUE ;
+//	}
+//	if(compteur % longitude.periode == 0 || longitude.to_send){
+//		if(compteur_octet >= longitude.nb_octet){
+//			TELEMETRIE_send_long(longitude_, uart_telem);
+//			compteur_octet -= longitude.nb_octet ;
+//			longitude.to_send = FALSE ;
+//		}
+//		else
+//			longitude.to_send = TRUE ;
+//	}
+//	if(compteur % acc_z.periode == 0 || acc_z.to_send){
+//		if(compteur_octet >= acc_z.nb_octet){
+//			TELEMETRIE_send_acc_z(acc_z_, uart_telem);
+//			compteur_octet -= acc_z.nb_octet ;
+//			acc_z.to_send = FALSE ;
+//		}
+//		else
+//			acc_z.to_send = TRUE ;
+//	}
 
 	if(compteur % angles.periode == 0 || angles.to_send){
 		if(compteur_octet >= angles.nb_octet){

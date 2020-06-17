@@ -100,10 +100,13 @@ High_Level_SM previous_state_high_level = PWM_LOW ;
 
 //Nos machines à état
 DataSend_SM state_data_send = TO_SEND_1 ;
-Flying_SM state_flying = ON_THE_GROUND ;
-Flight_Mode_SM state_flight_mode = MANUAL ;
 
-uint16_t pulse = 1000;
+Flying_SM state_flying = ON_THE_GROUND ;
+
+Flight_Mode_SM state_flight_mode = MANUAL ;
+Flight_Mode_SM previous_state_flight_mode = MANUAL_STYLEE ;
+bool_e entrance_flight_mode = FALSE ;
+
 
 int main(void)
 {
@@ -113,15 +116,13 @@ int main(void)
 	ADC_init();
 
 	//On laisse du temps à tout le monde pour bien démarer
-	HAL_Delay(300);
+	HAL_Delay(20);
 	//------------------Init serial uart
 	uart_init(&uart_telem, UART_TELEMETRIE, 57600, 10);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);
-	printf("test");
 
 	//Init du gps, on passe sur une fréquence de 5hz sur l'envoit de données et d'autre trucs
 	GPS_congif(UART_GPS);
-
 
 	//------------------Initialisation du port de la led Verte
 	BSP_GPIO_PinCfg(LED_GREEN_GPIO, LED_GREEN_PIN, GPIO_MODE_OUTPUT_PP,GPIO_NOPULL,GPIO_SPEED_FREQ_HIGH);
@@ -194,7 +195,7 @@ int main(void)
 			case UPDATE_ANGLES :
 				//read mpu data and appli the filter
 				MPU6050_ReadAll(&mpu_data);
-				COMP_FILTER_update_angles();
+				COMP_FILTER_update_angles(&mpu_angles);
 				state_high_level = VERIF_SYSTEM ;
 				break ;
 
@@ -246,8 +247,11 @@ int main(void)
 							state_flight_mode = MANUAL ;
 						}
 
-
+						//Pour le if entrance
+						entrance_flight_mode = state_flight_mode != previous_state_flight_mode ;
+						previous_state_flight_mode = state_flight_mode ;
 						switch(state_flight_mode){
+
 							case MANUAL :
 								//Si on est en mode manuel pour les consigne c'est facile
 								roll_consigne = ((double)(channels[ROLL]- 1500) / (double)500) * (double)roll_and_pitch_max_setpoint ;
@@ -256,6 +260,8 @@ int main(void)
 								throttle_consigne = (double)(channels[THROTTLE] - 1050)  ;
 								break;
 							case MANUAL_STYLEE:
+								if(entrance_flight_mode)
+									TELEMETRIE_send_consigne_base(SUB_ID_BASE_CONSIGNE_START_SENDING_ANGLES, &uart_telem);
 								yaw_consigne = ((double)(channels[YAW] - 1500) / (double)500) * (double)yaw_max_setpoint ;	//Consigne en degré par seconde attention ^^
 								throttle_consigne = (double)(channels[THROTTLE] - 1050)  ;
 								roll_consigne = roll_consigne_base ;
@@ -301,7 +307,7 @@ int main(void)
 			case SEND_DATA :
 
 				if(channels[SWITCH_4] > 1500)
-					sub_send_data(&uart_telem, mpu_angles.z_acc, EVERY_IS_OK, gps.latitude_deg,gps.longitude_deg,roll_consigne, mpu_angles.y, channels[0], channels[1], channels[2], channels[3], channels[4], channels[5], channels[6], channels[7], v_bat, (uint8_t)state_flying, escs[0].pulsation, escs[1].pulsation, escs[2].pulsation, escs[3].pulsation);
+					sub_send_data(&uart_telem, mpu_angles.z_acc, EVERY_IS_OK, gps.latitude_deg,gps.longitude_deg,mpu_angles.x, roll_consigne_base, channels[0], channels[1], channels[2], channels[3], channels[4], channels[5], channels[6], channels[7], v_bat, (uint8_t)state_flying, escs[0].pulsation, escs[1].pulsation, escs[2].pulsation, escs[3].pulsation);
 
 				if((compteur_loop % 10) == 0)
 					state_high_level = ONCE_EVERY_10 ;

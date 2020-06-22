@@ -34,9 +34,9 @@ typedef enum{
 }mae_low_lvl_e;
 mae_low_lvl_e state_low_lvl = WAIT ;
 
-uint8_t bytes[3];
+uint8_t bytes[5];
 
-
+MPU6050_Result_t mpu_result ;
 
 int main(void)
 {
@@ -59,8 +59,9 @@ int main(void)
 	SYS_set_std_usart(UART_PC, UART_PC, UART_PC);
 
 	//Init du mpu
-	MPU6050_Init(&mpu_data, NULL, GPIO_PIN_12, MPU6050_Device_0, MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s);
-	COMP_FILTER_init(&mpu_data, &mpu_angles,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.995, 100 );
+	mpu_result = MPU6050_Init(&mpu_data, NULL, GPIO_PIN_12, MPU6050_Device_0, MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s);
+	printf("mpu_result\t%d", mpu_result);
+	COMP_FILTER_init(&mpu_data, &mpu_angles,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 100 );
 
 
 	receive.send_angles = 0 ;
@@ -75,13 +76,9 @@ int main(void)
 				}
 				break;
 			case UPDATE_ANGLES :
-				//read mpu data and appli the filter
-				if(receive.send_angles){
-					MPU6050_ReadAll(&mpu_data);
-					COMP_FILTER_update_angles(&mpu_angles);
-					state_low_lvl = SEND_ANGLES ;
-					//printf("x\t%f\ty\t%f\n", mpu_angles.x, mpu_angles.y);
-				}
+				MPU6050_ReadAll(&mpu_data);
+				COMP_FILTER_update_angles(&mpu_angles);
+				state_low_lvl = SEND_ANGLES ;
 				break;
 
 			case SEND_ANGLES :
@@ -90,6 +87,8 @@ int main(void)
 					bytes[1] = (uint8_t)(mpu_angles.x + 90);
 					bytes[2] = (uint8_t)(mpu_angles.y + 90);
 					uart_add_few(&uart_drone, bytes, 3);
+					bytes[0] = ID_PC_X_Y_BASE ;
+					uart_add_few(&uart_pc, bytes, 3);
 				}
 				state_low_lvl = WAIT ;
 				break;

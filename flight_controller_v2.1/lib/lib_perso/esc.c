@@ -11,7 +11,7 @@
 #include "stdio.h"
 #include "systick.h"
 #include "settings.h"
-#include "../global.h"
+#include "../../appli/global.h"
 
 
 static uint8_t nb_escs ;

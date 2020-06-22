@@ -13,21 +13,21 @@
 #include "macro_types.h"
 #include "systick.h"
 #include "stm32f1_extit.h"
-#include "lib_perso\ppm.h"
+#include "../lib/lib_perso\ppm.h"
 #include "branchement.h"
 #include "settings.h"
-#include "lib_perso\esc.h"
+#include "../lib/lib_perso\esc.h"
 #include "stm32f1_mpu6050.h"
-#include "lib_perso\complementary_filter.h"
-#include "lib_perso\pid.h"
-#include "lib_perso\telemetrie.h"
+#include "../lib/lib_perso\complementary_filter.h"
+#include "../lib/lib_perso\pid.h"
+#include "../lib/lib_perso\telemetrie.h"
 #include "stm32f1_adc.h"
 #include "sub/sub_action.h"
-#include "lib_perso/GPS.h"
+#include "../lib/lib_perso/GPS.h"
 #include "WS2812S.h"
-#include "lib_perso/state_machine.h"
+#include "../lib/lib_perso/state_machine.h"
 #include "global.h"
-#include "lib_perso/uart_lib.h"
+#include "../lib/lib_perso/uart_lib.h"
 #include "MAE.h"
 
 
@@ -163,7 +163,7 @@ int main(void)
 	PID_init(&pid_yaw, kp_yaw, ki_yaw, kd_yaw, 250, max_pid_output);
 
 
-
+	HAL_Delay(100);
 
 
 
@@ -319,7 +319,7 @@ int main(void)
 
 			case ONCE_EVERY_10:
 				//Mesure de la tension ne recquiert pas de se faire tout le temps
-				v_bat = (double)ADC_getValue(ADC_0) * BATTERIE_RESISTANCES_COEF ;
+				v_bat = (double)ADC_getValue(ADC_9) * BATTERIE_RESISTANCES_COEF ;
 				state_high_level = END ;
 				break;
 

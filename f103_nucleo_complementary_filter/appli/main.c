@@ -21,7 +21,7 @@ COMP_FILTER_angles_e mpu_angles ;
 uint32_t previous_time =0 ;
 uint32_t time = 0 ;
 uint32_t loop_time = 0 ;
-
+#define uart UART3_ID
 int main(void)
 {
 	//Initialisation de la couche logicielle HAL (Hardware Abstraction Layer)
@@ -32,10 +32,10 @@ int main(void)
 	//Initialisation de l'UART2 à la vitesse de 115200 bauds/secondes (92kbits/s) PA2 : Tx  | PA3 : Rx.
 		//Attention, les pins PA2 et PA3 ne sont pas reliées jusqu'au connecteur de la Nucleo.
 		//Ces broches sont redirigées vers la sonde de débogage, la liaison UART étant ensuite encapsulée sur l'USB vers le PC de développement.
-	UART_init(UART2_ID,115200);
+	UART_init(uart,57600);
 
 	//"Indique que les printf sortent vers le périphérique UART2."
-	SYS_set_std_usart(UART2_ID, UART2_ID, UART2_ID);
+	SYS_set_std_usart(uart, uart, uart);
 	printf("Init NUCLEO\n");
 
 
@@ -43,10 +43,7 @@ int main(void)
 	printf("INIT mpu : %d\n", mpu_result);
 	COMP_FILTER_init(&data, &mpu_angles,MPU6050_Accelerometer_8G, MPU6050_Gyroscope_500s, 0.998, 250 );
 
-	for(int c = 0; c < 20; c++){
-		//COMP_FILTER_calibration();
-		//HAL_Delay(100);
-	}
+
 
 
 	//Initialisation du port de la led Verte (carte Nucleo)
@@ -63,16 +60,10 @@ int main(void)
 	while(1)	//boucle de tâche de fond
 	{
 
-		previous_time = SYSTICK_get_time_us() ;
-		mpu_result = MPU6050_ReadAccelerometer(&data);
-		mpu_result =MPU6050_ReadGyroscope(&data);
 
-		time = SYSTICK_get_time_us() ;
+		MPU6050_ReadAll(&data);
 		COMP_FILTER_update_angles();
-		printf("X : %f Y : %f\n", data.Accelerometer_X, data.Accelerometer_Y);
-		//Si quand on arrive le flag est déjà c'est que l'on à été trop lent
-
-		//On repasse le flag à false
+		printf("%f\t%f\n", mpu_angles.x, mpu_angles.y);
 
 		if(mpu_angles.x > 0){
 			HAL_GPIO_WritePin(LED_GREEN_GPIO, LED_GREEN_PIN, FALSE);
@@ -84,9 +75,9 @@ int main(void)
 
 		//printf("%lu\n", time - previous_time);
 		//printf("X %d\n", data.Accelerometer_X);
-		while(SYSTICK_get_time_us() < loop_time + 4000  );
+		while(SYSTICK_get_time_us() < loop_time + 100000  );
 
-		loop_time = SYSTICK_get_time_us() ;
+		loop_time += 100000 ;
 
 	}
 }

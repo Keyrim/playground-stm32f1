@@ -13,7 +13,7 @@
 
 void TELEMETRIE_send_consigne_base(uint8_t consigne,  uart_struct_e * uart){
 	uint8_t bytes[2] ;
-	bytes[0] = ID_BASE_CONSIGNE ;
+	bytes[0] = ID_BASE_CONSIGNE_BASE ;
 	bytes[1] = consigne ;
 	uart_add_few(uart, bytes, 2);
 }

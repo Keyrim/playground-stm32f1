@@ -63,7 +63,7 @@ void COMP_FILTER_update_angles(COMP_FILTER_angles_e* angles){
 
 		//Complementary filter
 		//acc_x used with gyY makes sense dw (it really does btw)
-		angles->x = angles->alpha * angles->x + (acc_angles.y ) * ((double)1 - angles->alpha);
+		angles->x = angles->alpha * angles->x + (acc_angles.y + 15) * ((double)1 - angles->alpha);
 		angles->y = angles->alpha * angles->y + (acc_angles.x ) * ((double)1 - angles->alpha);
 
 	}

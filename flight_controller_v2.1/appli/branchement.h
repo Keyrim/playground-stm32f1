@@ -28,8 +28,8 @@
 #define esc2_pin GPIO_PIN_3
 #define esc3_pin GPIO_PIN_5
 
-#define PIN_BATTERIE	GPIO_PIN_9
-#define PORT_BATTERIE	GPIOA
+#define PIN_BATTERIE	GPIO_PIN_1
+#define PORT_BATTERIE	GPIOB
 
 //leds
 #define LED_MATRIX_PORT_DATA GPIOB

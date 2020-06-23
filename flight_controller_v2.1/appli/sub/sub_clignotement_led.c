@@ -7,8 +7,8 @@
 
 
 #include "sub_action.h"
-#include "../WS2812S.h"
-#include "../couleur.h"
+#include "../../lib_perso/WS2812S.h"
+#include "../ressources/couleur.h"
 
 
 void sub_clignotement_led(LedMode_e mode){

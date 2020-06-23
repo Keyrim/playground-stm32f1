@@ -18,7 +18,7 @@
 
 #include "stm32f1xx_hal.h"
 #include "WS2812S.h"
-#include "couleur.h"
+#include "../ressources/couleur.h"
 #include "config.h"
 #include "macro_types.h"
 #include "stm32f103xb.h"

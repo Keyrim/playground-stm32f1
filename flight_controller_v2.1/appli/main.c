@@ -29,6 +29,7 @@
 #include "global.h"
 #include "../lib/lib_perso/uart_lib.h"
 #include "MAE.h"
+#include "../lib/lib_perso/sequence_led.h"
 
 
 //	-------------------------- Global variables ----------------------------------
@@ -107,6 +108,8 @@ Flight_Mode_SM state_flight_mode = MANUAL ;
 Flight_Mode_SM previous_state_flight_mode = MANUAL_STYLEE ;
 bool_e entrance_flight_mode = FALSE ;
 
+//Sequence led d'etat
+sequence_led_t led_etat ;
 
 int main(void)
 {
@@ -115,6 +118,7 @@ int main(void)
 	HAL_Init();
 	ADC_init();
 
+	LED_SEQUENCE_init(&led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, (int32_t)0b10010000, 200, 8, 1);
 	//On laisse du temps à tout le monde pour bien démarer
 	HAL_Delay(20);
 	//------------------Init serial uart
@@ -125,7 +129,10 @@ int main(void)
 	GPS_congif(UART_GPS);
 
 	//------------------Initialisation du port de la led Verte
-	BSP_GPIO_PinCfg(LED_GREEN_GPIO, LED_GREEN_PIN, GPIO_MODE_OUTPUT_PP,GPIO_NOPULL,GPIO_SPEED_FREQ_HIGH);
+	//BSP_GPIO_PinCfg(LED_GREEN_GPIO, LED_GREEN_PIN, GPIO_MODE_OUTPUT_PP,GPIO_NOPULL,GPIO_SPEED_FREQ_HIGH);
+
+	//Init led etat
+
 
 	//------------------Init ruban de led
 	//LED_MATRIX_init();
@@ -133,10 +140,6 @@ int main(void)
 
 	//------------------Init du MPU et du complementary filer
 	mpu_result = MPU6050_Init(&mpu_data, NULL, GPIO_PIN_12, MPU6050_Device_0, MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s);
-	if(mpu_result == MPU6050_Result_Ok)
-		HAL_GPIO_WritePin(LED_GREEN_GPIO, LED_GREEN_PIN, 0);
-	else
-		HAL_GPIO_WritePin(LED_GREEN_GPIO, LED_GREEN_PIN, 1);	//Led éteinte si le mpu est pas init
 	COMP_FILTER_init(&mpu_data, &mpu_angles,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
 
 	//------------------Init ppm module
@@ -342,12 +345,16 @@ int main(void)
 					time_last_read_gps = SYSTICK_get_time_us() ;
 				}
 			}
+			global.free_time -= 5 ;
 
 			//Si on a reçu des données de la base
 			if(UART_data_ready(UART_TELEMETRIE)){
 				sub_receive_data(UART_get_next_byte(UART_TELEMETRIE), &state_flying, &roll_consigne_base, &pitch_consigne_base);
 			}
 			uart_send(&uart_telem);
+
+			//led d'etat
+			LED_SEQUENCE_play(&led_etat);
 		}
 
 	}

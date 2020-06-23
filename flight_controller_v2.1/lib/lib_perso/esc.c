@@ -10,7 +10,7 @@
 #include "stm32f1_gpio.h"
 #include "stdio.h"
 #include "systick.h"
-#include "settings.h"
+#include "../../appli/settings.h"
 #include "../../appli/global.h"
 
 

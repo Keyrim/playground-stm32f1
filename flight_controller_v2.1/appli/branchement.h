@@ -9,7 +9,9 @@
 #define BRANCHEMENT_H_
 
 
-
+//state led
+#define GPIO_STATE_LED GPIOC
+#define GPIO_PIN_STATE_LED GPIO_PIN_13
 
 //Branchements ppm
 #define GPIO_PPM GPIOB

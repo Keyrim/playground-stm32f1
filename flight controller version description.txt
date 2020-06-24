@@ -25,8 +25,13 @@ Version 2 :
 
 Version 2.1
 	Ajouts:
+		Séquence de leds
 	Modifs:
 		Télémétrie : On remplit un buffer qui est vidé à interval de temps régulier pour optimizer le truc 
+
+Version 2.2 
+	Ajouts:
+	Modifs:
 		
 		
 		

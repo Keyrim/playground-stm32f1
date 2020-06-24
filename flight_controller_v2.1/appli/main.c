@@ -30,6 +30,7 @@
 #include "../lib/lib_perso/uart_lib.h"
 #include "MAE.h"
 #include "../lib/lib_perso/sequence_led.h"
+#include "../ressources/sequences_led.h"
 
 
 //	-------------------------- Global variables ----------------------------------
@@ -103,6 +104,8 @@ High_Level_SM previous_state_high_level = PWM_LOW ;
 DataSend_SM state_data_send = TO_SEND_1 ;
 
 Flying_SM state_flying = ON_THE_GROUND ;
+Flying_SM previous_state_flying = FLYING ;
+bool_e entrance_state_flying = FALSE ;
 
 Flight_Mode_SM state_flight_mode = MANUAL ;
 Flight_Mode_SM previous_state_flight_mode = MANUAL_STYLEE ;
@@ -118,7 +121,7 @@ int main(void)
 	HAL_Init();
 	ADC_init();
 
-	LED_SEQUENCE_init(&led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, (int32_t)0b10010000, 200, 8, 1);
+	LED_SEQUENCE_init(&led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, SEQUENCE_LED_1, 100, 12, 1);
 	//On laisse du temps à tout le monde pour bien démarer
 	HAL_Delay(20);
 	//------------------Init serial uart
@@ -224,8 +227,13 @@ int main(void)
 				break;
 
 			case ESCS_SETPOINTS :
+				entrance_state_flying = state_flying != previous_state_flying ;
+				previous_state_flying = state_flying ;
 				switch(state_flying){
 					case ON_THE_GROUND :
+						if(entrance_state_flying){
+							LED_SEQUENCE_set_sequence(&led_etat, SEQUENCE_LED_1);
+						}
 						//Si on est au sol on met la consigne des moteurs à zéro
 						escs[0].pulsation = PULSATION_MIN ;
 						escs[1].pulsation = PULSATION_MIN ;
@@ -250,12 +258,14 @@ int main(void)
 							state_flight_mode = MANUAL ;
 						}
 
-						//Pour le if entrance
+						//Détermine un changement de mode de vol
 						entrance_flight_mode = state_flight_mode != previous_state_flight_mode ;
 						previous_state_flight_mode = state_flight_mode ;
 						switch(state_flight_mode){
 
 							case MANUAL :
+								if(entrance_flight_mode)
+									LED_SEQUENCE_set_sequence(&led_etat, SEQUENCE_LED_2);
 								//Si on est en mode manuel pour les consigne c'est facile
 								roll_consigne = ((double)(channels[ROLL]- 1500) / (double)500) * (double)roll_and_pitch_max_setpoint ;
 								pitch_consigne = ((double)(channels[PITCH]- 1500) / (double)500) * (double)roll_and_pitch_max_setpoint ;
@@ -263,8 +273,11 @@ int main(void)
 								throttle_consigne = (double)(channels[THROTTLE] - 1050)  ;
 								break;
 							case MANUAL_STYLEE:
-								if(entrance_flight_mode)
+								if(entrance_flight_mode){
 									TELEMETRIE_send_consigne_base(SUB_ID_BASE_CONSIGNE_START_SENDING_ANGLES, &uart_telem);
+									LED_SEQUENCE_set_sequence(&led_etat, SEQUENCE_LED_4);
+								}
+
 								yaw_consigne = ((double)(channels[YAW] - 1500) / (double)500) * (double)yaw_max_setpoint ;	//Consigne en degré par seconde attention ^^
 								throttle_consigne = (double)(channels[THROTTLE] - 1050)  ;
 								roll_consigne = roll_consigne_base ;
@@ -299,8 +312,6 @@ int main(void)
 						if(channels[SWITCH_1] < 1500 || channels[THROTTLE] < 1070 || !SECURITY_IS_OK){
 							state_flying = ON_THE_GROUND ;
 						}
-
-
 						break;
 
 					}

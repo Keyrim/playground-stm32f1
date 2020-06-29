@@ -7,6 +7,8 @@
 
 #ifndef MAE_H_
 #define MAE_H_
+#include "settings.h"
+#include "macro_types.h"
 
 //High Level State machine
 typedef enum{
@@ -31,19 +33,18 @@ typedef enum{
 	TO_SEND_6,
 }DataSend_SM;
 
-//Are we flying atm ?
-typedef enum{
-	ON_THE_GROUND,
-	FLYING
-}Flying_SM;
+
 
 //Flight mode state machine
 typedef enum{
+	ON_THE_GROUND,
 	MANUAL,
 	PARACHUTE,
 	MANUAL_STYLEE,
 	POSITION_HOLD,
 	ALTITUDE_HOLD
 }Flight_Mode_SM;
+
+
 
 #endif /* MAE_H_ */

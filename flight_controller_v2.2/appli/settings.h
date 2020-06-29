@@ -53,11 +53,8 @@
 
 #define max_pid_output 200
 
-//Rapport tension_batterie sur tension_mesurée en prenant en compte le adc qui renvoit entre 0 et 4095 pour 3.3 v
-//2.139 a0 = 11.93 baterrie
-//4096 = 3.3v
-//v_bat = read_adc * (11.93 * 3.3) / (4096 * 2.139)
-//v_bat = read_adc * 4.493 / 1000
+//Batterie
+#define USE_BATTERIE_CHECK 0
 #define BATTERIE_RESISTANCES_COEF ((double)0.00550)
 
 #endif /* SETTINGS_H_ */

@@ -14,21 +14,21 @@ typedef enum{
 
 static STATES_sub_parachute_e state_parachute = PARACHUTE_INIT ;
 
-running_e sub_parachute(double * consigne_roll, double * consigne_pitch, double * consigne_throtle, double acc_z){
+running_e sub_parachute(State_drone_t * drone){
 	running_e progression = IN_PROGRESS ;
 	switch(state_parachute){
 		case PARACHUTE_INIT :
-			*consigne_roll = 0 ;
-			*consigne_pitch = 0 ;
+			drone->roll_consigne = 0 ;
+			drone->pitch_consigne = 0 ;
 			state_parachute = PARACHUTE_LAND ;
 			break;
 		case PARACHUTE_LAND :
 			//D'après une "étude " faite par moi même (enregistrement du 30 / 05 / 2020)
 			//L'acc ne peut être négative uniquement quand on atterit ou si le drone est à l'envers .. )
 			//Et dans un vol même un peu agro, l'acc ne dépasse pas 3.5 g)
-			if(acc_z < 0 || acc_z > 3.5){
+			if(drone->mpu_angles.z_acc < 0 || drone->mpu_angles.z_acc > 3.5){
 				//On a toucher le sol, ou qqchoses .. Coupure des moteurs puis fin de la sub
-				*consigne_throtle = 0 ;
+				drone->throttle_consigne = 0 ;
 				state_parachute = PARACHUTE_LANDED ;
 			}
 			break;

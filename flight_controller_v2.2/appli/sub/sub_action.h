@@ -30,11 +30,11 @@ typedef struct {
 void sub_clignotement_led(LedMode_e mode);
 
 //Subs de données (télémétrie)
-void sub_send_data(uart_struct_e * uart_telem , State_drone_t drone);
-void sub_receive_data(uint8_t c, uint8_t * state_flying, double * consigne_roll_base, double * consigne_pitch_base);
+void sub_send_data(State_drone_t * drone);
+void sub_receive_data(uint8_t c, State_drone_t * drone, State_base_t * base);
 
-//Sub autonomies
-running_e sub_parachute();
+//Sub smart, trèss smart
+running_e sub_parachute(State_drone_t * drone);
 
 
 

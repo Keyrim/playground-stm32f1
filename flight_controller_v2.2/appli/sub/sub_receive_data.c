@@ -18,7 +18,7 @@ typedef enum {
 }sub_receive_e;
 
 
-void sub_receive_data(uint8_t c, uint8_t * state_flying, double * consigne_roll_base, double * consigne_pitch_base){
+void sub_receive_data(uint8_t c, State_drone_t * drone, State_base_t * base){
 
 	static uint8_t id = 0 ;
 	static uint8_t compteur = 0 ;
@@ -37,7 +37,7 @@ void sub_receive_data(uint8_t c, uint8_t * state_flying, double * consigne_roll_
 				//Si on a reçu une consigne, on a que un octect à gérer donc pas besoin de compteur
 				switch(c){
 					case SUB_ID_DRONE_CONSIGNE_STOP_MOTEUR :
-						*state_flying = 0 ; // correspond à on_the_ground
+						drone->state_flight_mode = 0 ; // correspond à on_the_ground
 						break;
 					default:
 						break;
@@ -49,8 +49,8 @@ void sub_receive_data(uint8_t c, uint8_t * state_flying, double * consigne_roll_
 				SAVE_AND_INCREASE ;
 				//Si le compteur == 2, on a nos deux valeurs
 				if(compteur == 2){
-					*consigne_roll_base = (double)(buffer[0] - 90)  ;
-					*consigne_pitch_base = (double)(buffer[1] - 90)  ;
+					base->angle_x = (double)(buffer[0] - 90)  ;
+					base->angle_y = (double)(buffer[1] - 90)  ;
 					new_data = 1 ;
 				}
 

@@ -8,6 +8,10 @@
 #ifndef SETTINGS_H_
 #define SETTINGS_H_
 
+
+
+
+
 //PPM settings
 #define TIME_OUT_PPM 20000 	//(en micros seconde)
 #define NB_CHANNEL 8

@@ -31,7 +31,16 @@ Version 2.1
 
 Version 2.2 
 	Ajouts:
+		Structures Drone et base pour mieux organisé les données
+		Fonctions pour les switch sur les mae high_lvl et low_lvl
 	Modifs:
+		Rennommage low lvl et high lvl (flight mode)
+		Modifs dans l'appelle des fonction et des mae
+		
+Versio 2.3
+	Ajouts:
+	Modifs:
+		Moteurs : Distinction entre la lib qui gère un moteur à la fois et la sub pour allumer et eteindre les moteurs qui les gère tous les 4 
 		
 		
 		

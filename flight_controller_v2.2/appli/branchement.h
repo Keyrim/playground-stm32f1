@@ -36,4 +36,8 @@
 //leds
 #define LED_MATRIX_PORT_DATA GPIOB
 #define LED_MATRIX_PIN_DATA GPIO_PIN_13
+
+//Gps
+#define UART_GPS UART2_ID
+
 #endif /* BRANCHEMENT_H_ */

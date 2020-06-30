@@ -19,21 +19,8 @@ typedef enum{
 	PWM_LOW,
 	ESCS_SETPOINTS,
 	SEND_DATA,
-	ONCE_EVERY_10,
-	ERROR_HIGH_LEVEL,
-	END
-}High_Level_SM;
-
-typedef enum{
-	TO_SEND_1,
-	TO_SEND_2,
-	TO_SEND_3,
-	TO_SEND_4,
-	TO_SEND_5,
-	TO_SEND_6,
-}DataSend_SM;
-
-
+	ERROR_HIGH_LEVEL
+}Low_Level_SM;
 
 //Flight mode state machine
 typedef enum{

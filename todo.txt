@@ -1,0 +1,13 @@
+
+TODO :
+	- rajouter des trammes de recalage envoyés de temps en temps
+	- ids à ajouter : les ids de présence genre "drone je suis présent"
+	-
+	- 
+	- faire un case init pour pouvoir clean les includes et mieux voir le niveau d appel	
+	- ranger un peu les includes dans le main 
+	- passer le free time en champs de drone
+	- crée une sub pour moteurs low, meme si elle ressemble bcp au truc de la lib			in_progress
+	- call une fonction "use free time "							
+	- séparation variables en SOUS struct dans la struct state drone
+	- rajout de msg de transition (je passe en mode on_the_ground) pcq le switch à été trigger 

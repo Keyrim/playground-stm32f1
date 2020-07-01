@@ -11,6 +11,7 @@
 #include "macro_types.h"
 #include "../lib_perso/uart_lib.h"
 #include "../system_d.h"
+#include "../lib_perso/esc.h"
 
 
 
@@ -29,12 +30,17 @@ typedef struct {
 //Sub pour les leds
 void sub_clignotement_led(LedMode_e mode);
 
+//Sub escs
+running_e sub_esc_end_pulse(ESC_e* escs);
+void sub_esc_start_pulse(ESC_e * escs);
+
 //Subs de données (télémétrie)
 void sub_send_data(State_drone_t * drone);
 void sub_receive_data(uint8_t c, State_drone_t * drone, State_base_t * base);
 
 //Sub smart, trèss smart
 running_e sub_parachute(State_drone_t * drone);
+
 
 
 

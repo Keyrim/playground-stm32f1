@@ -21,7 +21,7 @@ void LOW_LVL_Wait_Loop(State_drone_t * drone){
 }
 void LOW_LVL_Pwm_High(State_drone_t * drone){
 	//Starting pwm signals for the escs
-	ESC_Start_pulse();
+	sub_esc_start_pulse(drone->escs);
 	drone->state_low_level = UPDATE_ANGLES ;
 }
 
@@ -53,7 +53,7 @@ void LOW_LVL_Verif_System(State_drone_t * drone){
 }
 
 void LOW_LVL_Pwm_Low(State_drone_t * drone){
-	drone->state_low_level = try_action(ESC_End_pulse(), drone->state_low_level, ESCS_SETPOINTS, ERROR_HIGH_LEVEL);
+	drone->state_low_level = try_action(sub_esc_end_pulse(drone->escs), drone->state_low_level, ESCS_SETPOINTS, ERROR_HIGH_LEVEL);
 }
 
 

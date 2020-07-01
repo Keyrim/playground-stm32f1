@@ -68,25 +68,15 @@ int main(void)
 	PPM_init(drone.channels, PIN_NUMBER, GPIO_PPM, GPIO_PIN_PPM, TRUE, &drone.time_last_read_ppm);
 
 	//------------------Init pwm escs module
-	drone.escs[0].gpio = esc0_gpio ;
-	drone.escs[1].gpio = esc1_gpio ;
-	drone.escs[2].gpio = esc2_gpio ;
-	drone.escs[3].gpio = esc3_gpio ;
-	drone.escs[0].gpio_pin = esc0_pin ;
-	drone.escs[1].gpio_pin = esc1_pin ;
-	drone.escs[2].gpio_pin = esc2_pin ;
-	drone.escs[3].gpio_pin = esc3_pin ;
-	drone.escs[0].pulsation = 1000;
-	drone.escs[1].pulsation = 1000;
-	drone.escs[2].pulsation = 1000;
-	drone.escs[3].pulsation = 1000;
-	ESC_init(drone.escs, 4);
+	ESC_init(&drone.escs[0], esc0_gpio, esc0_pin);
+	ESC_init(&drone.escs[1], esc1_gpio, esc1_pin);
+	ESC_init(&drone.escs[2], esc2_gpio, esc2_pin);
+	ESC_init(&drone.escs[3], esc3_gpio, esc3_pin);
 
 	//Init pids
 	PID_init(&drone.pid_roll, kp_roll, ki_roll, kd_roll, 250, max_pid_output);
 	PID_init(&drone.pid_pitch, kp_pitch, ki_pitch, kd_pitch, 250, max_pid_output);
 	PID_init(&drone.pid_yaw, kp_yaw, ki_yaw, kd_yaw, 250, max_pid_output);
-
 
 	HAL_Delay(100);
 

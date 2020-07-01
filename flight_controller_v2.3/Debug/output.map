@@ -215,7 +215,7 @@ __lock___sinit_recursive_mutex
                     0x1               c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-lock.o)
 __lock___malloc_recursive_mutex
                     0x1               c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-lock.o)
-global              0x4               appli/main.o
+global              0x4               lib/lib_perso/esc.o
 longitude           0xc               appli/sub/sub_send_data.o
 drone               0x318             appli/main.o
 radio1              0xc               appli/sub/sub_send_data.o
@@ -550,20 +550,29 @@ Discarded input sections
  .group         0x00000000        0xc appli/main.o
  .group         0x00000000        0xc appli/main.o
  .group         0x00000000        0xc appli/main.o
- .group         0x00000000        0xc appli/main.o
  .text          0x00000000        0x0 appli/main.o
  .data          0x00000000        0x0 appli/main.o
  .bss           0x00000000        0x0 appli/main.o
  .debug_macro   0x00000000      0xa72 appli/main.o
- .debug_macro   0x00000000       0xbe appli/main.o
+ .debug_macro   0x00000000      0x1fa appli/main.o
+ .debug_macro   0x00000000       0x28 appli/main.o
  .debug_macro   0x00000000       0x22 appli/main.o
- .debug_macro   0x00000000       0x58 appli/main.o
+ .debug_macro   0x00000000       0x22 appli/main.o
+ .debug_macro   0x00000000       0x8e appli/main.o
+ .debug_macro   0x00000000       0x51 appli/main.o
+ .debug_macro   0x00000000       0xef appli/main.o
+ .debug_macro   0x00000000       0x6a appli/main.o
+ .debug_macro   0x00000000      0x1df appli/main.o
+ .debug_macro   0x00000000       0x34 appli/main.o
+ .debug_macro   0x00000000       0x34 appli/main.o
+ .debug_macro   0x00000000      0xb8e appli/main.o
+ .debug_macro   0x00000000     0xe911 appli/main.o
+ .debug_macro   0x00000000       0x43 appli/main.o
+ .debug_macro   0x00000000       0x5e appli/main.o
  .debug_macro   0x00000000       0x18 appli/main.o
- .debug_macro   0x00000000       0x94 appli/main.o
  .debug_macro   0x00000000       0x35 appli/main.o
  .debug_macro   0x00000000       0x34 appli/main.o
  .debug_macro   0x00000000       0x16 appli/main.o
- .debug_macro   0x00000000       0x57 appli/main.o
  .debug_macro   0x00000000       0x97 appli/main.o
  .debug_macro   0x00000000      0x330 appli/main.o
  .debug_macro   0x00000000       0xfd appli/main.o
@@ -574,7 +583,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x20 appli/main.o
  .debug_macro   0x00000000      0x18e appli/main.o
  .debug_macro   0x00000000       0x10 appli/main.o
- .debug_macro   0x00000000       0x6a appli/main.o
  .debug_macro   0x00000000       0x1c appli/main.o
  .debug_macro   0x00000000       0x52 appli/main.o
  .debug_macro   0x00000000       0x40 appli/main.o
@@ -585,17 +593,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x3d appli/main.o
  .debug_macro   0x00000000       0x16 appli/main.o
  .debug_macro   0x00000000      0x16f appli/main.o
- .debug_macro   0x00000000       0x82 appli/main.o
- .debug_macro   0x00000000      0x1fa appli/main.o
- .debug_macro   0x00000000       0x28 appli/main.o
- .debug_macro   0x00000000       0x22 appli/main.o
- .debug_macro   0x00000000       0xef appli/main.o
- .debug_macro   0x00000000      0x1df appli/main.o
- .debug_macro   0x00000000       0x34 appli/main.o
- .debug_macro   0x00000000       0x34 appli/main.o
- .debug_macro   0x00000000      0xb8e appli/main.o
- .debug_macro   0x00000000     0xe911 appli/main.o
- .debug_macro   0x00000000       0x43 appli/main.o
  .debug_macro   0x00000000       0x57 appli/main.o
  .debug_macro   0x00000000      0x5c2 appli/main.o
  .debug_macro   0x00000000      0x28a appli/main.o
@@ -625,9 +622,12 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 appli/main.o
  .debug_macro   0x00000000      0x26c appli/main.o
  .debug_macro   0x00000000       0x83 appli/main.o
+ .debug_macro   0x00000000       0x88 appli/main.o
  .debug_macro   0x00000000      0x13b appli/main.o
  .debug_macro   0x00000000      0x1e1 appli/main.o
+ .debug_macro   0x00000000       0xbe appli/main.o
  .debug_macro   0x00000000       0x3a appli/main.o
+ .debug_macro   0x00000000       0x76 appli/main.o
  .group         0x00000000        0xc appli/sub/sub_clignotement_led.o
  .group         0x00000000        0xc appli/sub/sub_clignotement_led.o
  .group         0x00000000        0xc appli/sub/sub_clignotement_led.o
@@ -1250,7 +1250,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x13b appli/sub/sub_receive_data.o
  .debug_macro   0x00000000      0x1e1 appli/sub/sub_receive_data.o
  .debug_macro   0x00000000       0xbe appli/sub/sub_receive_data.o
- .debug_macro   0x00000000       0x76 appli/sub/sub_receive_data.o
  .group         0x00000000        0xc appli/sub/sub_send_data.o
  .group         0x00000000        0xc appli/sub/sub_send_data.o
  .group         0x00000000        0xc appli/sub/sub_send_data.o
@@ -13948,6 +13947,7 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/lib_perso/esc.o
  .debug_macro   0x00000000       0x83 lib/lib_perso/esc.o
  .debug_macro   0x00000000       0xbe lib/lib_perso/esc.o
+ COMMON         0x00000000        0x4 lib/lib_perso/esc.o
  .group         0x00000000        0xc lib/lib_perso/pid.o
  .group         0x00000000        0xc lib/lib_perso/pid.o
  .group         0x00000000        0xc lib/lib_perso/pid.o
@@ -16708,7 +16708,7 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
  .igot.plt      0x200009c8        0x0 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
                 0x200009c8                . = ALIGN (0x4)
 
-.bss            0x200009c8      0xda4 load address 0x08011f8c
+.bss            0x200009c8      0xd9c load address 0x08011f8c
                 0x200009c8                _sbss = .
                 0x200009c8                __bss_start__ = _sbss
  *(.bss)
@@ -16797,51 +16797,50 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x20001390                __malloc_top_pad
  *(COMMON)
  *fill*         0x20001394        0x4 
- COMMON         0x20001398      0x330 appli/main.o
+ COMMON         0x20001398      0x328 appli/main.o
                 0x20001398                base
-                0x200013a8                global
-                0x200013b0                drone
- COMMON         0x200016c8       0x78 appli/sub/sub_send_data.o
-                0x200016c8                angles
-                0x200016d4                longitude
-                0x200016e0                radio1
-                0x200016ec                batterie
-                0x200016f8                latitude
-                0x20001704                radio2
-                0x20001710                every_is_ok
-                0x2000171c                state_global
-                0x20001728                moteurs
-                0x20001734                acc_z
- COMMON         0x20001740        0x4 lib/hal/src/stm32f1xx_hal.o
-                0x20001740                uwTick
- COMMON         0x20001744       0x21 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-lock.o)
-                0x20001744                __lock___atexit_recursive_mutex
-                0x20001748                __lock___arc4random_mutex
-                0x2000174c                __lock___env_recursive_mutex
-                0x20001750                __lock___sinit_recursive_mutex
-                0x20001754                __lock___malloc_recursive_mutex
-                0x20001758                __lock___at_quick_exit_mutex
-                0x2000175c                __lock___dd_hash_mutex
-                0x20001760                __lock___tz_mutex
-                0x20001764                __lock___sfp_recursive_mutex
- *fill*         0x20001765        0x3 
- COMMON         0x20001768        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-reent.o)
-                0x20001768                errno
-                0x2000176c                . = ALIGN (0x4)
-                0x2000176c                _ebss = .
-                0x2000176c                __bss_end__ = _ebss
+                0x200013a8                drone
+ COMMON         0x200016c0       0x78 appli/sub/sub_send_data.o
+                0x200016c0                angles
+                0x200016cc                longitude
+                0x200016d8                radio1
+                0x200016e4                batterie
+                0x200016f0                latitude
+                0x200016fc                radio2
+                0x20001708                every_is_ok
+                0x20001714                state_global
+                0x20001720                moteurs
+                0x2000172c                acc_z
+ COMMON         0x20001738        0x4 lib/hal/src/stm32f1xx_hal.o
+                0x20001738                uwTick
+ COMMON         0x2000173c       0x21 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-lock.o)
+                0x2000173c                __lock___atexit_recursive_mutex
+                0x20001740                __lock___arc4random_mutex
+                0x20001744                __lock___env_recursive_mutex
+                0x20001748                __lock___sinit_recursive_mutex
+                0x2000174c                __lock___malloc_recursive_mutex
+                0x20001750                __lock___at_quick_exit_mutex
+                0x20001754                __lock___dd_hash_mutex
+                0x20001758                __lock___tz_mutex
+                0x2000175c                __lock___sfp_recursive_mutex
+ *fill*         0x2000175d        0x3 
+ COMMON         0x20001760        0x4 c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m\libc.a(lib_a-reent.o)
+                0x20001760                errno
+                0x20001764                . = ALIGN (0x4)
+                0x20001764                _ebss = .
+                0x20001764                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x2000176c      0x604 load address 0x08011f8c
-                0x20001770                . = ALIGN (0x8)
- *fill*         0x2000176c        0x4 
-                0x20001770                PROVIDE (end = .)
+                0x20001764      0x604 load address 0x08011f8c
+                0x20001768                . = ALIGN (0x8)
+ *fill*         0x20001764        0x4 
+                0x20001768                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
-                0x20001970                . = (. + _Min_Heap_Size)
- *fill*         0x20001770      0x200 
-                0x20001d70                . = (. + _Min_Stack_Size)
- *fill*         0x20001970      0x400 
-                0x20001d70                . = ALIGN (0x8)
+                0x20001968                . = (. + _Min_Heap_Size)
+ *fill*         0x20001768      0x200 
+                0x20001d68                . = (. + _Min_Stack_Size)
+ *fill*         0x20001968      0x400 
+                0x20001d68                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -17113,44 +17112,44 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x000016a7       0x1d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(flight_controller_v2.3.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x2e108
+.debug_info     0x00000000    0x2e0d7
  .debug_info    0x00000000     0x11ef appli/high_lvl_cases.o
  .debug_info    0x000011ef     0x15c3 appli/low_lvl_cases.o
- .debug_info    0x000027b2     0x171f appli/main.o
- .debug_info    0x00003ed1      0xbc1 appli/sub/sub_esc.o
- .debug_info    0x00004a92     0x1180 appli/sub/sub_parachute.o
- .debug_info    0x00005c12     0x119d appli/sub/sub_receive_data.o
- .debug_info    0x00006daf     0x12ef appli/sub/sub_send_data.o
- .debug_info    0x0000809e     0x117f lib/bsp/MPU6050/stm32f1_mpu6050.o
- .debug_info    0x0000921d     0x19ef lib/bsp/stm32f1_adc.o
- .debug_info    0x0000ac0c      0xcab lib/bsp/stm32f1_gpio.o
- .debug_info    0x0000b8b7     0x1f75 lib/bsp/stm32f1_i2c.o
- .debug_info    0x0000d82c     0x19ed lib/bsp/stm32f1_sys.o
- .debug_info    0x0000f219     0x1b4e lib/bsp/stm32f1_timer.o
- .debug_info    0x00010d67     0x218f lib/bsp/stm32f1_uart.o
- .debug_info    0x00012ef6     0x11fe lib/bsp/stm32f1_weak_it.o
- .debug_info    0x000140f4      0xc5c lib/bsp/system_stm32f1xx.o
- .debug_info    0x00014d50      0xb86 lib/bsp/systick.o
- .debug_info    0x000158d6      0xfb4 lib/hal/src/stm32f1xx_hal.o
- .debug_info    0x0001688a     0x1671 lib/hal/src/stm32f1xx_hal_adc.o
- .debug_info    0x00017efb     0x14bc lib/hal/src/stm32f1xx_hal_cortex.o
- .debug_info    0x000193b7     0x105b lib/hal/src/stm32f1xx_hal_dma.o
- .debug_info    0x0001a412      0xece lib/hal/src/stm32f1xx_hal_gpio.o
- .debug_info    0x0001b2e0     0x37e1 lib/hal/src/stm32f1xx_hal_i2c.o
- .debug_info    0x0001eac1     0x1236 lib/hal/src/stm32f1xx_hal_rcc.o
- .debug_info    0x0001fcf7     0x36a7 lib/hal/src/stm32f1xx_hal_tim.o
- .debug_info    0x0002339e     0x1aef lib/hal/src/stm32f1xx_hal_tim_ex.o
- .debug_info    0x00024e8d     0x1ec2 lib/hal/src/stm32f1xx_hal_uart.o
- .debug_info    0x00026d4f     0x1029 lib/lib_perso/GPS.o
- .debug_info    0x00027d78      0xce6 lib/lib_perso/complementary_filter.o
- .debug_info    0x00028a5e      0xba8 lib/lib_perso/esc.o
- .debug_info    0x00029606      0xa04 lib/lib_perso/pid.o
- .debug_info    0x0002a00a     0x10a1 lib/lib_perso/ppm.o
- .debug_info    0x0002b0ab      0xbd3 lib/lib_perso/sequence_led.o
- .debug_info    0x0002bc7e      0x93d lib/lib_perso/state_machine.o
- .debug_info    0x0002c5bb      0xf70 lib/lib_perso/telemetrie.o
- .debug_info    0x0002d52b      0xbbb lib/lib_perso/uart_lib.o
- .debug_info    0x0002e0e6       0x22 lib/startup_stm32f103xb.o
+ .debug_info    0x000027b2     0x16ee appli/main.o
+ .debug_info    0x00003ea0      0xbc1 appli/sub/sub_esc.o
+ .debug_info    0x00004a61     0x1180 appli/sub/sub_parachute.o
+ .debug_info    0x00005be1     0x119d appli/sub/sub_receive_data.o
+ .debug_info    0x00006d7e     0x12ef appli/sub/sub_send_data.o
+ .debug_info    0x0000806d     0x117f lib/bsp/MPU6050/stm32f1_mpu6050.o
+ .debug_info    0x000091ec     0x19ef lib/bsp/stm32f1_adc.o
+ .debug_info    0x0000abdb      0xcab lib/bsp/stm32f1_gpio.o
+ .debug_info    0x0000b886     0x1f75 lib/bsp/stm32f1_i2c.o
+ .debug_info    0x0000d7fb     0x19ed lib/bsp/stm32f1_sys.o
+ .debug_info    0x0000f1e8     0x1b4e lib/bsp/stm32f1_timer.o
+ .debug_info    0x00010d36     0x218f lib/bsp/stm32f1_uart.o
+ .debug_info    0x00012ec5     0x11fe lib/bsp/stm32f1_weak_it.o
+ .debug_info    0x000140c3      0xc5c lib/bsp/system_stm32f1xx.o
+ .debug_info    0x00014d1f      0xb86 lib/bsp/systick.o
+ .debug_info    0x000158a5      0xfb4 lib/hal/src/stm32f1xx_hal.o
+ .debug_info    0x00016859     0x1671 lib/hal/src/stm32f1xx_hal_adc.o
+ .debug_info    0x00017eca     0x14bc lib/hal/src/stm32f1xx_hal_cortex.o
+ .debug_info    0x00019386     0x105b lib/hal/src/stm32f1xx_hal_dma.o
+ .debug_info    0x0001a3e1      0xece lib/hal/src/stm32f1xx_hal_gpio.o
+ .debug_info    0x0001b2af     0x37e1 lib/hal/src/stm32f1xx_hal_i2c.o
+ .debug_info    0x0001ea90     0x1236 lib/hal/src/stm32f1xx_hal_rcc.o
+ .debug_info    0x0001fcc6     0x36a7 lib/hal/src/stm32f1xx_hal_tim.o
+ .debug_info    0x0002336d     0x1aef lib/hal/src/stm32f1xx_hal_tim_ex.o
+ .debug_info    0x00024e5c     0x1ec2 lib/hal/src/stm32f1xx_hal_uart.o
+ .debug_info    0x00026d1e     0x1029 lib/lib_perso/GPS.o
+ .debug_info    0x00027d47      0xce6 lib/lib_perso/complementary_filter.o
+ .debug_info    0x00028a2d      0xba8 lib/lib_perso/esc.o
+ .debug_info    0x000295d5      0xa04 lib/lib_perso/pid.o
+ .debug_info    0x00029fd9     0x10a1 lib/lib_perso/ppm.o
+ .debug_info    0x0002b07a      0xbd3 lib/lib_perso/sequence_led.o
+ .debug_info    0x0002bc4d      0x93d lib/lib_perso/state_machine.o
+ .debug_info    0x0002c58a      0xf70 lib/lib_perso/telemetrie.o
+ .debug_info    0x0002d4fa      0xbbb lib/lib_perso/uart_lib.o
+ .debug_info    0x0002e0b5       0x22 lib/startup_stm32f103xb.o
 
 .debug_abbrev   0x00000000     0x6312
  .debug_abbrev  0x00000000      0x265 appli/high_lvl_cases.o
@@ -17342,7 +17341,7 @@ OUTPUT(flight_controller_v2.3.elf elf32-littlearm)
  .debug_ranges  0x00001480       0x40 lib/lib_perso/uart_lib.o
  .debug_ranges  0x000014c0       0x28 lib/startup_stm32f103xb.o
 
-.debug_macro    0x00000000    0x1e965
+.debug_macro    0x00000000    0x1e926
  .debug_macro   0x00000000      0x4be appli/high_lvl_cases.o
  .debug_macro   0x000004be      0xa72 appli/high_lvl_cases.o
  .debug_macro   0x00000f30      0x1fa appli/high_lvl_cases.o
@@ -17425,175 +17424,174 @@ OUTPUT(flight_controller_v2.3.elf elf32-littlearm)
  .debug_macro   0x000155d0       0x82 appli/low_lvl_cases.o
  .debug_macro   0x00015652       0x3a appli/low_lvl_cases.o
  .debug_macro   0x0001568c       0x76 appli/low_lvl_cases.o
- .debug_macro   0x00015702      0x55e appli/main.o
- .debug_macro   0x00015c60      0x1b3 appli/main.o
- .debug_macro   0x00015e13       0x76 appli/main.o
- .debug_macro   0x00015e89       0x10 appli/main.o
- .debug_macro   0x00015e99       0x76 appli/main.o
- .debug_macro   0x00015f0f      0x48e appli/sub/sub_esc.o
- .debug_macro   0x0001639d      0x48e appli/sub/sub_parachute.o
- .debug_macro   0x0001682b      0x49d appli/sub/sub_receive_data.o
- .debug_macro   0x00016cc8      0x4ab appli/sub/sub_send_data.o
- .debug_macro   0x00017173      0x40c lib/bsp/MPU6050/stm32f1_mpu6050.o
- .debug_macro   0x0001757f      0x3ff lib/bsp/stm32f1_adc.o
- .debug_macro   0x0001797e      0x3c3 lib/bsp/stm32f1_gpio.o
- .debug_macro   0x00017d41      0x3fd lib/bsp/stm32f1_i2c.o
- .debug_macro   0x0001813e      0x4a0 lib/bsp/stm32f1_sys.o
- .debug_macro   0x000185de       0x10 lib/bsp/stm32f1_sys.o
- .debug_macro   0x000185ee      0x241 lib/bsp/stm32f1_sys.o
- .debug_macro   0x0001882f       0x16 lib/bsp/stm32f1_sys.o
- .debug_macro   0x00018845       0x35 lib/bsp/stm32f1_sys.o
- .debug_macro   0x0001887a       0x10 lib/bsp/stm32f1_sys.o
- .debug_macro   0x0001888a       0x10 lib/bsp/stm32f1_sys.o
- .debug_macro   0x0001889a       0x35 lib/bsp/stm32f1_sys.o
- .debug_macro   0x000188cf      0x122 lib/bsp/stm32f1_sys.o
- .debug_macro   0x000189f1       0x16 lib/bsp/stm32f1_sys.o
- .debug_macro   0x00018a07      0x51a lib/bsp/stm32f1_sys.o
- .debug_macro   0x00018f21       0x10 lib/bsp/stm32f1_sys.o
- .debug_macro   0x00018f31       0x3c lib/bsp/stm32f1_sys.o
- .debug_macro   0x00018f6d       0x4c lib/bsp/stm32f1_sys.o
- .debug_macro   0x00018fb9      0x3e1 lib/bsp/stm32f1_timer.o
- .debug_macro   0x0001939a      0x416 lib/bsp/stm32f1_uart.o
- .debug_macro   0x000197b0       0x16 lib/bsp/stm32f1_uart.o
- .debug_macro   0x000197c6      0x3df lib/bsp/stm32f1_weak_it.o
- .debug_macro   0x00019ba5      0x3bf lib/bsp/system_stm32f1xx.o
- .debug_macro   0x00019f64      0x3d2 lib/bsp/systick.o
- .debug_macro   0x0001a336      0x3dd lib/hal/src/stm32f1xx_hal.o
- .debug_macro   0x0001a713      0x3d6 lib/hal/src/stm32f1xx_hal_adc.o
- .debug_macro   0x0001aae9      0x3b9 lib/hal/src/stm32f1xx_hal_cortex.o
- .debug_macro   0x0001aea2      0x3b9 lib/hal/src/stm32f1xx_hal_dma.o
- .debug_macro   0x0001b25b      0x429 lib/hal/src/stm32f1xx_hal_gpio.o
- .debug_macro   0x0001b684      0x3f9 lib/hal/src/stm32f1xx_hal_i2c.o
- .debug_macro   0x0001ba7d      0x3cb lib/hal/src/stm32f1xx_hal_rcc.o
- .debug_macro   0x0001be48      0x3b9 lib/hal/src/stm32f1xx_hal_tim.o
- .debug_macro   0x0001c201      0x3b9 lib/hal/src/stm32f1xx_hal_tim_ex.o
- .debug_macro   0x0001c5ba      0x3ba lib/hal/src/stm32f1xx_hal_uart.o
- .debug_macro   0x0001c974      0x460 lib/lib_perso/GPS.o
- .debug_macro   0x0001cdd4       0x16 lib/lib_perso/GPS.o
- .debug_macro   0x0001cdea       0x16 lib/lib_perso/GPS.o
- .debug_macro   0x0001ce00       0x29 lib/lib_perso/GPS.o
- .debug_macro   0x0001ce29      0x415 lib/lib_perso/complementary_filter.o
- .debug_macro   0x0001d23e      0x3fb lib/lib_perso/esc.o
- .debug_macro   0x0001d639      0x1af lib/lib_perso/pid.o
- .debug_macro   0x0001d7e8      0x3f7 lib/lib_perso/ppm.o
- .debug_macro   0x0001dbdf      0x3e4 lib/lib_perso/sequence_led.o
- .debug_macro   0x0001dfc3      0x1af lib/lib_perso/state_machine.o
- .debug_macro   0x0001e172      0x400 lib/lib_perso/telemetrie.o
- .debug_macro   0x0001e572      0x3f3 lib/lib_perso/uart_lib.o
+ .debug_macro   0x00015702      0x52f appli/main.o
+ .debug_macro   0x00015c31      0x1b3 appli/main.o
+ .debug_macro   0x00015de4       0x76 appli/main.o
+ .debug_macro   0x00015e5a      0x48e appli/sub/sub_esc.o
+ .debug_macro   0x000162e8      0x48e appli/sub/sub_parachute.o
+ .debug_macro   0x00016776      0x49d appli/sub/sub_receive_data.o
+ .debug_macro   0x00016c13       0x76 appli/sub/sub_receive_data.o
+ .debug_macro   0x00016c89      0x4ab appli/sub/sub_send_data.o
+ .debug_macro   0x00017134      0x40c lib/bsp/MPU6050/stm32f1_mpu6050.o
+ .debug_macro   0x00017540      0x3ff lib/bsp/stm32f1_adc.o
+ .debug_macro   0x0001793f      0x3c3 lib/bsp/stm32f1_gpio.o
+ .debug_macro   0x00017d02      0x3fd lib/bsp/stm32f1_i2c.o
+ .debug_macro   0x000180ff      0x4a0 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x0001859f       0x10 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x000185af      0x241 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x000187f0       0x16 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x00018806       0x35 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x0001883b       0x10 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x0001884b       0x10 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x0001885b       0x35 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x00018890      0x122 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x000189b2       0x16 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x000189c8      0x51a lib/bsp/stm32f1_sys.o
+ .debug_macro   0x00018ee2       0x10 lib/bsp/stm32f1_sys.o
+ .debug_macro   0x00018ef2       0x3c lib/bsp/stm32f1_sys.o
+ .debug_macro   0x00018f2e       0x4c lib/bsp/stm32f1_sys.o
+ .debug_macro   0x00018f7a      0x3e1 lib/bsp/stm32f1_timer.o
+ .debug_macro   0x0001935b      0x416 lib/bsp/stm32f1_uart.o
+ .debug_macro   0x00019771       0x16 lib/bsp/stm32f1_uart.o
+ .debug_macro   0x00019787      0x3df lib/bsp/stm32f1_weak_it.o
+ .debug_macro   0x00019b66      0x3bf lib/bsp/system_stm32f1xx.o
+ .debug_macro   0x00019f25      0x3d2 lib/bsp/systick.o
+ .debug_macro   0x0001a2f7      0x3dd lib/hal/src/stm32f1xx_hal.o
+ .debug_macro   0x0001a6d4      0x3d6 lib/hal/src/stm32f1xx_hal_adc.o
+ .debug_macro   0x0001aaaa      0x3b9 lib/hal/src/stm32f1xx_hal_cortex.o
+ .debug_macro   0x0001ae63      0x3b9 lib/hal/src/stm32f1xx_hal_dma.o
+ .debug_macro   0x0001b21c      0x429 lib/hal/src/stm32f1xx_hal_gpio.o
+ .debug_macro   0x0001b645      0x3f9 lib/hal/src/stm32f1xx_hal_i2c.o
+ .debug_macro   0x0001ba3e      0x3cb lib/hal/src/stm32f1xx_hal_rcc.o
+ .debug_macro   0x0001be09      0x3b9 lib/hal/src/stm32f1xx_hal_tim.o
+ .debug_macro   0x0001c1c2      0x3b9 lib/hal/src/stm32f1xx_hal_tim_ex.o
+ .debug_macro   0x0001c57b      0x3ba lib/hal/src/stm32f1xx_hal_uart.o
+ .debug_macro   0x0001c935      0x460 lib/lib_perso/GPS.o
+ .debug_macro   0x0001cd95       0x16 lib/lib_perso/GPS.o
+ .debug_macro   0x0001cdab       0x16 lib/lib_perso/GPS.o
+ .debug_macro   0x0001cdc1       0x29 lib/lib_perso/GPS.o
+ .debug_macro   0x0001cdea      0x415 lib/lib_perso/complementary_filter.o
+ .debug_macro   0x0001d1ff      0x3fb lib/lib_perso/esc.o
+ .debug_macro   0x0001d5fa      0x1af lib/lib_perso/pid.o
+ .debug_macro   0x0001d7a9      0x3f7 lib/lib_perso/ppm.o
+ .debug_macro   0x0001dba0      0x3e4 lib/lib_perso/sequence_led.o
+ .debug_macro   0x0001df84      0x1af lib/lib_perso/state_machine.o
+ .debug_macro   0x0001e133      0x400 lib/lib_perso/telemetrie.o
+ .debug_macro   0x0001e533      0x3f3 lib/lib_perso/uart_lib.o
 
-.debug_line     0x00000000    0x1a9da
+.debug_line     0x00000000    0x1a8c4
  .debug_line    0x00000000      0xc3d appli/high_lvl_cases.o
  .debug_line    0x00000c3d      0xd2d appli/low_lvl_cases.o
- .debug_line    0x0000196a      0xdfe appli/main.o
- .debug_line    0x00002768      0xb4c appli/sub/sub_esc.o
- .debug_line    0x000032b4      0xb3f appli/sub/sub_parachute.o
- .debug_line    0x00003df3      0xb3d appli/sub/sub_receive_data.o
- .debug_line    0x00004930      0xbaf appli/sub/sub_send_data.o
- .debug_line    0x000054df      0xa9c lib/bsp/MPU6050/stm32f1_mpu6050.o
- .debug_line    0x00005f7b      0xa69 lib/bsp/stm32f1_adc.o
- .debug_line    0x000069e4      0x8d7 lib/bsp/stm32f1_gpio.o
- .debug_line    0x000072bb      0xb20 lib/bsp/stm32f1_i2c.o
- .debug_line    0x00007ddb      0xd03 lib/bsp/stm32f1_sys.o
- .debug_line    0x00008ade      0xb81 lib/bsp/stm32f1_timer.o
- .debug_line    0x0000965f      0xc62 lib/bsp/stm32f1_uart.o
- .debug_line    0x0000a2c1      0xc89 lib/bsp/stm32f1_weak_it.o
- .debug_line    0x0000af4a      0x8ed lib/bsp/system_stm32f1xx.o
- .debug_line    0x0000b837      0x967 lib/bsp/systick.o
- .debug_line    0x0000c19e      0xa57 lib/hal/src/stm32f1xx_hal.o
- .debug_line    0x0000cbf5      0xde8 lib/hal/src/stm32f1xx_hal_adc.o
- .debug_line    0x0000d9dd      0xa6f lib/hal/src/stm32f1xx_hal_cortex.o
- .debug_line    0x0000e44c      0xc20 lib/hal/src/stm32f1xx_hal_dma.o
- .debug_line    0x0000f06c      0xa54 lib/hal/src/stm32f1xx_hal_gpio.o
- .debug_line    0x0000fac0     0x1b06 lib/hal/src/stm32f1xx_hal_i2c.o
- .debug_line    0x000115c6      0xb75 lib/hal/src/stm32f1xx_hal_rcc.o
- .debug_line    0x0001213b     0x186c lib/hal/src/stm32f1xx_hal_tim.o
- .debug_line    0x000139a7      0xe26 lib/hal/src/stm32f1xx_hal_tim_ex.o
- .debug_line    0x000147cd     0x1188 lib/hal/src/stm32f1xx_hal_uart.o
- .debug_line    0x00015955      0xab7 lib/lib_perso/GPS.o
- .debug_line    0x0001640c      0xa5e lib/lib_perso/complementary_filter.o
- .debug_line    0x00016e6a      0x99e lib/lib_perso/esc.o
- .debug_line    0x00017808      0x45b lib/lib_perso/pid.o
- .debug_line    0x00017c63      0xaa6 lib/lib_perso/ppm.o
- .debug_line    0x00018709      0x96f lib/lib_perso/sequence_led.o
- .debug_line    0x00019078      0x448 lib/lib_perso/state_machine.o
- .debug_line    0x000194c0      0xa9b lib/lib_perso/telemetrie.o
- .debug_line    0x00019f5b      0x9ea lib/lib_perso/uart_lib.o
- .debug_line    0x0001a945       0x95 lib/startup_stm32f103xb.o
+ .debug_line    0x0000196a      0xce8 appli/main.o
+ .debug_line    0x00002652      0xb4c appli/sub/sub_esc.o
+ .debug_line    0x0000319e      0xb3f appli/sub/sub_parachute.o
+ .debug_line    0x00003cdd      0xb3d appli/sub/sub_receive_data.o
+ .debug_line    0x0000481a      0xbaf appli/sub/sub_send_data.o
+ .debug_line    0x000053c9      0xa9c lib/bsp/MPU6050/stm32f1_mpu6050.o
+ .debug_line    0x00005e65      0xa69 lib/bsp/stm32f1_adc.o
+ .debug_line    0x000068ce      0x8d7 lib/bsp/stm32f1_gpio.o
+ .debug_line    0x000071a5      0xb20 lib/bsp/stm32f1_i2c.o
+ .debug_line    0x00007cc5      0xd03 lib/bsp/stm32f1_sys.o
+ .debug_line    0x000089c8      0xb81 lib/bsp/stm32f1_timer.o
+ .debug_line    0x00009549      0xc62 lib/bsp/stm32f1_uart.o
+ .debug_line    0x0000a1ab      0xc89 lib/bsp/stm32f1_weak_it.o
+ .debug_line    0x0000ae34      0x8ed lib/bsp/system_stm32f1xx.o
+ .debug_line    0x0000b721      0x967 lib/bsp/systick.o
+ .debug_line    0x0000c088      0xa57 lib/hal/src/stm32f1xx_hal.o
+ .debug_line    0x0000cadf      0xde8 lib/hal/src/stm32f1xx_hal_adc.o
+ .debug_line    0x0000d8c7      0xa6f lib/hal/src/stm32f1xx_hal_cortex.o
+ .debug_line    0x0000e336      0xc20 lib/hal/src/stm32f1xx_hal_dma.o
+ .debug_line    0x0000ef56      0xa54 lib/hal/src/stm32f1xx_hal_gpio.o
+ .debug_line    0x0000f9aa     0x1b06 lib/hal/src/stm32f1xx_hal_i2c.o
+ .debug_line    0x000114b0      0xb75 lib/hal/src/stm32f1xx_hal_rcc.o
+ .debug_line    0x00012025     0x186c lib/hal/src/stm32f1xx_hal_tim.o
+ .debug_line    0x00013891      0xe26 lib/hal/src/stm32f1xx_hal_tim_ex.o
+ .debug_line    0x000146b7     0x1188 lib/hal/src/stm32f1xx_hal_uart.o
+ .debug_line    0x0001583f      0xab7 lib/lib_perso/GPS.o
+ .debug_line    0x000162f6      0xa5e lib/lib_perso/complementary_filter.o
+ .debug_line    0x00016d54      0x99e lib/lib_perso/esc.o
+ .debug_line    0x000176f2      0x45b lib/lib_perso/pid.o
+ .debug_line    0x00017b4d      0xaa6 lib/lib_perso/ppm.o
+ .debug_line    0x000185f3      0x96f lib/lib_perso/sequence_led.o
+ .debug_line    0x00018f62      0x448 lib/lib_perso/state_machine.o
+ .debug_line    0x000193aa      0xa9b lib/lib_perso/telemetrie.o
+ .debug_line    0x00019e45      0x9ea lib/lib_perso/uart_lib.o
+ .debug_line    0x0001a82f       0x95 lib/startup_stm32f103xb.o
 
-.debug_str      0x00000000    0x8559f
+.debug_str      0x00000000    0x85573
  .debug_str     0x00000000    0x7d870 appli/high_lvl_cases.o
                               0x7dc7f (size before relaxing)
  .debug_str     0x0007d870      0x55a appli/low_lvl_cases.o
                               0x7e188 (size before relaxing)
- .debug_str     0x0007ddca      0x3be appli/main.o
-                              0x7e357 (size before relaxing)
- .debug_str     0x0007e188       0x53 appli/sub/sub_esc.o
+ .debug_str     0x0007ddca      0x37a appli/main.o
+                              0x7e30c (size before relaxing)
+ .debug_str     0x0007e144       0x53 appli/sub/sub_esc.o
                               0x7d6f7 (size before relaxing)
- .debug_str     0x0007e1db       0x7f appli/sub/sub_parachute.o
+ .debug_str     0x0007e197       0x7f appli/sub/sub_parachute.o
                               0x7dc68 (size before relaxing)
- .debug_str     0x0007e25a       0x5e appli/sub/sub_receive_data.o
+ .debug_str     0x0007e216       0x5e appli/sub/sub_receive_data.o
                               0x7ddf7 (size before relaxing)
- .debug_str     0x0007e2b8      0x16e appli/sub/sub_send_data.o
+ .debug_str     0x0007e274      0x16e appli/sub/sub_send_data.o
                               0x7df03 (size before relaxing)
- .debug_str     0x0007e426      0x1cb lib/bsp/MPU6050/stm32f1_mpu6050.o
+ .debug_str     0x0007e3e2      0x1cb lib/bsp/MPU6050/stm32f1_mpu6050.o
                               0x7ced3 (size before relaxing)
- .debug_str     0x0007e5f1      0xb0e lib/bsp/stm32f1_adc.o
+ .debug_str     0x0007e5ad      0xb0e lib/bsp/stm32f1_adc.o
                               0x7d2a5 (size before relaxing)
- .debug_str     0x0007f0ff       0xb2 lib/bsp/stm32f1_gpio.o
+ .debug_str     0x0007f0bb       0xb2 lib/bsp/stm32f1_gpio.o
                               0x7beef (size before relaxing)
- .debug_str     0x0007f1b1      0x4eb lib/bsp/stm32f1_i2c.o
+ .debug_str     0x0007f16d      0x4eb lib/bsp/stm32f1_i2c.o
                               0x7ce02 (size before relaxing)
- .debug_str     0x0007f69c     0x2027 lib/bsp/stm32f1_sys.o
+ .debug_str     0x0007f658     0x2027 lib/bsp/stm32f1_sys.o
                               0x7e73f (size before relaxing)
- .debug_str     0x000816c3      0x315 lib/bsp/stm32f1_timer.o
+ .debug_str     0x0008167f      0x315 lib/bsp/stm32f1_timer.o
                               0x7d087 (size before relaxing)
- .debug_str     0x000819d8      0x43f lib/bsp/stm32f1_uart.o
+ .debug_str     0x00081994      0x43f lib/bsp/stm32f1_uart.o
                               0x7d0fc (size before relaxing)
- .debug_str     0x00081e17      0x2a4 lib/bsp/stm32f1_weak_it.o
+ .debug_str     0x00081dd3      0x2a4 lib/bsp/stm32f1_weak_it.o
                               0x7c983 (size before relaxing)
- .debug_str     0x000820bb       0x4f lib/bsp/system_stm32f1xx.o
+ .debug_str     0x00082077       0x4f lib/bsp/system_stm32f1xx.o
                               0x7beb9 (size before relaxing)
- .debug_str     0x0008210a       0xc5 lib/bsp/systick.o
+ .debug_str     0x000820c6       0xc5 lib/bsp/systick.o
                               0x7c2a4 (size before relaxing)
- .debug_str     0x000821cf      0x348 lib/hal/src/stm32f1xx_hal.o
+ .debug_str     0x0008218b      0x348 lib/hal/src/stm32f1xx_hal.o
                               0x7c4e7 (size before relaxing)
- .debug_str     0x00082517      0x36c lib/hal/src/stm32f1xx_hal_adc.o
+ .debug_str     0x000824d3      0x36c lib/hal/src/stm32f1xx_hal_adc.o
                               0x7c508 (size before relaxing)
- .debug_str     0x00082883      0x1c1 lib/hal/src/stm32f1xx_hal_cortex.o
+ .debug_str     0x0008283f      0x1c1 lib/hal/src/stm32f1xx_hal_cortex.o
                               0x7c4b6 (size before relaxing)
- .debug_str     0x00082a44      0x1d7 lib/hal/src/stm32f1xx_hal_dma.o
+ .debug_str     0x00082a00      0x1d7 lib/hal/src/stm32f1xx_hal_dma.o
                               0x7c21a (size before relaxing)
- .debug_str     0x00082c1b      0x2bc lib/hal/src/stm32f1xx_hal_gpio.o
+ .debug_str     0x00082bd7      0x2bc lib/hal/src/stm32f1xx_hal_gpio.o
                               0x7c1fd (size before relaxing)
- .debug_str     0x00082ed7      0x9c8 lib/hal/src/stm32f1xx_hal_i2c.o
+ .debug_str     0x00082e93      0x9c8 lib/hal/src/stm32f1xx_hal_i2c.o
                               0x7cd36 (size before relaxing)
- .debug_str     0x0008389f      0x207 lib/hal/src/stm32f1xx_hal_rcc.o
+ .debug_str     0x0008385b      0x207 lib/hal/src/stm32f1xx_hal_rcc.o
                               0x7c252 (size before relaxing)
- .debug_str     0x00083aa6      0xc49 lib/hal/src/stm32f1xx_hal_tim.o
+ .debug_str     0x00083a62      0xc49 lib/hal/src/stm32f1xx_hal_tim.o
                               0x7cf52 (size before relaxing)
- .debug_str     0x000846ef      0x457 lib/hal/src/stm32f1xx_hal_tim_ex.o
+ .debug_str     0x000846ab      0x457 lib/hal/src/stm32f1xx_hal_tim_ex.o
                               0x7c7f4 (size before relaxing)
- .debug_str     0x00084b46      0x464 lib/hal/src/stm32f1xx_hal_uart.o
+ .debug_str     0x00084b02      0x464 lib/hal/src/stm32f1xx_hal_uart.o
                               0x7c76b (size before relaxing)
- .debug_str     0x00084faa      0x2ef lib/lib_perso/GPS.o
+ .debug_str     0x00084f66      0x2ef lib/lib_perso/GPS.o
                               0x7d2a9 (size before relaxing)
- .debug_str     0x00085299       0x70 lib/lib_perso/complementary_filter.o
+ .debug_str     0x00085255       0x70 lib/lib_perso/complementary_filter.o
                               0x7d63b (size before relaxing)
- .debug_str     0x00085309       0x17 lib/lib_perso/esc.o
+ .debug_str     0x000852c5       0x2f lib/lib_perso/esc.o
                               0x7c44d (size before relaxing)
- .debug_str     0x00085320       0x1e lib/lib_perso/pid.o
+ .debug_str     0x000852f4       0x1e lib/lib_perso/pid.o
                                0x775a (size before relaxing)
- .debug_str     0x0008533e       0xfe lib/lib_perso/ppm.o
+ .debug_str     0x00085312       0xfe lib/lib_perso/ppm.o
                               0x7c8e7 (size before relaxing)
- .debug_str     0x0008543c       0x31 lib/lib_perso/sequence_led.o
+ .debug_str     0x00085410       0x31 lib/lib_perso/sequence_led.o
                               0x7c2ba (size before relaxing)
- .debug_str     0x0008546d       0x39 lib/lib_perso/state_machine.o
+ .debug_str     0x00085441       0x39 lib/lib_perso/state_machine.o
                                0x7763 (size before relaxing)
- .debug_str     0x000854a6       0x88 lib/lib_perso/telemetrie.o
+ .debug_str     0x0008547a       0x88 lib/lib_perso/telemetrie.o
                               0x7c9d7 (size before relaxing)
- .debug_str     0x0008552e       0x46 lib/lib_perso/uart_lib.o
+ .debug_str     0x00085502       0x46 lib/lib_perso/uart_lib.o
                               0x7c6de (size before relaxing)
- .debug_str     0x00085574       0x2b lib/startup_stm32f103xb.o
+ .debug_str     0x00085548       0x2b lib/startup_stm32f103xb.o
                                  0x6d (size before relaxing)
 
 .comment        0x00000000       0x7f

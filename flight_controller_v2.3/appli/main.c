@@ -1,39 +1,30 @@
 /**
   ******************************************************************************
   * @file    main.c
-  * @author  Nirgal
-  * @date    03-July-2019
+  * @author  Theo
+  * @date    01-July-2020
   * @brief   Default main function.
   ******************************************************************************
 */
-#include "MAE.h"
+
+//Include de base pour la stm
 #include "stm32f1xx_hal.h"
-#include "stm32f1_uart.h"
 #include "stm32f1_sys.h"
-#include "stm32f1_gpio.h"
-#include "macro_types.h"
-#include "systick.h"
-#include "stm32f1_extit.h"
-#include "../lib/lib_perso\ppm.h"
-#include "branchement.h"
-#include "settings.h"
-#include "../lib/lib_perso\esc.h"
-#include "stm32f1_mpu6050.h"
-#include "../lib/lib_perso\complementary_filter.h"
-#include "../lib/lib_perso\pid.h"
-#include "../lib/lib_perso\telemetrie.h"
-#include "stm32f1_adc.h"
-#include "sub/sub_action.h"
-#include "../lib/lib_perso/GPS.h"
-#include "WS2812S.h"
-#include "../lib/lib_perso/state_machine.h"
-#include "global.h"
-#include "../lib/lib_perso/uart_lib.h"
-#include "../lib/lib_perso/sequence_led.h"
-#include "../ressources/sequences_led.h"
-#include "system_d.h"
+
+//Include des deux machines à état principales (qui elles include bcp de choses)
 #include "high_lvl_cases.h"
 #include "low_lvl_cases.h"
+
+//Lib pour l'init du ppm
+#include "../lib/lib_perso\ppm.h"
+
+//Fichier de ref pour les configurations
+#include "branchement.h"
+#include "settings.h"
+
+
+
+
 
 //	-------------------------- Global variables ----------------------------------
 State_drone_t drone ;
@@ -50,7 +41,9 @@ int main(void)
 	drone.state_flight_mode = ON_THE_GROUND ;
 	drone.state_low_level = WAIT_LOOP ;
 
+	//Init sequence led
 	LED_SEQUENCE_init(&drone.led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, SEQUENCE_LED_1, 200, 12, 1);
+
 	//On laisse du temps à tout le monde pour bien démarer
 	HAL_Delay(20);
 	//------------------Init serial uart

@@ -41,6 +41,7 @@ Versio 2.3
 	Ajouts:
 	Modifs:
 		Moteurs : Distinction entre la lib qui gère un moteur à la fois et la sub pour allumer et eteindre les moteurs qui les gère tous les 4 
+		Trie dans les includes du main
 		
 		
 		

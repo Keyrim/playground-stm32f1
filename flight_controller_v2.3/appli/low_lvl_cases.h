@@ -14,12 +14,12 @@
 #include "../../lib_perso/sequence_led.h"
 #include "../../ressources/sequences_led.h"
 #include "../../lib_perso/telemetrie.h"
-#include "../../lib_perso/complementary_filter.h"
 #include "../../lib_perso/state_machine.h"
 #include "MPU6050/stm32f1_mpu6050.h"
 #include "high_lvl_cases.h"
 #include "IDs.h"
-#include "stm32f1_adc.h"
+#include "../lib/lib_perso/DRONE_batterie.h"
+#include "../lib/lib_perso/DRONE_mpu6050.h"
 
 void LOW_LVL_Wait_Loop(State_drone_t * drone);
 void LOW_LVL_Pwm_High(State_drone_t * drone);

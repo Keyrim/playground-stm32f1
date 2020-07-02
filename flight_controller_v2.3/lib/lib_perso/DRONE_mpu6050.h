@@ -5,8 +5,8 @@
  *      Author: Theo
  */
 
-#ifndef COMPLEMENTARY_FILTER_H_
-#define COMPLEMENTARY_FILTER_H_
+#ifndef DRONE_MPU6050_H_
+#define DRONE_MPU6050_H_
 
 #include "stm32f1_mpu6050.h"
 #include "math.h"
@@ -25,14 +25,16 @@ typedef struct{
 	double gyro_sensi;
 	double acc_sensi;
 	bool_e first_read;
-	MPU6050_t* raw_data_mpu ;
+	bool_e mpu_is_ok;
+	MPU6050_t raw_data_mpu ;
+	MPU6050_Result_t mpu_result;
 
 
 	uint16_t frequency;
-}COMP_FILTER_angles_e;
+}DRONE_mpu6050_t;
 
-void COMP_FILTER_init(MPU6050_t * mpu_data_struct, COMP_FILTER_angles_e* angles, MPU6050_Accelerometer_t acc_sensi, MPU6050_Gyroscope_t gyro_sensi, double alpha_, uint16_t frequency);
-void COMP_FILTER_update_angles(COMP_FILTER_angles_e* angles);
+void DRONE_mpu6050_init(DRONE_mpu6050_t * angles, MPU6050_Accelerometer_t acc_sensi, MPU6050_Gyroscope_t gyro_sensi, double alpha, uint16_t frequency);
+void DRONE_mpu6050_update_angles(DRONE_mpu6050_t * angles);
 
 
 #endif /* COMPLEMENTARY_FILTER_H_ */

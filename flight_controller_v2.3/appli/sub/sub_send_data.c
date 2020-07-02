@@ -111,7 +111,7 @@ void sub_send_data(State_drone_t * drone){
 
 	if(compteur % angles.periode == 0 || angles.to_send){
 		if(compteur_octet >= angles.nb_octet){
-			TELEMETRIE_send_angle_x_y_as_int(drone->mpu_angles.x, drone->mpu_angles.y, &drone->uart_telem);
+			TELEMETRIE_send_angle_x_y_as_int(drone->capteurs.mpu.x, drone->capteurs.mpu.y, &drone->communication.uart_telem);
 			compteur_octet -= angles.nb_octet ;
 			angles.to_send = FALSE ;
 		}
@@ -120,7 +120,7 @@ void sub_send_data(State_drone_t * drone){
 	}
 	if(compteur % moteurs.periode == 0 || moteurs.to_send ){
 		if(compteur_octet >= moteurs.nb_octet){
-			TELEMETRIE_send_moteur_all(drone->escs[0].pulsation, drone->escs[1].pulsation, drone->escs[2].pulsation, drone->escs[3].pulsation, &drone->uart_telem);
+			TELEMETRIE_send_moteur_all(drone->stabilisation.escs[0].pulsation, drone->stabilisation.escs[1].pulsation, drone->stabilisation.escs[2].pulsation, drone->stabilisation.escs[3].pulsation, &drone->communication.uart_telem);
 			compteur_octet -= moteurs.nb_octet ;
 			moteurs.to_send = FALSE ;
 		}
@@ -129,7 +129,7 @@ void sub_send_data(State_drone_t * drone){
 	}
 	if(compteur % radio1.periode == 0 || radio1.to_send ){
 		if(compteur_octet >= radio1.nb_octet){
-			TELEMETRIE_send_channel_all_1_4(drone->channels[0], drone->channels[1], drone->channels[2], drone->channels[3], &drone->uart_telem);
+			TELEMETRIE_send_channel_all_1_4(drone->communication.ppm.channels[0], drone->communication.ppm.channels[1], drone->communication.ppm.channels[2], drone->communication.ppm.channels[3], &drone->communication.uart_telem);
 			compteur_octet -= radio1.nb_octet ;
 			radio1.to_send = FALSE;
 		}
@@ -138,7 +138,7 @@ void sub_send_data(State_drone_t * drone){
 	}
 	if(compteur % radio2.periode == 0 || radio2.to_send ){
 		if(compteur_octet >= radio2.nb_octet){
-			TELEMETRIE_send_channel_all_5_8(drone->channels[4], drone->channels[5], drone->channels[6], drone->channels[7], &drone->uart_telem);
+			TELEMETRIE_send_channel_all_5_8(drone->communication.ppm.channels[4], drone->communication.ppm.channels[5], drone->communication.ppm.channels[6], drone->communication.ppm.channels[7], &drone->communication.uart_telem);
 			compteur_octet -= radio2.nb_octet ;
 			radio2.to_send = FALSE ;
 		}
@@ -147,7 +147,7 @@ void sub_send_data(State_drone_t * drone){
 	}
 	if(compteur % batterie.periode == 0 || batterie.to_send ){
 		if(compteur_octet >= batterie.nb_octet){
-			TELEMETRIE_send_v_bat(drone->v_bat, &drone->uart_telem);
+			TELEMETRIE_send_v_bat(drone->capteurs.batterie.voltage, &drone->communication.uart_telem);
 			compteur_octet -= batterie.nb_octet ;
 			batterie.to_send = FALSE ;
 		}
@@ -156,7 +156,7 @@ void sub_send_data(State_drone_t * drone){
 	}
 	if(compteur % every_is_ok.periode == 0 || every_is_ok.to_send ){
 			if(compteur_octet >= every_is_ok.nb_octet){
-				TELEMETRIE_send_every_is_ok(((uint8_t)( 2 * drone->ppm_is_ok +  drone->gps_is_ok)), &drone->uart_telem);
+				TELEMETRIE_send_every_is_ok(((uint8_t)( 2 * drone->communication.ppm.is_ok +  drone->capteurs.gps.is_ok)), &drone->communication.uart_telem);
 				compteur_octet -= every_is_ok.nb_octet ;
 				every_is_ok.to_send = FALSE ;
 			}
@@ -165,7 +165,7 @@ void sub_send_data(State_drone_t * drone){
 		}
 	if(compteur % state_global.periode == 0 || state_global.to_send ){
 		if(compteur_octet >= state_global.nb_octet){
-			TELEMETRIE_send_state_flying(drone->state_flight_mode, &drone->uart_telem);
+			TELEMETRIE_send_state_flying(drone->soft.state_flight_mode, &drone->communication.uart_telem);
 			compteur_octet -= state_global.nb_octet ;
 			state_global.to_send = FALSE ;
 		}

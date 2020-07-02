@@ -4,10 +4,7 @@ TODO :
 	- ids à ajouter : les ids de présence genre "drone je suis présent"
 	-
 	- 
-	- faire un case init pour pouvoir clean les includes et mieux voir le niveau d appel	
-	- passer le free time en champs de drone
 	- call une fonction "use free time "							
-	- séparation variables en SOUS struct dans la struct state drone
-		- ppm
-		- 
-	- rajout de msg de transition (je passe en mode on_the_ground pcq le switch à été trigger )
+	- rajout de msg de transition (je passe en mode on_the_ground) pcq le switch à été trigger 
+	- dans le pid fournir consigne et valeur actuelle, pas l'erreur et la valeur actuelle
+	- envoyer les acc_z sur les trois axes et voir ce que ça donne quand on met à l'envers etc

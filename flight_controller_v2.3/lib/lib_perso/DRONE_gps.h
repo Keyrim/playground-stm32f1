@@ -5,14 +5,15 @@
  *      Author: Nirgal
  */
 
-#ifndef GPS_H_
-#define GPS_H_
-#include "config.h"
-#if USE_GPS
+#ifndef DRONE_GPS_H_
+#define DRONE_GPS_H_
+
 #include "stm32f1_uart.h"
 #include "macro_types.h"
 
 typedef struct{
+	bool_e is_ok ;
+	uint32_t last_time_read_gps ;
 	uint16_t 	id;
 	uint32_t 	time;		//[HHMMSS]
 	uint32_t 	seconds;	//[sec since 0:00:00]
@@ -40,8 +41,8 @@ typedef enum{
 	TRAME_GPGGA				//Une trame GPGGA a été reçue
 }nmea_frame_e;
 
-nmea_frame_e GPS_process_rx(uint8_t c, gps_datas_t * gps_datas);
-void GPS_congif(uart_id_e id_uart);
-#endif //USE_GPS
+nmea_frame_e DRONE_GPS_process_rx(uint8_t c, gps_datas_t * gps_datas);
+void DRONE_GPS_congif(uart_id_e id_uart);
+
 #endif /* GPS_H_ */
 

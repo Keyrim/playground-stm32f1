@@ -8,10 +8,6 @@
 #ifndef SETTINGS_H_
 #define SETTINGS_H_
 
-
-
-
-
 //PPM settings
 #define TIME_OUT_PPM 20000 	//(en micros seconde)
 #define NB_CHANNEL 8
@@ -55,10 +51,10 @@
 #define ki_yaw 0
 #define kd_yaw 0
 
-#define max_pid_output 200
+#define PID_MAX_OUTPUT 200
 
 //Batterie
-#define USE_BATTERIE_CHECK 0
+#define USE_BATTERIE_CHECK FALSE
 #define BATTERIE_RESISTANCES_COEF ((double)0.00550)
 
 #endif /* SETTINGS_H_ */

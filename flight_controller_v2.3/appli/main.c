@@ -15,8 +15,6 @@
 #include "high_lvl_cases.h"
 #include "low_lvl_cases.h"
 
-//Lib pour l'init du ppm
-#include "../lib/lib_perso\ppm.h"
 
 //Fichier de ref pour les configurations
 #include "branchement.h"
@@ -33,53 +31,50 @@ State_base_t base ;
 
 int main(void)
 {
+	//Init mae drone
+	drone.soft.state_flight_mode = ON_THE_GROUND ;
+	drone.soft.state_low_level = WAIT_LOOP ;
+
 	//	-------------------------------------------- Setup -----------------------------------------------------------
 	HAL_Init();
-	ADC_init();
+	DRONE_batterie_init(&drone.capteurs.batterie, BATTERIE_ADC_VOLTAGE, BATTERIE_RESISTANCES_COEF);
 
-	//Init mae drone
-	drone.state_flight_mode = ON_THE_GROUND ;
-	drone.state_low_level = WAIT_LOOP ;
 
 	//Init sequence led
-	LED_SEQUENCE_init(&drone.led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, SEQUENCE_LED_1, 200, 12, 1);
+	LED_SEQUENCE_init(&drone.ihm.led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, SEQUENCE_LED_1, 200, 12, 1);
 
 	//On laisse du temps à tout le monde pour bien démarer
 	HAL_Delay(20);
 	//------------------Init serial uart
-	uart_init(&drone.uart_telem, UART_TELEMETRIE, 57600, 10);
+	uart_init(&drone.communication.uart_telem, UART_TELEMETRIE, 57600, 10);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);
 
 	//Init du gps, on passe sur une fréquence de 5hz sur l'envoit de données et d'autre trucs
-	GPS_congif(UART_GPS);
+	DRONE_GPS_congif(UART_GPS);
 
 	//------------------Init du MPU et du complementary filer
-	drone.mpu_result = MPU6050_Init(&drone.mpu_data, NULL, GPIO_PIN_12, MPU6050_Device_0, MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s);
-	COMP_FILTER_init(&drone.mpu_data, &drone.mpu_angles,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
+	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
 
 	//------------------Init ppm module
-	PPM_init(drone.channels, PIN_NUMBER, GPIO_PPM, GPIO_PIN_PPM, TRUE, &drone.time_last_read_ppm);
-
+	DRONE_ppm_init(&drone.communication.ppm, PIN_NUMBER, GPIO_PPM, GPIO_PIN_PPM);
 	//------------------Init pwm escs module
-	ESC_init(&drone.escs[0], esc0_gpio, esc0_pin);
-	ESC_init(&drone.escs[1], esc1_gpio, esc1_pin);
-	ESC_init(&drone.escs[2], esc2_gpio, esc2_pin);
-	ESC_init(&drone.escs[3], esc3_gpio, esc3_pin);
+	ESC_init(&drone.stabilisation.escs[0], esc0_gpio, esc0_pin);
+	ESC_init(&drone.stabilisation.escs[1], esc1_gpio, esc1_pin);
+	ESC_init(&drone.stabilisation.escs[2], esc2_gpio, esc2_pin);
+	ESC_init(&drone.stabilisation.escs[3], esc3_gpio, esc3_pin);
 
 	//Init pids
-	PID_init(&drone.pid_roll, kp_roll, ki_roll, kd_roll, 250, max_pid_output);
-	PID_init(&drone.pid_pitch, kp_pitch, ki_pitch, kd_pitch, 250, max_pid_output);
-	PID_init(&drone.pid_yaw, kp_yaw, ki_yaw, kd_yaw, 250, max_pid_output);
+	PID_init(&drone.stabilisation.pid_roll, kp_roll, ki_roll, kd_roll, 250, PID_MAX_OUTPUT);
+	PID_init(&drone.stabilisation.pid_pitch, kp_pitch, ki_pitch, kd_pitch, 250, PID_MAX_OUTPUT);
+	PID_init(&drone.stabilisation.pid_yaw, kp_yaw, ki_yaw, kd_yaw, 250, PID_MAX_OUTPUT);
 
 	HAL_Delay(100);
-
-
 
 
 	//	--------------------------------------------- Main Loop	-----------------------------------------------------
 	while(1)
 	{
-		switch(drone.state_low_level){
+		switch(drone.soft.state_low_level){
 			case WAIT_LOOP :
 				LOW_LVL_Wait_Loop(&drone);
 				break;
@@ -116,11 +111,11 @@ int main(void)
 
 
 		//Là on fait des choses en prenant en compte le "free time" : je crois ça fonctionne )
-		if(drone.free_time > 15){
+		if(drone.soft.free_time > 15){
 			//Si on reçu des données du gps
 			if(UART_data_ready(UART_GPS)){
-				if(GPS_process_rx(UART_get_next_byte(UART_GPS), &drone.gps) >= 3){
-					drone.time_last_read_gps = SYSTICK_get_time_us() ;
+				if(DRONE_GPS_process_rx(UART_get_next_byte(UART_GPS), &drone.capteurs.gps) >= 3){
+					drone.capteurs.gps.last_time_read_gps = SYSTICK_get_time_us() ;
 				}
 			}
 			//global.free_time -= 5 ;
@@ -129,10 +124,10 @@ int main(void)
 			if(UART_data_ready(UART_TELEMETRIE)){
 				sub_receive_data(UART_get_next_byte(UART_TELEMETRIE), &drone, &base);
 			}
-			uart_send(&drone.uart_telem);
+			uart_send(&drone.communication.uart_telem);
 
 			//led d'etat
-			LED_SEQUENCE_play(&drone.led_etat);
+			LED_SEQUENCE_play(&drone.ihm.led_etat);
 		}
 
 	}

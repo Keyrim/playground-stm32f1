@@ -37,11 +37,12 @@ Version 2.2
 		Rennommage low lvl et high lvl (flight mode)
 		Modifs dans l'appelle des fonction et des mae
 		
-Versio 2.3
+Version 2.3
 	Ajouts:
 	Modifs:
 		Moteurs : Distinction entre la lib qui gère un moteur à la fois et la sub pour allumer et eteindre les moteurs qui les gère tous les 4 
-		Trie dans les includes du main
+		Code : Trie dans les includes du main
+		Structure : Réorganisation struct drone avec des sous structure pour organisé les données
 		
 		
 		

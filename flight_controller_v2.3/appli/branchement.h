@@ -8,6 +8,8 @@
 #ifndef BRANCHEMENT_H_
 #define BRANCHEMENT_H_
 
+//Batterie
+#define BATTERIE_ADC_VOLTAGE ADC_9
 
 //state led
 #define GPIO_STATE_LED GPIOC

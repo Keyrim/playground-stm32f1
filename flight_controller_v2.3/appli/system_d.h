@@ -6,75 +6,71 @@
  */
 
 
-#include "../lib/lib_perso/GPS.h"
-#include "stm32f1_mpu6050.h"
-#include "../lib/lib_perso\complementary_filter.h"
+
 #include "settings.h"
 #include "macro_types.h"
 #include "MAE.h"
 #include "../lib/lib_perso\esc.h"
-#include "../../lib_perso/sequence_led.h"
+#include "../lib/lib_perso/sequence_led.h"
+#include "../lib/lib_perso/DRONE_gps.h"
+#include "../lib/lib_perso/DRONE_mpu6050.h"
 #include "../lib/lib_perso/pid.h"
 #include "../lib/lib_perso/uart_lib.h"
+#include "../lib/lib_perso/ppm.h"
+#include "../lib/lib_perso/DRONE_batterie.h"
+#include "../lib/lib_perso/DRONE_consigne.h"
 
 #ifndef SYSTEM_D_H_
 #define SYSTEM_D_H_
 
-// Struct du drone
+//Struct capteur
 typedef struct{
-
-	//Gps
 	gps_datas_t gps ;
-	bool_e gps_is_ok  ;
-	uint32_t time_last_read_gps ;
+	DRONE_batterie_t batterie ;
+	DRONE_mpu6050_t mpu ;
+}DRONE_capteurs_t;
 
-	//Batterie
-	double v_bat ;
-
-	//Consignes
-	double roll_consigne ;
-	double pitch_consigne ;
-	double yaw_consigne ;
-	double throttle_consigne ;
-
-	// PWM escs signal variables
+//Struct stabilisation
+typedef struct{
 	ESC_e escs[4];
-
-	//PPM variables
-	uint16_t channels [NB_CHANNEL] ;
-	bool_e ppm_is_ok  ;
-	uint32_t time_last_read_ppm  ;
-
-	//MPU 6050 variables
-	MPU6050_t mpu_data ;
-	MPU6050_Result_t mpu_result ;
-	bool_e mpu_is_ok  ;
-	COMP_FILTER_angles_e mpu_angles ;
-
-	//Flight mode
-	Flight_Mode_SM state_flight_mode ;
-	bool_e entrance_flight_mode ;
-
-	//low_lvl
-	Low_Level_SM state_low_level ;
-
-	//Main loop frequency setting
-	uint32_t previous_time_loop ;
-
-	//Free time
-	uint32_t free_time ;
-
-	//led etat
-	sequence_led_t led_etat ;
-
-	//Pid variables
 	PID_t pid_roll ;
 	PID_t pid_pitch ;
 	PID_t pid_yaw ;
+}DRONE_stabilisation_t;
 
-	//Uart
+//Struct communication
+typedef struct{
+	DRONE_ppm_t ppm ;
 	uart_struct_e uart_telem ;
+}DRONE_communication_t;
 
+//Struct soft
+typedef struct{
+	Flight_Mode_SM state_flight_mode ;
+	bool_e entrance_flight_mode ;
+
+	Low_Level_SM state_low_level ;
+
+	uint32_t previous_time_loop ;
+	uint32_t free_time ;
+}DRONE_soft_t;
+
+//Struct ihm
+typedef struct{
+	sequence_led_t led_etat ;
+}DRONE_ihm_t;
+
+
+
+// Struct du drone
+typedef struct{
+
+	DRONE_capteurs_t capteurs ;
+	DRONE_stabilisation_t stabilisation ;
+	DRONE_consigne_t consigne ;
+	DRONE_communication_t communication ;
+	DRONE_soft_t soft ;
+	DRONE_ihm_t ihm ;
 
 }State_drone_t;
 

@@ -24,6 +24,7 @@
 
 #define ID_PC_ANGLE_X_Y							120
 #define ID_PC_X_Y_BASE							121
+#define ID_PC_ANGLE_X_Y_ACC						122
 
 #define	ID_PC_MOTEUR_ALL 						160
 #define	ID_PC_CHAN_1_4							161

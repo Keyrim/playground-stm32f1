@@ -53,7 +53,7 @@ int main(void)
 	DRONE_GPS_congif(UART_GPS);
 
 	//------------------Init du MPU et du complementary filer
-	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
+	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.999, 250 );
 
 	//------------------Init ppm module
 	DRONE_ppm_init(&drone.communication.ppm, PIN_NUMBER, GPIO_PPM, GPIO_PIN_PPM);
@@ -114,11 +114,13 @@ int main(void)
 		if(drone.soft.free_time > 15){
 			//Si on reçu des données du gps
 			if(UART_data_ready(UART_GPS)){
-				if(DRONE_GPS_process_rx(UART_get_next_byte(UART_GPS), &drone.capteurs.gps) >= 3){
+				uint8_t c = UART_get_next_byte(UART_GPS) ;
+				if(DRONE_GPS_process_rx(c, &drone.capteurs.gps) >= 3){
 					drone.capteurs.gps.last_time_read_gps = SYSTICK_get_time_us() ;
 				}
+				if(GPS_RELAY)
+					uart_add_one(&drone.communication.uart_telem, c);
 			}
-			//global.free_time -= 5 ;
 
 			//Si on a reçu des données de la base
 			if(UART_data_ready(UART_TELEMETRIE)){

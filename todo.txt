@@ -6,5 +6,7 @@ TODO :
 	- 
 	- call une fonction "use free time "							
 	- rajout de msg de transition (je passe en mode on_the_ground) pcq le switch à été trigger 
-	- dans le pid fournir consigne et valeur actuelle, pas l'erreur et la valeur actuelle
-	- envoyer les acc_z sur les trois axes et voir ce que ça donne quand on met à l'envers etc
+	- 
+	- voler à l'envers :
+		- revoir pid angle les + les -, donner du sens à ça 
+		- voir pour le pid avec consigne discontinu, l'impact que ça a

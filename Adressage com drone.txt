@@ -32,20 +32,21 @@ Id pour le drone :
 
 Id pour le pc :
 	1 octect :
-		ID_BATTERIE 			100
-		ID_STATE_FLYING			101
-		ID_EVERY_IS_OK			102
+		ID_PC_BATTERIE 			100
+		ID_PC_STATE_FLYING		101
+		ID_PC_EVERY_IS_OK		102
 	2 octects :
-		ID_ANGLE_X_Y			120	
+		ID_PC_ANGLE_X_Y			120	
 		ID_PC_X_Y_BASE			121
+		ID_PC_ANGLE_X_Y_ACC		122
 	3 octects :
 	4 octects :
-		ID_MOTEUR_ALL 			160
-		ID_CHAN_1_4			161
-		ID_CHAN_5_8			162
-		ID_LONGITUDE			163
-		ID_LATTITUDE			164
-		ID_ACC_Z			165
+		ID_PC_MOTEUR_ALL 		160
+		ID_PC_CHAN_1_4			161
+		ID_PC_CHAN_5_8			162
+		ID_PC_LONGITUDE			163
+		ID_PC_LATTITUDE			164
+		ID_PC_ACC_Z			165
 		
 	5 octects :
 

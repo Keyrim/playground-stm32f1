@@ -101,21 +101,21 @@ void LOW_LVL_Escs_Setpoints(State_drone_t * drone, State_base_t * base){
 
 	//If we fly, we compute our outputs, according to our targets, to keep the drone leveled
 	if(drone->soft.state_flight_mode){
-		double roll_output 	= PID_compute(&drone->stabilisation.pid_roll,- drone->consigne.roll + drone->capteurs.mpu.y, drone->capteurs.mpu.y);
-		double pitch_output = PID_compute(&drone->stabilisation.pid_pitch,- drone->consigne.pitch + drone->capteurs.mpu.x, drone->capteurs.mpu.x);
-		double yaw_output	= PID_compute(&drone->stabilisation.pid_yaw, - drone->consigne.yaw - drone->capteurs.mpu.z  , 0);
+		double roll_output 	= PID_compute(&drone->stabilisation.pid_roll, drone->consigne.roll, drone->capteurs.mpu.y);
+		double pitch_output = PID_compute(&drone->stabilisation.pid_pitch, drone->consigne.pitch, drone->capteurs.mpu.x);
+		double yaw_output	= PID_compute(&drone->stabilisation.pid_yaw, drone->consigne.yaw, drone->capteurs.mpu.z);
 
-		ESC_Set_pulse(&drone->stabilisation.escs[0], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output - pitch_output + yaw_output)));
-		ESC_Set_pulse(&drone->stabilisation.escs[1], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output - pitch_output - yaw_output)));
-		ESC_Set_pulse(&drone->stabilisation.escs[2], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output + pitch_output - yaw_output)));
-		ESC_Set_pulse(&drone->stabilisation.escs[3], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output + pitch_output + yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[0], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output - pitch_output - yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[1], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output - pitch_output + yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[2], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output + pitch_output + yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[3], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output + pitch_output - yaw_output)));
 	}
 
 	drone->soft.state_low_level = SEND_DATA ;
 }
 
 void LOW_LVL_Send_Data(State_drone_t * drone){
-	if(drone->communication.ppm.channels[SWITCH_4] > 1500)
+	//if(drone->communication.ppm.channels[SWITCH_4] > 1500)
 		sub_send_data(drone);
 	drone->soft.state_low_level = WAIT_LOOP ;
 }

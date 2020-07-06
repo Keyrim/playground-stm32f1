@@ -26,6 +26,7 @@
 //Gps settings
 #define TIME_OUT_GPS 2000000 //(en microsecondes)
 #define UART_GPS UART2_ID
+#define GPS_RELAY	FALSE
 
 //Main loop settings
 #define LOOP_PERIODE 4000

@@ -29,6 +29,7 @@ Data_group latitude ;
 Data_group longitude ;
 Data_group every_is_ok ;
 Data_group acc_z ;
+Data_group angles_from_acc;
 
 void sub_send_data(State_drone_t * drone){
 	if(first_call){
@@ -40,6 +41,8 @@ void sub_send_data(State_drone_t * drone){
 		//angle
 		angles.nb_octet = 3 ;
 		angles.periode	= 30 ; //10
+		angles_from_acc.nb_octet = 3 ;
+		angles_from_acc.periode = 30 ;
 
 		//Latitude
 		latitude.nb_octet = 5 ;
@@ -118,6 +121,15 @@ void sub_send_data(State_drone_t * drone){
 		else
 			angles.to_send = TRUE ;
 	}
+	if(compteur % angles_from_acc.periode == 0 || angles_from_acc.to_send){
+			if(compteur_octet >= angles_from_acc.nb_octet){
+				TELEMETRIE_send_angle_x_y_acc_as_int(drone->capteurs.mpu.x_acc_angle, drone->capteurs.mpu.y_acc_angle, &drone->communication.uart_telem);
+				compteur_octet -= angles_from_acc.nb_octet ;
+				angles_from_acc.to_send = FALSE ;
+			}
+			else
+				angles_from_acc.to_send = TRUE ;
+		}
 	if(compteur % moteurs.periode == 0 || moteurs.to_send ){
 		if(compteur_octet >= moteurs.nb_octet){
 			TELEMETRIE_send_moteur_all(drone->stabilisation.escs[0].pulsation, drone->stabilisation.escs[1].pulsation, drone->stabilisation.escs[2].pulsation, drone->stabilisation.escs[3].pulsation, &drone->communication.uart_telem);

@@ -44,7 +44,7 @@ int main(void)
 	LED_SEQUENCE_init(&drone.ihm.led_etat, GPIO_STATE_LED, GPIO_PIN_STATE_LED, SEQUENCE_LED_1, 200, 12, 1);
 
 	//On laisse du temps à tout le monde pour bien démarer
-	HAL_Delay(20);
+	HAL_Delay(100);
 	//------------------Init serial uart
 	uart_init(&drone.communication.uart_telem, UART_TELEMETRIE, 57600, 10);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);

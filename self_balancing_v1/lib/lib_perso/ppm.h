@@ -12,7 +12,7 @@
 #include "stm32f103xb.h"
 #include "stm32f1_gpio.h"
 #include "systick.h"
-#include "settings.h"
+#include "../../appli/settings.h"
 
 typedef struct{
 	uint8_t actual_channel ;

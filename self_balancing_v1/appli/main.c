@@ -12,22 +12,20 @@
 #include "stm32f1_gpio.h"
 #include "macro_types.h"
 #include "systick.h"
+#include "Self_Balancing.h"
 
 
 
+Self_Balancing_t robot ;
 
 int main(void)
 {
 	HAL_Init();
-	UART_init(UART1_ID,57600);
-	SYS_set_std_usart(UART1_ID, UART1_ID, UART1_ID);
+		Self_Balancing_init(&robot);
 
-
-
-
-	while(1)	//boucle de tâche de fond
+	while(1)
 	{
-
+		Self_Balancing_procces_main(&robot);
 
 	}
 }

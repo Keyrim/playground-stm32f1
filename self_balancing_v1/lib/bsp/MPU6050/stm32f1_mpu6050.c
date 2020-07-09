@@ -40,7 +40,6 @@
  *
  */
 #include "config.h"
-#if USE_MPU6050
 #include "stm32f1xx_hal.h"
 #include "stm32f1_mpu6050.h"
 #include "stm32f1_sys.h"
@@ -252,4 +251,3 @@ MPU6050_Result_t MPU6050_ReadAll(MPU6050_t* DataStruct) {
 	/* Return OK */
 	return MPU6050_Result_Ok;
 }
-#endif

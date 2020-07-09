@@ -1,4 +1,7 @@
-appli/main.o: ../appli/main.c \
+appli/Low_lvl.o: ../appli/Low_lvl.c ../appli/Low_lvl.h \
+ ../appli/Self_Balancing.h ../appli/../lib/lib_perso/DRONE_mpu6050.h \
+ C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/MPU6050/stm32f1_mpu6050.h \
+ C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/appli/config.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal_conf.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal_rcc.h \
@@ -42,18 +45,21 @@ appli/main.o: ../appli/main.c \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_ll_usb.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal_pcd_ex.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal_hcd.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_uart.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/macro_types.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/appli/config.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_sys.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_uart.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_gpio.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/macro_types.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/systick.h \
- ../appli/Self_Balancing.h ../appli/../lib/lib_perso/DRONE_mpu6050.h \
- C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/MPU6050/stm32f1_mpu6050.h \
  C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_i2c.h \
- ../appli/mae.h ../appli/branchement.h ../appli/settings.h
+ C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/macro_types.h \
+ ../appli/mae.h ../appli/branchement.h ../appli/settings.h \
+ C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/systick.h
+
+../appli/Low_lvl.h:
+
+../appli/Self_Balancing.h:
+
+../appli/../lib/lib_perso/DRONE_mpu6050.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/MPU6050/stm32f1_mpu6050.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/appli/config.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal.h:
 
@@ -141,32 +147,16 @@ C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal
 
 C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/hal/inc/stm32f1xx_hal_hcd.h:
 
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_uart.h:
-
 C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/macro_types.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/appli/config.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_sys.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_uart.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_gpio.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/macro_types.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/systick.h:
-
-../appli/Self_Balancing.h:
-
-../appli/../lib/lib_perso/DRONE_mpu6050.h:
-
-C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/MPU6050/stm32f1_mpu6050.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/stm32f1_i2c.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/macro_types.h:
 
 ../appli/mae.h:
 
 ../appli/branchement.h:
 
 ../appli/settings.h:
+
+C:/Users/Théo/Documents/GitHub/STM32/self_balancing_v1/lib/bsp/systick.h:

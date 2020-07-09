@@ -77,7 +77,6 @@ AD0			-			If pin is low, I2C address is 0xD0, if pin is high, the address is 0xD
 @endverbatim
  */
 #include "config.h"
-#if USE_MPU6050
 
 #include "macro_types.h"
 #include "stm32f1_i2c.h"
@@ -292,4 +291,3 @@ MPU6050_Result_t MPU6050_ReadAll(MPU6050_t* DataStruct);
 
 
 #endif /* BSP_STM32F1_MPU6050_H_ */
-#endif

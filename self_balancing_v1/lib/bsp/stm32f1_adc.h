@@ -8,7 +8,6 @@
 #ifndef BSP_STM32F1_ADC_H_
 #define BSP_STM32F1_ADC_H_
 #include "config.h"
-#if USE_ADC
 
 	#if !USE_BSP_TIMER
 		#error "USE_ADC suppose que l'on active également USE_BSP_TIMER !"
@@ -71,5 +70,4 @@
 		*/
 	bool_e ADC_is_new_sample_available(void);
 
-#endif
 #endif /* BSP_STM32F1_ADC_H_ */

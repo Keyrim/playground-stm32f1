@@ -40,17 +40,20 @@
 #define yaw_max_setpoint 400
 
 //PID settings
-#define kp_roll 2.94 //2.94
-#define ki_roll 0
-#define kd_roll 0.4 //0.27
+#define kp_roll 				2.94 //2.94
+#define ki_roll 				0
+#define kd_roll 				0.4 //0.27
+#define kd_filter_roll 			0.4
 
-#define kp_pitch 2.94 //2.94
-#define ki_pitch 0
-#define kd_pitch 0.4 //0.27
+#define kp_pitch 				2.94 //2.94
+#define ki_pitch 				0
+#define kd_pitch 				0.4 //0.27
+#define kd_filter_pitch 		0.4
 
-#define kp_yaw 4
-#define ki_yaw 0
-#define kd_yaw 0
+#define kp_yaw 					6
+#define ki_yaw 					0
+#define kd_yaw 					2
+#define kd_filter_yaw 			0.1
 
 #define PID_MAX_OUTPUT 200
 

@@ -46,14 +46,14 @@ int main(void)
 	//On laisse du temps à tout le monde pour bien démarer
 	HAL_Delay(100);
 	//------------------Init serial uart
-	uart_init(&drone.communication.uart_telem, UART_TELEMETRIE, 57600, 10);
+	uart_init(&drone.communication.uart_telem, UART_TELEMETRIE, 57600, 8);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);
 
 	//Init du gps, on passe sur une fréquence de 5hz sur l'envoit de données et d'autre trucs
 	DRONE_GPS_congif(UART_GPS);
 
 	//------------------Init du MPU et du complementary filer
-	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.999, 250 );
+	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
 
 	//------------------Init ppm module
 	DRONE_ppm_init(&drone.communication.ppm, PIN_NUMBER, GPIO_PPM, GPIO_PIN_PPM);
@@ -64,9 +64,9 @@ int main(void)
 	ESC_init(&drone.stabilisation.escs[3], esc3_gpio, esc3_pin);
 
 	//Init pids
-	PID_init(&drone.stabilisation.pid_roll, kp_roll, ki_roll, kd_roll, 250, PID_MAX_OUTPUT);
-	PID_init(&drone.stabilisation.pid_pitch, kp_pitch, ki_pitch, kd_pitch, 250, PID_MAX_OUTPUT);
-	PID_init(&drone.stabilisation.pid_yaw, kp_yaw, ki_yaw, kd_yaw, 250, PID_MAX_OUTPUT);
+	PID_init(&drone.stabilisation.pid_roll, kp_roll, ki_roll, kd_roll, kd_filter_roll, 250, PID_MAX_OUTPUT, TRUE);
+	PID_init(&drone.stabilisation.pid_pitch, kp_pitch, ki_pitch, kd_pitch, kd_filter_pitch, 250, PID_MAX_OUTPUT, TRUE);
+	PID_init(&drone.stabilisation.pid_yaw, kp_yaw, ki_yaw, kd_yaw, kd_filter_yaw, 250, PID_MAX_OUTPUT, TRUE);
 
 	HAL_Delay(100);
 

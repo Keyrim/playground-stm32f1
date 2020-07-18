@@ -1,12 +1,21 @@
 
-TODO :
+TODO MODIFS :
 	- rajouter des trammes de recalage envoyés de temps en temps
 	- ids à ajouter : les ids de présence genre "drone je suis présent"
 	-
 	- 
 	- call une fonction "use free time "							
-	- rajout de msg de transition (je passe en mode on_the_ground) pcq le switch à été trigger 
+	- rajout de msg de transition (je passe en mode on_the_ground) pcq le switch à été trigger 	=> DONE
 	- 
 	- voler à l'envers :
-		- revoir pid angle les + les -, donner du sens à ça 
-		- voir pour le pid avec consigne discontinu, l'impact que ça a
+		- voir pour le pid avec consigne discontinu, l'impact que ça a				=> DONE
+		- gestion si mpu non init									
+	
+	- controle par séquence sur switch (huat bas huat bas)
+	- améliorer ground station (2.0?) au niveau de l'enregistrement des données			=> DONE
+	- swap to to a control on the yaw angle instead off an angle rate control
+
+
+TODO AJOUTS :
+	- gestion du compas
+	- gestion de la boussole

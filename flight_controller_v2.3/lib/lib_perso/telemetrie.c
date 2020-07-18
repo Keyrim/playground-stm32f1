@@ -18,6 +18,13 @@ void TELEMETRIE_send_consigne_base(uint8_t consigne,  uart_struct_e * uart){
 	uart_add_few(uart, bytes, 2);
 }
 
+void TELEMETRIE_send_high_lvl_transi(uint8_t transi, uart_struct_e * uart){
+	uint8_t bytes[2] ;
+	bytes[0] = ID_PC_HIGH_LVL_TRANSITION ;
+	bytes[1] = transi ;
+	uart_add_few(uart, bytes, 2);
+}
+
 
 // Données des moteurs
 void TELEMETRIE_send_moteur_all(int32_t m1, int32_t m2, int32_t m3, int32_t m4, uart_struct_e * uart){
@@ -60,6 +67,14 @@ void TELEMETRIE_send_angle_x_y_as_int(double x, double y, uart_struct_e * uart){
 	bytes[2] = (int8_t)y;
 	uart_add_few(uart, bytes, 3);
 }
+void TELEMETRIE_send_angle_z_as_int(double z, uart_struct_e * uart){
+	uint8_t  bytes[3] = {0} ;
+	int16_t yaw = (int16_t)z;
+	bytes[0] = ID_PC_ANGLE_Z ;
+	bytes[1] = (uint8_t)(yaw >> 8);
+	bytes[2] = (uint8_t)(yaw & 0b11111111);
+	uart_add_few(uart, bytes, 3);
+}
 
 void TELEMETRIE_send_angle_x_y_acc_as_int(double x, double y, uart_struct_e * uart){
 	uint8_t  bytes[3] = {0} ;
@@ -87,6 +102,18 @@ void TELEMETRIE_send_acc_z(double acc_z, uart_struct_e * uart){
 	bytes[2] = (uint8_t)((int_ac >> 16) & 0b11111111) ;
 	bytes[3] = (uint8_t)((int_ac >> 8) & 0b11111111) ;
 	bytes[4] = (uint8_t)((int_ac ) & 0b11111111) ;
+	uart_add_few(uart, bytes, 5);
+}
+
+//Double
+void TELEMETRIE_send_double(double value, uint8_t id, uart_struct_e * uart){
+	uint8_t bytes[5] = {0};
+	int32_t int_value = (int32_t)( value * (double) 1000000);
+	bytes[0] = id ;
+	bytes[1] = (uint8_t)((int_value >> 24) & 0b11111111) ;
+	bytes[2] = (uint8_t)((int_value >> 16) & 0b11111111) ;
+	bytes[3] = (uint8_t)((int_value >> 8) & 0b11111111) ;
+	bytes[4] = (uint8_t)((int_value ) & 0b11111111) ;
 	uart_add_few(uart, bytes, 5);
 }
 

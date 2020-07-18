@@ -20,6 +20,7 @@ typedef struct{
 }Data_group;
 
 Data_group angles ;
+Data_group angle_z ;
 Data_group radio1 ;
 Data_group radio2 ;
 Data_group state_global ;
@@ -40,9 +41,11 @@ void sub_send_data(State_drone_t * drone){
 
 		//angle
 		angles.nb_octet = 3 ;
-		angles.periode	= 30 ; //10
+		angles.periode	= 10 ; //10
+		angle_z.nb_octet = 3 ;
+		angle_z.periode	= 10 ; //10
 		angles_from_acc.nb_octet = 3 ;
-		angles_from_acc.periode = 30 ;
+		angles_from_acc.periode = 10 ;
 
 		//Latitude
 		latitude.nb_octet = 5 ;
@@ -66,11 +69,11 @@ void sub_send_data(State_drone_t * drone){
 		state_global.nb_octet = 2 ;
 		state_global.periode = 100 ; // 250
 		batterie.nb_octet	= 2;
-		batterie.periode = 250 ;  // 250
+		batterie.periode = 506065050 ;  // 250
 
 		//moteurs
 		moteurs.nb_octet 	= 5 ;
-		moteurs.periode		= 100 ;
+		moteurs.periode		= 20 ;
 
 		//Every is ok
 		every_is_ok.nb_octet = 2 ;
@@ -121,6 +124,15 @@ void sub_send_data(State_drone_t * drone){
 		else
 			angles.to_send = TRUE ;
 	}
+	if(compteur % angle_z.periode == 0 || angle_z.to_send){
+			if(compteur_octet >= angle_z.nb_octet){
+				TELEMETRIE_send_angle_z_as_int(drone->capteurs.mpu.z, &drone->communication.uart_telem);
+				compteur_octet -= angle_z.nb_octet ;
+				angle_z.to_send = FALSE ;
+			}
+			else
+				angle_z.to_send = TRUE ;
+		}
 	if(compteur % angles_from_acc.periode == 0 || angles_from_acc.to_send){
 			if(compteur_octet >= angles_from_acc.nb_octet){
 				TELEMETRIE_send_angle_x_y_acc_as_int(drone->capteurs.mpu.x_acc_angle, drone->capteurs.mpu.y_acc_angle, &drone->communication.uart_telem);

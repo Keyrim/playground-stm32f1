@@ -39,10 +39,15 @@ Version 2.2
 		
 Version 2.3
 	Ajouts:
+		IMU : calibration du mpu disponible
+		Telemetrie : permet un controle basique depuis le pc
+
 	Modifs:
 		Moteurs : Distinction entre la lib qui gère un moteur à la fois et la sub pour allumer et eteindre les moteurs qui les gère tous les 4 
 		Code : Trie dans les includes du main
 		Structure : Réorganisation struct drone avec des sous structure pour organisé les données
+		PID : ajout d'un filtre sur le D qui permet de réduire le bruit envoyer aux moteurs
+		
 		
 		
 		

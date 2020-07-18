@@ -36,6 +36,7 @@ typedef struct{
 	PID_t pid_roll ;
 	PID_t pid_pitch ;
 	PID_t pid_yaw ;
+	bool_e stabilize ;
 }DRONE_stabilisation_t;
 
 //Struct communication
@@ -53,6 +54,10 @@ typedef struct{
 
 	uint32_t previous_time_loop ;
 	uint32_t free_time ;
+
+	bool_e flag_request_calib_mpu ;
+	bool_e flag_request_manual_pc ;
+	bool_e flag_request_stop_motor ;
 }DRONE_soft_t;
 
 //Struct ihm

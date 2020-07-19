@@ -42,12 +42,12 @@
 //PID settings
 #define kp_roll 				2.94 //2.94
 #define ki_roll 				0
-#define kd_roll 				0.4 //0.27
+#define kd_roll 				0.45 //0.27
 #define kd_filter_roll 			0.4
 
 #define kp_pitch 				2.94 //2.94
 #define ki_pitch 				0
-#define kd_pitch 				0.4 //0.27
+#define kd_pitch 				0.45 //0.27
 #define kd_filter_pitch 		0.4
 
 #define kp_yaw 					6
@@ -55,7 +55,7 @@
 #define kd_yaw 					2
 #define kd_filter_yaw 			0.1
 
-#define PID_MAX_OUTPUT 200
+#define PID_MAX_OUTPUT 400
 
 //Batterie
 #define USE_BATTERIE_CHECK FALSE

@@ -13,9 +13,10 @@ TODO MODIFS :
 	
 	- controle par séquence sur switch (huat bas huat bas)
 	- améliorer ground station (2.0?) au niveau de l'enregistrement des données			=> DONE
-	- swap to to a control on the yaw angle instead off an angle rate control
-
-
+	- swap to to a control on the yaw angle instead off an angle rate control			=> DONE, must tune pid
+	- make a struct for the transition with a function pointer
+	- reset la consigne en throttle quand on passse en mode de vole 
 TODO AJOUTS :
 	- gestion du compas
 	- gestion de la boussole
+	- passer en control sur un modele, si je donne une consigne pour 

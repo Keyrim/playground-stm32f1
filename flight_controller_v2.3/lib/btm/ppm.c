@@ -18,6 +18,7 @@ void PPM_it(){
 	uint32_t delta = time - ppm->previous_time_rising ;
 	if(delta > 3000){
 		ppm->actual_channel = 0 ;
+
 	}
 	else{
 		if(ppm->actual_channel == NB_CHANNEL)
@@ -29,6 +30,9 @@ void PPM_it(){
 			delta -= 1000 ;
 		//On fait update de la valeur de la channel sur laquelle on est
 		ppm->channels[ppm->actual_channel] = (uint16_t)delta ;
+		//Si on update la chanel 0 on dit quand on l'a fait
+		if(!ppm->actual_channel)
+			ppm->last_update = time ;
 
 		//on passe à la channel suivante
 		ppm->actual_channel ++ ;

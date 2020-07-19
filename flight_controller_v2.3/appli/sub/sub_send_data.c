@@ -6,7 +6,7 @@
  */
 
 #include "sub_action.h"
-#include "../lib_perso/telemetrie.h"
+#include "../btm/telemetrie.h"
 
 #define NB_OCTECT_MAX 20	//On envoit au plus 10 octect par loop
 static bool_e first_call = TRUE ;
@@ -40,12 +40,12 @@ void sub_send_data(State_drone_t * drone){
 		//La premère fois on init les valeurs de période et de taille pour chaque groupe de donée
 
 		//angle
-		angles.nb_octet = 3 ;
-		angles.periode	= 10 ; //10
-		angle_z.nb_octet = 3 ;
-		angle_z.periode	= 10 ; //10
+		angles.nb_octet = 10 ;
+		angles.periode	= 10000 ; //10
+		angle_z.nb_octet = 10 ;
+		angle_z.periode	= 10000 ; //10
 		angles_from_acc.nb_octet = 3 ;
-		angles_from_acc.periode = 10 ;
+		angles_from_acc.periode = 10000 ;
 
 		//Latitude
 		latitude.nb_octet = 5 ;
@@ -57,27 +57,27 @@ void sub_send_data(State_drone_t * drone){
 
 		//acc
 		acc_z.nb_octet = 5 ;
-		acc_z.periode = 50 ;
+		acc_z.periode = 50000 ;
 
 		//radios
 		radio1.nb_octet = 5 ;
 		radio2.nb_octet = 5;
-		radio1.periode  = 50 ; // 50
-		radio2.periode	= 50 ; // 50
+		radio1.periode  = 1 ; // 50
+		radio2.periode	= 1 ; // 50
 
 		//state_global et v_bat
 		state_global.nb_octet = 2 ;
-		state_global.periode = 100 ; // 250
+		state_global.periode = 10000 ; // 250
 		batterie.nb_octet	= 2;
 		batterie.periode = 506065050 ;  // 250
 
 		//moteurs
 		moteurs.nb_octet 	= 5 ;
-		moteurs.periode		= 20 ;
+		moteurs.periode		= 200000 ;
 
 		//Every is ok
 		every_is_ok.nb_octet = 2 ;
-		every_is_ok.periode = 250 ;
+		every_is_ok.periode = 100000 ;
 
 
 		first_call = FALSE;

@@ -102,7 +102,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="appli"/>
-						<entry excluding="bsp/MatrixKeyboard|bsp/MatrixLed|bsp/DHT11|bsp/HC-SR04|bsp/GPS|bsp/VL53L0X|bsp/SEN0188_Fingerprint|bsp/BH1750FVI|bsp/APDS9960|middleware/FatFs/src/option/cc932.c|middleware/FatFs/src/option/cc936.c|bsp/MCP23017|bsp/CapacitiveKeyboard|middleware/FatFs/src/option/unicode.c|bsp/MLX90614|middleware/FatFs/src/option/cc949.c|bsp/ESP8266|bsp/iks01a1|bsp/DriverLed_STP16CP05|bsp/NFC03A1|bsp/lcd2x16|bsp/dmx|bsp/epaper|bsp/bmp180|bsp/MCP23S17|middleware/NFC03A1|bsp/FingerprintReader|middleware/FatFs|middleware/FatFs/src/option/cc950.c|bsp/tft_pcd8544" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lib"/>
+						<entry excluding="bsp/SEN0188_Fingerprint|bsp/BH1750FVI|bsp/APDS9960|middleware/FatFs/src/option/cc932.c|middleware/FatFs/src/option/cc936.c|bsp/MCP23017|bsp/CapacitiveKeyboard|middleware/FatFs/src/option/unicode.c|bsp/MLX90614|middleware/FatFs/src/option/cc949.c|bsp/ESP8266|bsp/MatrixKeyboard|bsp/iks01a1|bsp/DriverLed_STP16CP05|bsp/NFC03A1|bsp/lcd2x16|bsp/dmx|bsp/epaper|bsp/bmp180|bsp/MCP23S17|middleware/NFC03A1|bsp/GPS|bsp/FingerprintReader|middleware/FatFs|bsp/HC-SR04|bsp/VL53L0X|middleware/FatFs/src/option/cc950.c|bsp/MatrixLed|bsp/tft_pcd8544|bsp/DHT11" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lib"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -182,7 +182,7 @@
 					</folderInfo>
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="appli"/>
-						<entry excluding="bsp/MatrixKeyboard|bsp/MatrixLed|bsp/DHT11|bsp/HC-SR04|bsp/GPS|bsp/VL53L0X|bsp/lcd2x16|bsp/dmx|bsp/epaper|bsp/bmp180|bsp/SEN0188_Fingerprint|bsp/MCP23S17|bsp/BH1750FVI|bsp/APDS9960|middleware/NFC03A1|bsp/MCP23017|bsp/FingerprintReader|middleware/FatFs|bsp/CapacitiveKeyboard|bsp/MLX90614|bsp/ESP8266|bsp/iks01a1|bsp/DriverLed_STP16CP05|hal|bsp/NFC03A1|bsp/tft_pcd8544" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lib"/>
+						<entry excluding="bsp/SEN0188_Fingerprint|bsp/BH1750FVI|bsp/APDS9960|bsp/MCP23017|bsp/CapacitiveKeyboard|bsp/MLX90614|bsp/ESP8266|bsp/MatrixKeyboard|bsp/iks01a1|bsp/DriverLed_STP16CP05|hal|bsp/NFC03A1|bsp/lcd2x16|bsp/dmx|bsp/epaper|bsp/bmp180|bsp/MCP23S17|middleware/NFC03A1|bsp/GPS|bsp/FingerprintReader|middleware/FatFs|bsp/HC-SR04|bsp/VL53L0X|bsp/MatrixLed|bsp/tft_pcd8544|bsp/DHT11" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lib"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lib/hal"/>
 					</sourceEntries>
 				</configuration>

@@ -18,6 +18,7 @@ typedef struct{
 	uint8_t actual_channel ;
 	uint16_t channels [NB_CHANNEL];
 	uint32_t previous_time_rising ;
+	uint32_t last_update ;
 	//Pin
 	uint8_t gpio_pin_number;
 	uint16_t gpio_pin ;

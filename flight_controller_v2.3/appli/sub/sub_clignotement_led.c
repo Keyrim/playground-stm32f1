@@ -7,7 +7,7 @@
 
 
 #include "sub_action.h"
-#include "../../lib_perso/WS2812S.h"
+#include "../../btm/WS2812S.h"
 #include "../ressources/couleur.h"
 
 

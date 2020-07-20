@@ -178,7 +178,7 @@ void transition_high_lvl(State_drone_t * drone){
 				TELEMETRIE_send_high_lvl_transi(SUB_ID_PC_HIGH_LVL_TRANSITION_PPM_ISNT_OK, &drone->communication.uart_telem);
 			}
 
-			else if(TRANSITION_test(&arm_switch_test, drone, FALSE, 5)){
+			else if(TRANSITION_test(&arm_switch_test, drone, FALSE, 50)){
 				drone->soft.state_flight_mode = ON_THE_GROUND ;
 				TELEMETRIE_send_high_lvl_transi(SUB_ID_PC_HIGH_LVL_TRANSITION_ARM_SWITCH, &drone->communication.uart_telem);
 			}

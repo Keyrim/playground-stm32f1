@@ -40,21 +40,22 @@ void PPM_it(){
 			actual_channel = 0 ;
 		//Parfois on a une mesure qui est pouris donc ça permet de l'éviter
 		//Raison inconnu à voir à l'oscillo plus tard mais avec le test ça fonctionne bien (ptdr ça fonctionne archi pas )
-//		if(delta > 2000)
-//			delta -= 1000;
-//		else if(delta < 1000)
-//			delta += 1000;
+		if(delta > 2000)
+			delta -= 1000;
+		else if(delta < 1000)
+			delta += 1000;
 		channels_array[actual_channel] = (uint16_t)delta ;
 
 	}
-	print_it =TRUE ;
+	if(actual_channel == 1)
+		print_it =TRUE ;
 	previous_time_rising = time ;
 }
 
 void to_print(void){
 	if(print_it){
-		//printf("%d %d %d %d %d %d %d %d %d %lu\n",channels_array[0], channels_array[1], channels_array[2], channels_array[3], channels_array[4], channels_array[5], channels_array[6], channels_array[7], channels_array[8], t2);
-		printf("%lu\n", delta);
+		printf("%d %d %d %d %d %d %d %d\n",channels_array[1], channels_array[2], channels_array[3], channels_array[4], channels_array[5], channels_array[6], channels_array[7], channels_array[8]);
+		//printf("%lu\n", delta);
 		print_it = FALSE;
 	}
 }

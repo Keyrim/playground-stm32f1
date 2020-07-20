@@ -17515,46 +17515,46 @@ LOAD c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17
                 0x0000170d       0x1d c:/ac6/systemworkbench/plugins/fr.ac6.mcu.externaltools.arm-none.win32_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(flight_controller_v2.3.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x32144
- .debug_info    0x00000000     0x1c1b appli/high_lvl_cases.o
- .debug_info    0x00001c1b     0x18b5 appli/low_lvl_cases.o
- .debug_info    0x000034d0     0x1b14 appli/main.o
- .debug_info    0x00004fe4      0xbc1 appli/sub/sub_esc.o
- .debug_info    0x00005ba5     0x156b appli/sub/sub_parachute.o
- .debug_info    0x00007110     0x1588 appli/sub/sub_receive_data.o
- .debug_info    0x00008698     0x173d appli/sub/sub_send_data.o
- .debug_info    0x00009dd5     0x117f lib/bsp/MPU6050/stm32f1_mpu6050.o
- .debug_info    0x0000af54     0x19ef lib/bsp/stm32f1_adc.o
- .debug_info    0x0000c943      0xcab lib/bsp/stm32f1_gpio.o
- .debug_info    0x0000d5ee     0x1f75 lib/bsp/stm32f1_i2c.o
- .debug_info    0x0000f563     0x19ed lib/bsp/stm32f1_sys.o
- .debug_info    0x00010f50     0x1b4e lib/bsp/stm32f1_timer.o
- .debug_info    0x00012a9e     0x218f lib/bsp/stm32f1_uart.o
- .debug_info    0x00014c2d     0x11fe lib/bsp/stm32f1_weak_it.o
- .debug_info    0x00015e2b      0xc5c lib/bsp/system_stm32f1xx.o
- .debug_info    0x00016a87      0xb86 lib/bsp/systick.o
- .debug_info    0x0001760d      0xae9 lib/btm/DRONE_batterie.o
- .debug_info    0x000180f6      0xf1e lib/btm/DRONE_gps.o
- .debug_info    0x00019014      0xef6 lib/btm/DRONE_mpu6050.o
- .debug_info    0x00019f0a      0xba8 lib/btm/esc.o
- .debug_info    0x0001aab2      0xa44 lib/btm/pid.o
- .debug_info    0x0001b4f6     0x1001 lib/btm/ppm.o
- .debug_info    0x0001c4f7      0xbd3 lib/btm/sequence_led.o
- .debug_info    0x0001d0ca      0x93d lib/btm/state_machine.o
- .debug_info    0x0001da07     0x1130 lib/btm/telemetrie.o
- .debug_info    0x0001eb37     0x15b7 lib/btm/test_transition.o
- .debug_info    0x000200ee      0xbbb lib/btm/uart_lib.o
- .debug_info    0x00020ca9      0xfb4 lib/hal/src/stm32f1xx_hal.o
- .debug_info    0x00021c5d     0x1671 lib/hal/src/stm32f1xx_hal_adc.o
- .debug_info    0x000232ce     0x14bc lib/hal/src/stm32f1xx_hal_cortex.o
- .debug_info    0x0002478a     0x105b lib/hal/src/stm32f1xx_hal_dma.o
- .debug_info    0x000257e5      0xece lib/hal/src/stm32f1xx_hal_gpio.o
- .debug_info    0x000266b3     0x37e1 lib/hal/src/stm32f1xx_hal_i2c.o
- .debug_info    0x00029e94     0x1236 lib/hal/src/stm32f1xx_hal_rcc.o
- .debug_info    0x0002b0ca     0x36a7 lib/hal/src/stm32f1xx_hal_tim.o
- .debug_info    0x0002e771     0x1aef lib/hal/src/stm32f1xx_hal_tim_ex.o
- .debug_info    0x00030260     0x1ec2 lib/hal/src/stm32f1xx_hal_uart.o
- .debug_info    0x00032122       0x22 lib/startup_stm32f103xb.o
+.debug_info     0x00000000    0x32145
+ .debug_info    0x00000000     0x1c1c appli/high_lvl_cases.o
+ .debug_info    0x00001c1c     0x18b5 appli/low_lvl_cases.o
+ .debug_info    0x000034d1     0x1b14 appli/main.o
+ .debug_info    0x00004fe5      0xbc1 appli/sub/sub_esc.o
+ .debug_info    0x00005ba6     0x156b appli/sub/sub_parachute.o
+ .debug_info    0x00007111     0x1588 appli/sub/sub_receive_data.o
+ .debug_info    0x00008699     0x173d appli/sub/sub_send_data.o
+ .debug_info    0x00009dd6     0x117f lib/bsp/MPU6050/stm32f1_mpu6050.o
+ .debug_info    0x0000af55     0x19ef lib/bsp/stm32f1_adc.o
+ .debug_info    0x0000c944      0xcab lib/bsp/stm32f1_gpio.o
+ .debug_info    0x0000d5ef     0x1f75 lib/bsp/stm32f1_i2c.o
+ .debug_info    0x0000f564     0x19ed lib/bsp/stm32f1_sys.o
+ .debug_info    0x00010f51     0x1b4e lib/bsp/stm32f1_timer.o
+ .debug_info    0x00012a9f     0x218f lib/bsp/stm32f1_uart.o
+ .debug_info    0x00014c2e     0x11fe lib/bsp/stm32f1_weak_it.o
+ .debug_info    0x00015e2c      0xc5c lib/bsp/system_stm32f1xx.o
+ .debug_info    0x00016a88      0xb86 lib/bsp/systick.o
+ .debug_info    0x0001760e      0xae9 lib/btm/DRONE_batterie.o
+ .debug_info    0x000180f7      0xf1e lib/btm/DRONE_gps.o
+ .debug_info    0x00019015      0xef6 lib/btm/DRONE_mpu6050.o
+ .debug_info    0x00019f0b      0xba8 lib/btm/esc.o
+ .debug_info    0x0001aab3      0xa44 lib/btm/pid.o
+ .debug_info    0x0001b4f7     0x1001 lib/btm/ppm.o
+ .debug_info    0x0001c4f8      0xbd3 lib/btm/sequence_led.o
+ .debug_info    0x0001d0cb      0x93d lib/btm/state_machine.o
+ .debug_info    0x0001da08     0x1130 lib/btm/telemetrie.o
+ .debug_info    0x0001eb38     0x15b7 lib/btm/test_transition.o
+ .debug_info    0x000200ef      0xbbb lib/btm/uart_lib.o
+ .debug_info    0x00020caa      0xfb4 lib/hal/src/stm32f1xx_hal.o
+ .debug_info    0x00021c5e     0x1671 lib/hal/src/stm32f1xx_hal_adc.o
+ .debug_info    0x000232cf     0x14bc lib/hal/src/stm32f1xx_hal_cortex.o
+ .debug_info    0x0002478b     0x105b lib/hal/src/stm32f1xx_hal_dma.o
+ .debug_info    0x000257e6      0xece lib/hal/src/stm32f1xx_hal_gpio.o
+ .debug_info    0x000266b4     0x37e1 lib/hal/src/stm32f1xx_hal_i2c.o
+ .debug_info    0x00029e95     0x1236 lib/hal/src/stm32f1xx_hal_rcc.o
+ .debug_info    0x0002b0cb     0x36a7 lib/hal/src/stm32f1xx_hal_tim.o
+ .debug_info    0x0002e772     0x1aef lib/hal/src/stm32f1xx_hal_tim_ex.o
+ .debug_info    0x00030261     0x1ec2 lib/hal/src/stm32f1xx_hal_uart.o
+ .debug_info    0x00032123       0x22 lib/startup_stm32f103xb.o
 
 .debug_abbrev   0x00000000     0x6905
  .debug_abbrev  0x00000000      0x329 appli/high_lvl_cases.o

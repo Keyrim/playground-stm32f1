@@ -16,7 +16,7 @@
 #include "ppm.h"
 
 
-#define NB_CHANNEL 8
+#define NB_CHANNEL 9
 uint16_t channels [NB_CHANNEL] ;
 //Branchement ppm
 
@@ -39,8 +39,8 @@ int main(void)
 
 	HAL_Init();
 
-	UART_init(UART2_ID,230400);
-	SYS_set_std_usart(UART2_ID, UART2_ID, UART2_ID);
+	UART_init(UART3_ID,57600);
+	SYS_set_std_usart(UART3_ID, UART3_ID, UART3_ID);
 	printf("\nInit demo ppm\n");
 
 	//Initialisation du port de la led Verte (carte Nucleo)

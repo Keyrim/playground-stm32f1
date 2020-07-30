@@ -25,18 +25,18 @@ double PID_compute(PID_t* pid, double consigne, double angle){
 	pid->D_filtered = pid->D_filtered + (pid->D - pid->D_filtered) * pid->kD_filter;
 
 	//Ad filtered or not D
-	double output = pid->P + pid->I ;
+	pid->output = pid->P + pid->I ;
 	if(pid->use_D_filtered)
-		output += pid->D_filtered ;
+		pid->output += pid->D_filtered ;
 	else
-		output += pid->D;
+		pid->output += pid->D;
 
 	//Check mid and max
-	output = MIN(pid->max_output, output);
-	output = MAX(-pid->max_output, output);
+	pid->output = MIN(pid->max_output, pid->output);
+	pid->output = MAX(-pid->max_output, pid->output);
 	pid->previous_error = pid->error ;
 	pid->previous_angle = angle ;
-	return output ;
+	return pid->output ;
 }
 
 void PID_init(PID_t* pid, double kp, double ki, double kd, double kd_filter, uint16_t frequency_, double max_output, bool_e use_D_filtered){

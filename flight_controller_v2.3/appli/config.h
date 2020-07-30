@@ -150,7 +150,7 @@
 #if USE_MLX90614 || USE_MPU6050	|| USE_APDS9960	 || USE_BH1750FVI || USE_BMP180 || USE_MCP23017 || USE_VL53L0
 	#define USE_I2C				1
 #endif
-#define I2C_TIMEOUT				5	//ms
+#define I2C_TIMEOUT				1	//ms
 
 #define I2C1_ON_PB6_PB7			0
 

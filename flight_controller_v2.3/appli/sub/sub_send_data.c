@@ -31,19 +31,27 @@ Data_group longitude ;
 Data_group every_is_ok ;
 Data_group acc_z ;
 Data_group angles_from_acc;
+Data_group pid_roll ;
+Data_group pid_pitch ;
+Data_group pid_yaw ;
 
 void sub_send_data(State_drone_t * drone){
 	if(first_call){
 
-		//On config l'uart
+		//PIDS
+		pid_roll.nb_octet = 5 ;
+		pid_pitch.nb_octet = 5 ;
+		pid_yaw.nb_octet = 5 ;
+		pid_roll.periode = 5000 ;
+		pid_pitch.periode = 4 ;
+		pid_yaw.periode = 5;
 
-		//La premère fois on init les valeurs de période et de taille pour chaque groupe de donée
 
 		//angle
-		angles.nb_octet = 10 ;
-		angles.periode	= 10000 ; //10
+		angles.nb_octet = 3 ;
+		angles.periode	= 10 ; //10
 		angle_z.nb_octet = 10 ;
-		angle_z.periode	= 10000 ; //10
+		angle_z.periode	= 10 ; //10
 		angles_from_acc.nb_octet = 3 ;
 		angles_from_acc.periode = 10000 ;
 
@@ -62,22 +70,22 @@ void sub_send_data(State_drone_t * drone){
 		//radios
 		radio1.nb_octet = 5 ;
 		radio2.nb_octet = 5;
-		radio1.periode  = 1 ; // 50
-		radio2.periode	= 1 ; // 50
+		radio1.periode  = 3 ; // 50
+		radio2.periode	= 3 ; // 50
 
 		//state_global et v_bat
 		state_global.nb_octet = 2 ;
-		state_global.periode = 10000 ; // 250
+		state_global.periode = 3 ; // 250
 		batterie.nb_octet	= 2;
 		batterie.periode = 506065050 ;  // 250
 
 		//moteurs
 		moteurs.nb_octet 	= 5 ;
-		moteurs.periode		= 200000 ;
+		moteurs.periode		= 3 ;
 
 		//Every is ok
 		every_is_ok.nb_octet = 2 ;
-		every_is_ok.periode = 100000 ;
+		every_is_ok.periode = 3 ;
 
 
 		first_call = FALSE;
@@ -115,15 +123,42 @@ void sub_send_data(State_drone_t * drone){
 //			acc_z.to_send = TRUE ;
 //	}
 
-	if(compteur % angles.periode == 0 || angles.to_send){
-		if(compteur_octet >= angles.nb_octet){
-			TELEMETRIE_send_angle_x_y_as_int(drone->capteurs.mpu.x, drone->capteurs.mpu.y, &drone->communication.uart_telem);
-			compteur_octet -= angles.nb_octet ;
-			angles.to_send = FALSE ;
+	if(compteur % pid_roll.periode == 0 || pid_roll.to_send){
+		if(compteur_octet >= pid_roll.nb_octet){
+			TELEMETRIE_send_double(drone->stabilisation.pid_roll.output, ID_PC_PID_ROLL, &drone->communication.uart_telem);
+			compteur_octet -= pid_roll.nb_octet ;
+			pid_roll.to_send = FALSE ;
 		}
 		else
-			angles.to_send = TRUE ;
+			pid_roll.to_send = TRUE ;
 	}
+	if(compteur % pid_pitch.periode == 0 || pid_pitch.to_send){
+		if(compteur_octet >= pid_pitch.nb_octet){
+			TELEMETRIE_send_double(drone->stabilisation.pid_pitch.output, ID_PC_PID_PITCH, &drone->communication.uart_telem);
+			compteur_octet -= pid_pitch.nb_octet ;
+			pid_pitch.to_send = FALSE ;
+		}
+		else
+			pid_pitch.to_send = TRUE ;
+	}
+	if(compteur % pid_yaw.periode == 0 || pid_yaw.to_send){
+		if(compteur_octet >= pid_yaw.nb_octet){
+			TELEMETRIE_send_double(drone->stabilisation.pid_yaw.output, ID_PC_PID_YAW, &drone->communication.uart_telem);
+			compteur_octet -= pid_yaw.nb_octet ;
+			pid_yaw.to_send = FALSE ;
+		}
+		else
+			pid_yaw.to_send = TRUE ;
+	}
+	if(compteur % angles.periode == 0 || angles.to_send){
+			if(compteur_octet >= angles.nb_octet){
+				TELEMETRIE_send_angle_x_y_as_int(drone->capteurs.mpu.x, drone->capteurs.mpu.y, &drone->communication.uart_telem);
+				compteur_octet -= angles.nb_octet ;
+				angles.to_send = FALSE ;
+			}
+			else
+				angles.to_send = TRUE ;
+		}
 	if(compteur % angle_z.periode == 0 || angle_z.to_send){
 			if(compteur_octet >= angle_z.nb_octet){
 				TELEMETRIE_send_angle_z_as_int(drone->capteurs.mpu.z, &drone->communication.uart_telem);

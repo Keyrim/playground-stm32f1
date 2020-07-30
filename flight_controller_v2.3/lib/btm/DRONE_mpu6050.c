@@ -76,6 +76,9 @@ bool_e mpu6050_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch){
 
 
 void DRONE_mpu6050_update_angles(DRONE_mpu6050_t * angles){
+	//Update mpu values
+	MPU6050_ReadAll(&angles->raw_data_mpu);
+
 
 	//DRONE_mpu6050_t acc_angles ;
 	angles->x_acc = ((double)angles->raw_data_mpu.Accelerometer_X / angles->acc_sensi) - angles->x_acc_offset ;
@@ -141,7 +144,7 @@ void DRONE_mpu6050_update_angles(DRONE_mpu6050_t * angles){
 
 void DRONE_mpu6050_init(DRONE_mpu6050_t * angles, MPU6050_Accelerometer_t acc, MPU6050_Gyroscope_t gyro, double alpha, uint16_t frequency){
 	//Init du mpu
-	MPU6050_Init(&angles->raw_data_mpu, NULL, GPIO_PIN_12, MPU6050_Device_0,acc, gyro);
+	angles->mpu_result =  MPU6050_Init(&angles->raw_data_mpu, NULL, GPIO_PIN_12, MPU6050_Device_0,acc, gyro);
 
 	angles->alpha = alpha ;
 	angles->frequency = frequency ;

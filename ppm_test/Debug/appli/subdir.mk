@@ -4,14 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../appli/ibus.c \
 ../appli/main.c \
 ../appli/ppm.c 
 
 OBJS += \
+./appli/ibus.o \
 ./appli/main.o \
 ./appli/ppm.o 
 
 C_DEPS += \
+./appli/ibus.d \
 ./appli/main.d \
 ./appli/ppm.d 
 

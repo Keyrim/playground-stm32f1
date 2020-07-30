@@ -36,6 +36,9 @@
 #define	ID_PC_ACC_Z								165
 #define ID_PC_PID_D_ROLL						166
 #define ID_PC_PID_P_ROLL						167
+#define ID_PC_PID_ROLL							168
+#define ID_PC_PID_PITCH							169
+#define ID_PC_PID_YAW							170
 
 //Ids  pour la base
 #define ID_BASE_CONSIGNE_BASE 					200

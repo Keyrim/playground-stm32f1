@@ -15,10 +15,11 @@ void transition_high_lvl(State_drone_t * drone);
 
 //Fonctions où on test des états
 //Ces fonctions ne font pas de changement d'état
-int16_t test_ppm(State_drone_t * drone, bool_e working);
-int16_t test_arm_switch(State_drone_t * drone, bool_e armed);
-int16_t test_throttle_really_low(State_drone_t * drone, bool_e superior);
-int16_t test_throttle_low(State_drone_t * drone, bool_e superior);
+int32_t test_ppm(State_drone_t * drone, bool_e working);
+int32_t test_arm_switch(State_drone_t * drone, bool_e armed);
+int32_t test_throttle_really_low(State_drone_t * drone, bool_e superior);
+int32_t test_throttle_low(State_drone_t * drone, bool_e superior);
+int32_t test_imu_init(State_drone_t * drone, bool_e is_init);
 
 //Fonctions où on regarde si il ya une demande pour une action
 //Ces fonction effectues elles mêmes les changements d'état
@@ -32,7 +33,7 @@ bool_e check_manual_style_request(State_drone_t * drone);
 
 
 
-int16_t test_ppm(State_drone_t * drone, bool_e working){
+int32_t test_ppm(State_drone_t * drone, bool_e working){
 	//exemple :
 	//ppm.is_ok = true
 	//test = ok = 1 ;
@@ -47,9 +48,9 @@ int16_t test_ppm(State_drone_t * drone, bool_e working){
 
 
 }
-int16_t test_arm_switch(State_drone_t * drone, bool_e armed){
+int32_t test_arm_switch(State_drone_t * drone, bool_e armed){
 	static uint32_t last_update = 0 ;
-	int16_t to_return = 0;
+	int32_t to_return = 0;
 
 
 	if((drone->communication.ppm.channels[SWITCH_1] < 1200) ^ armed)
@@ -66,17 +67,50 @@ int16_t test_arm_switch(State_drone_t * drone, bool_e armed){
 
 	return to_return ;
 }
-int16_t test_throttle_low(State_drone_t * drone, bool_e superior){
+int32_t test_throttle_low(State_drone_t * drone, bool_e superior){
+
+	static uint32_t last_update = 0 ;
+	int32_t to_return = 0;
+
+
 	if((drone->communication.ppm.channels[THROTTLE] < 1100) ^ superior)
-		return TRUE;
+		to_return = 1 ;
 	else
-		return FALSE ;
+		to_return = 0 ;
+
+
+	if(drone->communication.ppm.last_update != last_update){
+		last_update = drone->communication.ppm.last_update;
+	}
+	else
+		to_return += 2 ;
+
+	return to_return ;
 }
-int16_t test_throttle_really_low(State_drone_t * drone, bool_e superior){
+int32_t test_throttle_really_low(State_drone_t * drone, bool_e superior){
+	static uint32_t last_update = 0 ;
+	int32_t to_return = 0;
+
+
 	if((drone->communication.ppm.channels[THROTTLE] < 1070) ^ superior)
-		return TRUE;
+		to_return = 1 ;
 	else
-		return FALSE ;
+		to_return = 0 ;
+
+
+	if(drone->communication.ppm.last_update != last_update){
+		last_update = drone->communication.ppm.last_update;
+	}
+	else
+		to_return += 2 ;
+
+	return to_return ;
+}
+int32_t test_imu_init(State_drone_t * drone, bool_e is_init){
+	bool_e to_return = 0 ;
+	if(drone->capteurs.mpu.mpu_result ^ is_init)
+		to_return = 1 ;
+	return to_return ;
 }
 
 
@@ -140,13 +174,22 @@ bool_e check_stop_motor_request(State_drone_t * drone){
 
 
 
-//Transition
-bool_e transition_init = 0 ;
+//Transitions
 test_t arm_switch_test ;
-
-
-
+test_t throttle_low_test ;
+test_t throttle_really_low_test ;
 void transition_high_lvl(State_drone_t * drone){
+	static bool_e transition_init = 0 ;
+	if(!transition_init)
+	{
+		TRANSITION_init_test(&arm_switch_test, test_arm_switch);
+		TRANSITION_init_test(&throttle_low_test, test_throttle_low);
+		TRANSITION_init_test(&throttle_really_low_test, test_throttle_really_low);
+
+		transition_init = 1;
+	}
+
+
 	switch(drone->soft.state_flight_mode){
 		case ON_THE_GROUND :
 			//Conditions de transitions
@@ -163,8 +206,8 @@ void transition_high_lvl(State_drone_t * drone){
 				break;
 			else if(test_ppm(drone, TRUE)){
 				if(TRANSITION_test(&arm_switch_test, drone, TRUE, 1)){
-					if(test_throttle_low(drone, FALSE)){
-						if(test_throttle_really_low(drone, TRUE))
+					if(TRANSITION_test(&throttle_low_test, drone, FALSE, 1)){
+						if(TRANSITION_test(&throttle_really_low_test, drone, TRUE, 1))
 							drone->soft.state_flight_mode = MANUAL ;
 					}
 				}
@@ -178,12 +221,12 @@ void transition_high_lvl(State_drone_t * drone){
 				TELEMETRIE_send_high_lvl_transi(SUB_ID_PC_HIGH_LVL_TRANSITION_PPM_ISNT_OK, &drone->communication.uart_telem);
 			}
 
-			else if(TRANSITION_test(&arm_switch_test, drone, FALSE, 50)){
+			else if(TRANSITION_test(&arm_switch_test, drone, FALSE, 20)){
 				drone->soft.state_flight_mode = ON_THE_GROUND ;
 				TELEMETRIE_send_high_lvl_transi(SUB_ID_PC_HIGH_LVL_TRANSITION_ARM_SWITCH, &drone->communication.uart_telem);
 			}
 
-			else if(test_throttle_really_low(drone, FALSE)){
+			else if(TRANSITION_test(&throttle_really_low_test, drone, FALSE, 20)){
 				drone->soft.state_flight_mode = ON_THE_GROUND ;
 				TELEMETRIE_send_high_lvl_transi(SUB_ID_PC_HIGH_LVL_TRANSITION_THROTTLE_LOW, &drone->communication.uart_telem);
 			}
@@ -205,10 +248,12 @@ void transition_high_lvl(State_drone_t * drone){
 		case CALIBRATE_MPU6050:
 			//Le state calibrate_mpu n'appelle pas la fonction de transition
 			break;
-
+		case IMU_FAILED_INIT:
+			if(test_imu_init(drone, TRUE))
+				drone->soft.state_flight_mode = ON_THE_GROUND ;
+			break;
 		case MANUAL_PC:
-			if(check_stop_motor_request(drone))
-				break;
+			check_stop_motor_request(drone);
 			break;
 
 		default:
@@ -222,12 +267,8 @@ void transition_high_lvl(State_drone_t * drone){
 
 
 void HIGH_LVL_On_The_Ground(State_drone_t * drone){
-	//On démarre par ici et on va en profiter pour init les transition
-	if(!transition_init){
-		TRANSITION_init_test(&arm_switch_test, test_arm_switch);
 
-		transition_init = 1;
-	}
+	//On démarre par ici et on va en profiter pour init les transition
 
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stabilize = FALSE ;
@@ -248,6 +289,7 @@ void HIGH_LVL_Manual(State_drone_t * drone){
 	if(drone->soft.entrance_flight_mode){
 		drone->capteurs.mpu.z = 0 ;
 		drone->stabilisation.stabilize = TRUE ;
+		drone->consigne.yaw = 0 ;
 		LED_SEQUENCE_set_sequence(&drone->ihm.led_etat, SEQUENCE_LED_2);
 	}
 
@@ -313,6 +355,16 @@ void HIGH_LVL_Manual_Pc(State_drone_t * drone){
 
 	//Controle des consigne moteurs pas evenement dans la sub "receive_data" donc rien à faire à part check si on reste là ou pas
 	transition_high_lvl(drone);
+}
+
+void HIGH_LVL_IMU_Failed_Init(State_drone_t * drone){
+	if(drone->soft.entrance_flight_mode){
+			drone->stabilisation.stabilize = FALSE ;
+			LED_SEQUENCE_set_sequence(&drone->ihm.led_etat, SEQUENCE_LED_7);
+		}
+	//DRONE_mpu6050_init(&drone->capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
+	transition_high_lvl(drone);
+
 }
 
 

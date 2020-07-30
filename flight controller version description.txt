@@ -41,14 +41,22 @@ Version 2.3
 	Ajouts:
 		IMU : calibration du mpu disponible
 		Telemetrie : permet un controle basique depuis le pc
+		Telemtrie : messages de transition "transition car switch2"
+		Code : structure de transition avec pointeur fonction sur fonction de test
+		Code : on démarre pas si le mpu est pas init
 
 	Modifs:
 		Moteurs : Distinction entre la lib qui gère un moteur à la fois et la sub pour allumer et eteindre les moteurs qui les gère tous les 4 
 		Code : Trie dans les includes du main
 		Structure : Réorganisation struct drone avec des sous structure pour organisé les données
 		PID : ajout d'un filtre sur le D qui permet de réduire le bruit envoyer aux moteurs
+		PID : controle du yaw en degree et non en degree / sec
 		
+Version 2.4
+	Ajouts:
+		Ibus : prise en charge du ibus pour remplacer le ppm qui cassait les couilles ;
 		
+	Modifs:
 		
 		
 		

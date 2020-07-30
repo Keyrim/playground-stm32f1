@@ -55,7 +55,7 @@
 #define kd_yaw 					2
 #define kd_filter_yaw 			0.1
 
-#define PID_MAX_OUTPUT 400
+#define PID_MAX_OUTPUT 200
 
 //Batterie
 #define USE_BATTERIE_CHECK FALSE

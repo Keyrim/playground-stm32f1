@@ -11,6 +11,7 @@
 
 
 typedef struct {
+	double output ;
 	double kP ;
 	double kI ;
 	double kD ;

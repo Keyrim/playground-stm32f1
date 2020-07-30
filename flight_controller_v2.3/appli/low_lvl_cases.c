@@ -12,7 +12,7 @@ void LOW_LVL_Wait_Loop(State_drone_t * drone){
 
 	uint32_t time = SYSTICK_get_time_us();
 	if(time >= drone->soft.previous_time_loop + LOOP_PERIODE){
-		drone->soft.previous_time_loop += LOOP_PERIODE ;
+		drone->soft.previous_time_loop = time ;
 		drone->soft.state_low_level = PWM_HIGH ;
 		drone->soft.free_time = 0 ;	//Si c'est l'heure on passe direct au state suivant
 	}
@@ -27,8 +27,8 @@ void LOW_LVL_Pwm_High(State_drone_t * drone){
 
 void LOW_LVL_Update_Angles(State_drone_t * drone){
 	//read mpu data and appli the filter
-	MPU6050_ReadAll(&drone->capteurs.mpu.raw_data_mpu);
-	DRONE_mpu6050_update_angles(&drone->capteurs.mpu);
+	if(!drone->capteurs.mpu.mpu_result)
+		DRONE_mpu6050_update_angles(&drone->capteurs.mpu);
 	drone->soft.state_low_level = VERIF_SYSTEM ;
 }
 
@@ -83,8 +83,13 @@ void LOW_LVL_Escs_Setpoints(State_drone_t * drone, State_base_t * base){
 		case CALIBRATE_MPU6050:
 			HIGH_LVL_Calibrate_MPU(drone);
 			break;
+
 		case MANUAL_PC:
 			HIGH_LVL_Manual_Pc(drone);
+			break;
+
+		case IMU_FAILED_INIT:
+			HIGH_LVL_IMU_Failed_Init(drone);
 			break;
 
 		case POSITION_HOLD:
@@ -100,16 +105,17 @@ void LOW_LVL_Escs_Setpoints(State_drone_t * drone, State_base_t * base){
 	if(drone->stabilisation.stabilize){
 		double roll_output 	= PID_compute(&drone->stabilisation.pid_roll, drone->consigne.roll, drone->capteurs.mpu.y);
 		double pitch_output = PID_compute(&drone->stabilisation.pid_pitch, drone->consigne.pitch, drone->capteurs.mpu.x);
-		double yaw_output	= PID_compute(&drone->stabilisation.pid_yaw, drone->consigne.yaw, drone->capteurs.mpu.z);
+		double yaw_output	=  0 ;
+		PID_compute(&drone->stabilisation.pid_yaw, drone->consigne.yaw, drone->capteurs.mpu.z);
 
 		//TELEMETRIE_send_double(drone->stabilisation.pid_roll.D, ID_PC_PID_D_ROLL, &drone->communication.uart_telem);
 		//TELEMETRIE_send_double(drone->stabilisation.pid_roll.D_filtered, ID_PC_PID_P_ROLL, &drone->communication.uart_telem);
 
 
-		ESC_Set_pulse(&drone->stabilisation.escs[0], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output + pitch_output - yaw_output)));
-		ESC_Set_pulse(&drone->stabilisation.escs[1], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output + pitch_output + yaw_output)));
-		ESC_Set_pulse(&drone->stabilisation.escs[2], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output - pitch_output + yaw_output)));
-		ESC_Set_pulse(&drone->stabilisation.escs[3], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output - pitch_output - yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[0], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output + pitch_output + yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[1], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output + pitch_output - yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[2], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(- roll_output - pitch_output - yaw_output)));
+		ESC_Set_pulse(&drone->stabilisation.escs[3], (uint16_t)(1000 + drone->consigne.throttle + (int16_t)(+ roll_output - pitch_output + yaw_output)));
 	}
 	else{
 		drone->stabilisation.escs[0].pulsation = PULSATION_MIN ;

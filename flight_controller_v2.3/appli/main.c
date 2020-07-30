@@ -54,6 +54,9 @@ int main(void)
 
 	//------------------Init du MPU et du complementary filer
 	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
+	//Si le mpu ne s'est pas init on démarre dans la high lvl imu non init
+	if(drone.capteurs.mpu.mpu_result)
+		drone.soft.state_flight_mode = IMU_FAILED_INIT ;
 
 	//------------------Init ppm module
 	DRONE_ppm_init(&drone.communication.ppm, PIN_NUMBER, GPIO_PPM, GPIO_PIN_PPM);

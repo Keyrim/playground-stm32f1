@@ -1,3 +1,4 @@
+"appli/ibus.o"
 "appli/main.o"
 "appli/ppm.o"
 "lib/bsp/MPU6050/stm32f1_mpu6050.o"

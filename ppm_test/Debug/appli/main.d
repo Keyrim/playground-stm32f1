@@ -52,7 +52,8 @@ appli/main.o: ../appli/main.c \
  C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/bsp/systick.h \
  C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/bsp/stm32f1_extit.h \
  ../appli/ppm.h \
- C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/CMSIS/device/stm32f103xb.h
+ C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/CMSIS/device/stm32f103xb.h \
+ ../appli/ibus.h
 
 C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/hal/inc/stm32f1xx_hal.h:
 
@@ -161,3 +162,5 @@ C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/bsp/stm32f1_extit.h:
 ../appli/ppm.h:
 
 C:/Users/Théo/Documents/GitHub/STM32/ppm_test/lib/CMSIS/device/stm32f103xb.h:
+
+../appli/ibus.h:

@@ -811,8 +811,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x1e1 appli/sub/sub_clignotement_led.o
  .debug_macro   0x00000000       0xe2 appli/sub/sub_clignotement_led.o
  .debug_macro   0x00000000       0x58 appli/sub/sub_clignotement_led.o
- .debug_line    0x00000000      0xbd4 appli/sub/sub_clignotement_led.o
- .debug_str     0x00000000    0x7dc37 appli/sub/sub_clignotement_led.o
+ .debug_line    0x00000000      0xb34 appli/sub/sub_clignotement_led.o
+ .debug_str     0x00000000    0x7dc23 appli/sub/sub_clignotement_led.o
  .comment       0x00000000       0x80 appli/sub/sub_clignotement_led.o
  .debug_frame   0x00000000       0x28 appli/sub/sub_clignotement_led.o
  .ARM.attributes
@@ -1893,8 +1893,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/stm32f1_extit.o
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_extit.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1_extit.o
- .debug_line    0x00000000      0x8e7 lib/bsp/stm32f1_extit.o
- .debug_str     0x00000000    0x7c1e7 lib/bsp/stm32f1_extit.o
+ .debug_line    0x00000000      0x897 lib/bsp/stm32f1_extit.o
+ .debug_str     0x00000000    0x7c1d3 lib/bsp/stm32f1_extit.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_extit.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/stm32f1_extit.o
@@ -2076,8 +2076,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_flash.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1_flash.o
  .debug_macro   0x00000000       0x88 lib/bsp/stm32f1_flash.o
- .debug_line    0x00000000      0xa4a lib/bsp/stm32f1_flash.o
- .debug_str     0x00000000    0x7c7ba lib/bsp/stm32f1_flash.o
+ .debug_line    0x00000000      0x9fa lib/bsp/stm32f1_flash.o
+ .debug_str     0x00000000    0x7c7a6 lib/bsp/stm32f1_flash.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_flash.o
  .debug_frame   0x00000000       0xf0 lib/bsp/stm32f1_flash.o
  .ARM.attributes
@@ -2532,8 +2532,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/stm32f1_motorDC.o
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_motorDC.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1_motorDC.o
- .debug_line    0x00000000      0x8e9 lib/bsp/stm32f1_motorDC.o
- .debug_str     0x00000000    0x7c1e9 lib/bsp/stm32f1_motorDC.o
+ .debug_line    0x00000000      0x899 lib/bsp/stm32f1_motorDC.o
+ .debug_str     0x00000000    0x7c1d5 lib/bsp/stm32f1_motorDC.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_motorDC.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/stm32f1_motorDC.o
@@ -2685,8 +2685,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/stm32f1_pwm.o
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_pwm.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1_pwm.o
- .debug_line    0x00000000      0x8e5 lib/bsp/stm32f1_pwm.o
- .debug_str     0x00000000    0x7c1e5 lib/bsp/stm32f1_pwm.o
+ .debug_line    0x00000000      0x895 lib/bsp/stm32f1_pwm.o
+ .debug_str     0x00000000    0x7c1d1 lib/bsp/stm32f1_pwm.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_pwm.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/stm32f1_pwm.o
@@ -2838,8 +2838,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/stm32f1_rtc.o
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_rtc.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1_rtc.o
- .debug_line    0x00000000      0x8e5 lib/bsp/stm32f1_rtc.o
- .debug_str     0x00000000    0x7c1e5 lib/bsp/stm32f1_rtc.o
+ .debug_line    0x00000000      0x895 lib/bsp/stm32f1_rtc.o
+ .debug_str     0x00000000    0x7c1d1 lib/bsp/stm32f1_rtc.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_rtc.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/stm32f1_rtc.o
@@ -2991,8 +2991,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/stm32f1_sd.o
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_sd.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1_sd.o
- .debug_line    0x00000000      0x8e4 lib/bsp/stm32f1_sd.o
- .debug_str     0x00000000    0x7c1e4 lib/bsp/stm32f1_sd.o
+ .debug_line    0x00000000      0x894 lib/bsp/stm32f1_sd.o
+ .debug_str     0x00000000    0x7c1d0 lib/bsp/stm32f1_sd.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_sd.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/stm32f1_sd.o
@@ -3170,8 +3170,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/stm32f1_spi.o
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1_spi.o
  .debug_macro   0x00000000       0x88 lib/bsp/stm32f1_spi.o
- .debug_line    0x00000000      0xa55 lib/bsp/stm32f1_spi.o
- .debug_str     0x00000000    0x7c82e lib/bsp/stm32f1_spi.o
+ .debug_line    0x00000000      0xa19 lib/bsp/stm32f1_spi.o
+ .debug_str     0x00000000    0x7c81a lib/bsp/stm32f1_spi.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1_spi.o
  .debug_frame   0x00000000      0x154 lib/bsp/stm32f1_spi.o
  .ARM.attributes
@@ -4145,8 +4145,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x83 lib/bsp/stm32f1xx_nucleo.o
  .debug_macro   0x00000000      0x1ad lib/bsp/stm32f1xx_nucleo.o
  .debug_macro   0x00000000      0x165 lib/bsp/stm32f1xx_nucleo.o
- .debug_line    0x00000000      0xbd7 lib/bsp/stm32f1xx_nucleo.o
- .debug_str     0x00000000    0x7d9c3 lib/bsp/stm32f1xx_nucleo.o
+ .debug_line    0x00000000      0xb87 lib/bsp/stm32f1xx_nucleo.o
+ .debug_str     0x00000000    0x7d9af lib/bsp/stm32f1xx_nucleo.o
  .comment       0x00000000       0x80 lib/bsp/stm32f1xx_nucleo.o
  .debug_frame   0x00000000      0x2ec lib/bsp/stm32f1xx_nucleo.o
  .ARM.attributes
@@ -4595,8 +4595,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x1ad lib/bsp/tft_ili9341/stm32f1_fonts.o
  .debug_macro   0x00000000       0x16 lib/bsp/tft_ili9341/stm32f1_fonts.o
  .debug_macro   0x00000000       0x35 lib/bsp/tft_ili9341/stm32f1_fonts.o
- .debug_line    0x00000000      0x94b lib/bsp/tft_ili9341/stm32f1_fonts.o
- .debug_str     0x00000000    0x7c2ab lib/bsp/tft_ili9341/stm32f1_fonts.o
+ .debug_line    0x00000000      0x8fb lib/bsp/tft_ili9341/stm32f1_fonts.o
+ .debug_str     0x00000000    0x7c297 lib/bsp/tft_ili9341/stm32f1_fonts.o
  .comment       0x00000000       0x80 lib/bsp/tft_ili9341/stm32f1_fonts.o
  .debug_frame   0x00000000       0x2c lib/bsp/tft_ili9341/stm32f1_fonts.o
  .ARM.attributes
@@ -4751,8 +4751,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x83 lib/bsp/tft_ili9341/stm32f1_ili9341.o
  .debug_macro   0x00000000      0x1ad lib/bsp/tft_ili9341/stm32f1_ili9341.o
  .debug_macro   0x00000000       0x4c lib/bsp/tft_ili9341/stm32f1_ili9341.o
- .debug_line    0x00000000      0x8f5 lib/bsp/tft_ili9341/stm32f1_ili9341.o
- .debug_str     0x00000000    0x7c2f1 lib/bsp/tft_ili9341/stm32f1_ili9341.o
+ .debug_line    0x00000000      0x8a5 lib/bsp/tft_ili9341/stm32f1_ili9341.o
+ .debug_str     0x00000000    0x7c2dd lib/bsp/tft_ili9341/stm32f1_ili9341.o
  .comment       0x00000000       0x80 lib/bsp/tft_ili9341/stm32f1_ili9341.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/tft_ili9341/stm32f1_ili9341.o
@@ -4904,8 +4904,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/bsp/tft_ili9341/stm32f1_xpt2046.o
  .debug_macro   0x00000000       0x83 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
  .debug_macro   0x00000000      0x1ad lib/bsp/tft_ili9341/stm32f1_xpt2046.o
- .debug_line    0x00000000      0x8f5 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
- .debug_str     0x00000000    0x7c1f5 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
+ .debug_line    0x00000000      0x8a5 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
+ .debug_str     0x00000000    0x7c1e1 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
  .comment       0x00000000       0x80 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
  .ARM.attributes
                 0x00000000       0x33 lib/bsp/tft_ili9341/stm32f1_xpt2046.o
@@ -5525,8 +5525,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x58 lib/btm/WS2812S.o
  .debug_macro   0x00000000       0x88 lib/btm/WS2812S.o
  .debug_macro   0x00000000       0x7c lib/btm/WS2812S.o
- .debug_line    0x00000000      0xaca lib/btm/WS2812S.o
- .debug_str     0x00000000    0x7c9fc lib/btm/WS2812S.o
+ .debug_line    0x00000000      0xa52 lib/btm/WS2812S.o
+ .debug_str     0x00000000    0x7c9e8 lib/btm/WS2812S.o
  .comment       0x00000000       0x80 lib/btm/WS2812S.o
  .debug_frame   0x00000000       0xd0 lib/btm/WS2812S.o
  .ARM.attributes
@@ -5541,7 +5541,7 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x14 lib/btm/WS2812S_asm.o
  .debug_aranges
                 0x00000000       0x20 lib/btm/WS2812S_asm.o
- .debug_str     0x00000000       0x69 lib/btm/WS2812S_asm.o
+ .debug_str     0x00000000       0x55 lib/btm/WS2812S_asm.o
  .ARM.attributes
                 0x00000000       0x21 lib/btm/WS2812S_asm.o
  .group         0x00000000        0xc lib/btm/esc.o
@@ -5844,8 +5844,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/btm/ms5611.o
  .debug_macro   0x00000000       0x83 lib/btm/ms5611.o
  .debug_macro   0x00000000       0x22 lib/btm/ms5611.o
- .debug_line    0x00000000      0x981 lib/btm/ms5611.o
- .debug_str     0x00000000    0x7c2b4 lib/btm/ms5611.o
+ .debug_line    0x00000000      0x931 lib/btm/ms5611.o
+ .debug_str     0x00000000    0x7c2a0 lib/btm/ms5611.o
  .comment       0x00000000       0x80 lib/btm/ms5611.o
  .debug_frame   0x00000000       0x30 lib/btm/ms5611.o
  .ARM.attributes
@@ -6869,8 +6869,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/Legacy/stm32f1xx_hal_can.o
  .debug_macro   0x00000000      0x26c lib/hal/src/Legacy/stm32f1xx_hal_can.o
  .debug_macro   0x00000000       0x83 lib/hal/src/Legacy/stm32f1xx_hal_can.o
- .debug_line    0x00000000      0x8a8 lib/hal/src/Legacy/stm32f1xx_hal_can.o
- .debug_str     0x00000000    0x7bddb lib/hal/src/Legacy/stm32f1xx_hal_can.o
+ .debug_line    0x00000000      0x86c lib/hal/src/Legacy/stm32f1xx_hal_can.o
+ .debug_str     0x00000000    0x7bdc7 lib/hal/src/Legacy/stm32f1xx_hal_can.o
  .comment       0x00000000       0x80 lib/hal/src/Legacy/stm32f1xx_hal_can.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/Legacy/stm32f1xx_hal_can.o
@@ -7396,8 +7396,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_adc_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_adc_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_adc_ex.o
- .debug_line    0x00000000      0xc3a lib/hal/src/stm32f1xx_hal_adc_ex.o
- .debug_str     0x00000000    0x7c4c0 lib/hal/src/stm32f1xx_hal_adc_ex.o
+ .debug_line    0x00000000      0xbfe lib/hal/src/stm32f1xx_hal_adc_ex.o
+ .debug_str     0x00000000    0x7c4ac lib/hal/src/stm32f1xx_hal_adc_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_adc_ex.o
  .debug_frame   0x00000000      0x190 lib/hal/src/stm32f1xx_hal_adc_ex.o
  .ARM.attributes
@@ -7548,8 +7548,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_can.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_can.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_can.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_can.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_can.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_can.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_can.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_can.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_can.o
@@ -7699,8 +7699,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_cec.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_cec.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_cec.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_cec.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_cec.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_cec.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_cec.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_cec.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_cec.o
@@ -8009,8 +8009,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_crc.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_crc.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_crc.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_crc.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_crc.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_crc.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_crc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_crc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_crc.o
@@ -8160,8 +8160,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_dac.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_dac.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_dac.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_dac.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_dac.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_dac.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_dac.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_dac.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_dac.o
@@ -8311,8 +8311,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_dac_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_dac_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_dac_ex.o
- .debug_line    0x00000000      0x8a4 lib/hal/src/stm32f1xx_hal_dac_ex.o
- .debug_str     0x00000000    0x7bdd7 lib/hal/src/stm32f1xx_hal_dac_ex.o
+ .debug_line    0x00000000      0x868 lib/hal/src/stm32f1xx_hal_dac_ex.o
+ .debug_str     0x00000000    0x7bdc3 lib/hal/src/stm32f1xx_hal_dac_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_dac_ex.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_dac_ex.o
@@ -8619,8 +8619,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_eth.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_eth.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_eth.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_eth.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_eth.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_eth.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_eth.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_eth.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_eth.o
@@ -8800,8 +8800,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_flash.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_flash.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_flash.o
- .debug_line    0x00000000      0xaa3 lib/hal/src/stm32f1xx_hal_flash.o
- .debug_str     0x00000000    0x7c13a lib/hal/src/stm32f1xx_hal_flash.o
+ .debug_line    0x00000000      0xa67 lib/hal/src/stm32f1xx_hal_flash.o
+ .debug_str     0x00000000    0x7c126 lib/hal/src/stm32f1xx_hal_flash.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_flash.o
  .debug_frame   0x00000000      0x134 lib/hal/src/stm32f1xx_hal_flash.o
  .ARM.attributes
@@ -8987,8 +8987,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_flash_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_flash_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_flash_ex.o
- .debug_line    0x00000000      0xb34 lib/hal/src/stm32f1xx_hal_flash_ex.o
- .debug_str     0x00000000    0x7c2e8 lib/hal/src/stm32f1xx_hal_flash_ex.o
+ .debug_line    0x00000000      0xaf8 lib/hal/src/stm32f1xx_hal_flash_ex.o
+ .debug_str     0x00000000    0x7c2d4 lib/hal/src/stm32f1xx_hal_flash_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_flash_ex.o
  .debug_frame   0x00000000      0x194 lib/hal/src/stm32f1xx_hal_flash_ex.o
  .ARM.attributes
@@ -9300,8 +9300,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_gpio_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_gpio_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_gpio_ex.o
- .debug_line    0x00000000      0x8db lib/hal/src/stm32f1xx_hal_gpio_ex.o
- .debug_str     0x00000000    0x7be74 lib/hal/src/stm32f1xx_hal_gpio_ex.o
+ .debug_line    0x00000000      0x89f lib/hal/src/stm32f1xx_hal_gpio_ex.o
+ .debug_str     0x00000000    0x7be60 lib/hal/src/stm32f1xx_hal_gpio_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_gpio_ex.o
  .debug_frame   0x00000000       0x40 lib/hal/src/stm32f1xx_hal_gpio_ex.o
  .ARM.attributes
@@ -9452,8 +9452,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_hcd.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_hcd.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_hcd.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_hcd.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_hcd.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_hcd.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_hcd.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_hcd.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_hcd.o
@@ -9866,8 +9866,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_i2s.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_i2s.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_i2s.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_i2s.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_i2s.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_i2s.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_i2s.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_i2s.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_i2s.o
@@ -10017,8 +10017,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_irda.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_irda.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_irda.o
- .debug_line    0x00000000      0x8a2 lib/hal/src/stm32f1xx_hal_irda.o
- .debug_str     0x00000000    0x7bdd5 lib/hal/src/stm32f1xx_hal_irda.o
+ .debug_line    0x00000000      0x866 lib/hal/src/stm32f1xx_hal_irda.o
+ .debug_str     0x00000000    0x7bdc1 lib/hal/src/stm32f1xx_hal_irda.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_irda.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_irda.o
@@ -10174,8 +10174,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_iwdg.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_iwdg.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_iwdg.o
- .debug_line    0x00000000      0x8d9 lib/hal/src/stm32f1xx_hal_iwdg.o
- .debug_str     0x00000000    0x7bebb lib/hal/src/stm32f1xx_hal_iwdg.o
+ .debug_line    0x00000000      0x89d lib/hal/src/stm32f1xx_hal_iwdg.o
+ .debug_str     0x00000000    0x7bea7 lib/hal/src/stm32f1xx_hal_iwdg.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_iwdg.o
  .debug_frame   0x00000000       0x44 lib/hal/src/stm32f1xx_hal_iwdg.o
  .ARM.attributes
@@ -10326,8 +10326,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_mmc.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_mmc.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_mmc.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_mmc.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_mmc.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_mmc.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_mmc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_mmc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_mmc.o
@@ -10486,8 +10486,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_msp_template.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_msp_template.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_msp_template.o
- .debug_line    0x00000000      0x8ee lib/hal/src/stm32f1xx_hal_msp_template.o
- .debug_str     0x00000000    0x7be19 lib/hal/src/stm32f1xx_hal_msp_template.o
+ .debug_line    0x00000000      0x8b2 lib/hal/src/stm32f1xx_hal_msp_template.o
+ .debug_str     0x00000000    0x7be05 lib/hal/src/stm32f1xx_hal_msp_template.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_msp_template.o
  .debug_frame   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_msp_template.o
  .ARM.attributes
@@ -10638,8 +10638,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_nand.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_nand.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_nand.o
- .debug_line    0x00000000      0x8a2 lib/hal/src/stm32f1xx_hal_nand.o
- .debug_str     0x00000000    0x7bdd5 lib/hal/src/stm32f1xx_hal_nand.o
+ .debug_line    0x00000000      0x866 lib/hal/src/stm32f1xx_hal_nand.o
+ .debug_str     0x00000000    0x7bdc1 lib/hal/src/stm32f1xx_hal_nand.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_nand.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_nand.o
@@ -10789,8 +10789,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_nor.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_nor.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_nor.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_hal_nor.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_hal_nor.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_hal_nor.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_hal_nor.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_nor.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_nor.o
@@ -10940,8 +10940,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_pccard.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_pccard.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_pccard.o
- .debug_line    0x00000000      0x8a4 lib/hal/src/stm32f1xx_hal_pccard.o
- .debug_str     0x00000000    0x7bdd7 lib/hal/src/stm32f1xx_hal_pccard.o
+ .debug_line    0x00000000      0x868 lib/hal/src/stm32f1xx_hal_pccard.o
+ .debug_str     0x00000000    0x7bdc3 lib/hal/src/stm32f1xx_hal_pccard.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_pccard.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_pccard.o
@@ -11159,8 +11159,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_pcd.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_pcd.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_pcd.o
- .debug_line    0x00000000      0xd84 lib/hal/src/stm32f1xx_hal_pcd.o
- .debug_str     0x00000000    0x7c66b lib/hal/src/stm32f1xx_hal_pcd.o
+ .debug_line    0x00000000      0xd48 lib/hal/src/stm32f1xx_hal_pcd.o
+ .debug_str     0x00000000    0x7c657 lib/hal/src/stm32f1xx_hal_pcd.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_pcd.o
  .debug_frame   0x00000000      0x300 lib/hal/src/stm32f1xx_hal_pcd.o
  .ARM.attributes
@@ -11317,8 +11317,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_pcd_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_pcd_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_pcd_ex.o
- .debug_line    0x00000000      0x8d3 lib/hal/src/stm32f1xx_hal_pcd_ex.o
- .debug_str     0x00000000    0x7c148 lib/hal/src/stm32f1xx_hal_pcd_ex.o
+ .debug_line    0x00000000      0x897 lib/hal/src/stm32f1xx_hal_pcd_ex.o
+ .debug_str     0x00000000    0x7c134 lib/hal/src/stm32f1xx_hal_pcd_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_pcd_ex.o
  .debug_frame   0x00000000       0x30 lib/hal/src/stm32f1xx_hal_pcd_ex.o
  .ARM.attributes
@@ -11507,8 +11507,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_pwr.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_pwr.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_pwr.o
- .debug_line    0x00000000      0xa43 lib/hal/src/stm32f1xx_hal_pwr.o
- .debug_str     0x00000000    0x7c3a8 lib/hal/src/stm32f1xx_hal_pwr.o
+ .debug_line    0x00000000      0xa07 lib/hal/src/stm32f1xx_hal_pwr.o
+ .debug_str     0x00000000    0x7c394 lib/hal/src/stm32f1xx_hal_pwr.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_pwr.o
  .debug_frame   0x00000000      0x140 lib/hal/src/stm32f1xx_hal_pwr.o
  .ARM.attributes
@@ -11825,8 +11825,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_rcc_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_rcc_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_rcc_ex.o
- .debug_line    0x00000000      0x95d lib/hal/src/stm32f1xx_hal_rcc_ex.o
- .debug_str     0x00000000    0x7bfde lib/hal/src/stm32f1xx_hal_rcc_ex.o
+ .debug_line    0x00000000      0x921 lib/hal/src/stm32f1xx_hal_rcc_ex.o
+ .debug_str     0x00000000    0x7bfca lib/hal/src/stm32f1xx_hal_rcc_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_rcc_ex.o
  .debug_frame   0x00000000       0x6c lib/hal/src/stm32f1xx_hal_rcc_ex.o
  .ARM.attributes
@@ -12035,8 +12035,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_rtc.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_rtc.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_rtc.o
- .debug_line    0x00000000      0xdb2 lib/hal/src/stm32f1xx_hal_rtc.o
- .debug_str     0x00000000    0x7c36a lib/hal/src/stm32f1xx_hal_rtc.o
+ .debug_line    0x00000000      0xd76 lib/hal/src/stm32f1xx_hal_rtc.o
+ .debug_str     0x00000000    0x7c356 lib/hal/src/stm32f1xx_hal_rtc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_rtc.o
  .debug_frame   0x00000000      0x358 lib/hal/src/stm32f1xx_hal_rtc.o
  .ARM.attributes
@@ -12217,8 +12217,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_rtc_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_rtc_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_rtc_ex.o
- .debug_line    0x00000000      0xae2 lib/hal/src/stm32f1xx_hal_rtc_ex.o
- .debug_str     0x00000000    0x7c1ac lib/hal/src/stm32f1xx_hal_rtc_ex.o
+ .debug_line    0x00000000      0xaa6 lib/hal/src/stm32f1xx_hal_rtc_ex.o
+ .debug_str     0x00000000    0x7c198 lib/hal/src/stm32f1xx_hal_rtc_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_rtc_ex.o
  .debug_frame   0x00000000      0x134 lib/hal/src/stm32f1xx_hal_rtc_ex.o
  .ARM.attributes
@@ -12369,8 +12369,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_sd.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_sd.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_sd.o
- .debug_line    0x00000000      0x8a0 lib/hal/src/stm32f1xx_hal_sd.o
- .debug_str     0x00000000    0x7bdd3 lib/hal/src/stm32f1xx_hal_sd.o
+ .debug_line    0x00000000      0x864 lib/hal/src/stm32f1xx_hal_sd.o
+ .debug_str     0x00000000    0x7bdbf lib/hal/src/stm32f1xx_hal_sd.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_sd.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_sd.o
@@ -12520,8 +12520,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_smartcard.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_smartcard.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_smartcard.o
- .debug_line    0x00000000      0x8a7 lib/hal/src/stm32f1xx_hal_smartcard.o
- .debug_str     0x00000000    0x7bdda lib/hal/src/stm32f1xx_hal_smartcard.o
+ .debug_line    0x00000000      0x86b lib/hal/src/stm32f1xx_hal_smartcard.o
+ .debug_str     0x00000000    0x7bdc6 lib/hal/src/stm32f1xx_hal_smartcard.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_smartcard.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_smartcard.o
@@ -12791,8 +12791,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_spi.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_spi.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_spi.o
- .debug_line    0x00000000     0x13c6 lib/hal/src/stm32f1xx_hal_spi.o
- .debug_str     0x00000000    0x7c77f lib/hal/src/stm32f1xx_hal_spi.o
+ .debug_line    0x00000000     0x138a lib/hal/src/stm32f1xx_hal_spi.o
+ .debug_str     0x00000000    0x7c76b lib/hal/src/stm32f1xx_hal_spi.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_spi.o
  .debug_frame   0x00000000      0x5f8 lib/hal/src/stm32f1xx_hal_spi.o
  .ARM.attributes
@@ -12951,8 +12951,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_spi_ex.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_spi_ex.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_spi_ex.o
- .debug_line    0x00000000      0x8e3 lib/hal/src/stm32f1xx_hal_spi_ex.o
- .debug_str     0x00000000    0x7c20b lib/hal/src/stm32f1xx_hal_spi_ex.o
+ .debug_line    0x00000000      0x8a7 lib/hal/src/stm32f1xx_hal_spi_ex.o
+ .debug_str     0x00000000    0x7c1f7 lib/hal/src/stm32f1xx_hal_spi_ex.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_spi_ex.o
  .debug_frame   0x00000000       0x3c lib/hal/src/stm32f1xx_hal_spi_ex.o
  .ARM.attributes
@@ -13103,8 +13103,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_sram.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_sram.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_sram.o
- .debug_line    0x00000000      0x8a2 lib/hal/src/stm32f1xx_hal_sram.o
- .debug_str     0x00000000    0x7bdd5 lib/hal/src/stm32f1xx_hal_sram.o
+ .debug_line    0x00000000      0x866 lib/hal/src/stm32f1xx_hal_sram.o
+ .debug_str     0x00000000    0x7bdc1 lib/hal/src/stm32f1xx_hal_sram.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_sram.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_hal_sram.o
@@ -14125,8 +14125,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_usart.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_usart.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_usart.o
- .debug_line    0x00000000     0x1130 lib/hal/src/stm32f1xx_hal_usart.o
- .debug_str     0x00000000    0x7c67f lib/hal/src/stm32f1xx_hal_usart.o
+ .debug_line    0x00000000     0x10f4 lib/hal/src/stm32f1xx_hal_usart.o
+ .debug_str     0x00000000    0x7c66b lib/hal/src/stm32f1xx_hal_usart.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_usart.o
  .debug_frame   0x00000000      0x41c lib/hal/src/stm32f1xx_hal_usart.o
  .ARM.attributes
@@ -14289,8 +14289,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_hal_wwdg.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_hal_wwdg.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_hal_wwdg.o
- .debug_line    0x00000000      0x90f lib/hal/src/stm32f1xx_hal_wwdg.o
- .debug_str     0x00000000    0x7beda lib/hal/src/stm32f1xx_hal_wwdg.o
+ .debug_line    0x00000000      0x8d3 lib/hal/src/stm32f1xx_hal_wwdg.o
+ .debug_str     0x00000000    0x7bec6 lib/hal/src/stm32f1xx_hal_wwdg.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_hal_wwdg.o
  .debug_frame   0x00000000       0x74 lib/hal/src/stm32f1xx_hal_wwdg.o
  .ARM.attributes
@@ -14306,7 +14306,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_adc.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_adc.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_adc.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_adc.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_adc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_adc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_adc.o
@@ -14321,7 +14321,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_crc.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_crc.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_crc.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_crc.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_crc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_crc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_crc.o
@@ -14336,7 +14336,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_dac.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_dac.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_dac.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_dac.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_dac.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_dac.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_dac.o
@@ -14351,7 +14351,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_dma.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_dma.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_dma.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_dma.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_dma.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_dma.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_dma.o
@@ -14366,7 +14366,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_exti.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_exti.o
  .debug_line    0x00000000       0x43 lib/hal/src/stm32f1xx_ll_exti.o
- .debug_str     0x00000000     0x2d0e lib/hal/src/stm32f1xx_ll_exti.o
+ .debug_str     0x00000000     0x2cfa lib/hal/src/stm32f1xx_ll_exti.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_exti.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_exti.o
@@ -14516,8 +14516,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_ll_fsmc.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_ll_fsmc.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_ll_fsmc.o
- .debug_line    0x00000000      0x8a1 lib/hal/src/stm32f1xx_ll_fsmc.o
- .debug_str     0x00000000    0x7bdd4 lib/hal/src/stm32f1xx_ll_fsmc.o
+ .debug_line    0x00000000      0x865 lib/hal/src/stm32f1xx_ll_fsmc.o
+ .debug_str     0x00000000    0x7bdc0 lib/hal/src/stm32f1xx_ll_fsmc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_fsmc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_fsmc.o
@@ -14532,7 +14532,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_gpio.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_gpio.o
  .debug_line    0x00000000       0x43 lib/hal/src/stm32f1xx_ll_gpio.o
- .debug_str     0x00000000     0x2d0e lib/hal/src/stm32f1xx_ll_gpio.o
+ .debug_str     0x00000000     0x2cfa lib/hal/src/stm32f1xx_ll_gpio.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_gpio.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_gpio.o
@@ -14547,7 +14547,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_i2c.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_i2c.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_i2c.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_i2c.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_i2c.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_i2c.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_i2c.o
@@ -14562,7 +14562,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_pwr.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_pwr.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_pwr.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_pwr.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_pwr.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_pwr.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_pwr.o
@@ -14577,7 +14577,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_rcc.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_rcc.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_rcc.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_rcc.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_rcc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_rcc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_rcc.o
@@ -14592,7 +14592,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_rtc.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_rtc.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_rtc.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_rtc.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_rtc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_rtc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_rtc.o
@@ -14742,8 +14742,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_ll_sdmmc.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_ll_sdmmc.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_ll_sdmmc.o
- .debug_line    0x00000000      0x8a2 lib/hal/src/stm32f1xx_ll_sdmmc.o
- .debug_str     0x00000000    0x7bdd5 lib/hal/src/stm32f1xx_ll_sdmmc.o
+ .debug_line    0x00000000      0x866 lib/hal/src/stm32f1xx_ll_sdmmc.o
+ .debug_str     0x00000000    0x7bdc1 lib/hal/src/stm32f1xx_ll_sdmmc.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_sdmmc.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_sdmmc.o
@@ -14758,7 +14758,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_spi.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_spi.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_spi.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_spi.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_spi.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_spi.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_spi.o
@@ -14773,7 +14773,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_tim.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_tim.o
  .debug_line    0x00000000       0x42 lib/hal/src/stm32f1xx_ll_tim.o
- .debug_str     0x00000000     0x2d0d lib/hal/src/stm32f1xx_ll_tim.o
+ .debug_str     0x00000000     0x2cf9 lib/hal/src/stm32f1xx_ll_tim.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_tim.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_tim.o
@@ -14788,7 +14788,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 lib/hal/src/stm32f1xx_ll_usart.o
  .debug_macro   0x00000000      0xa72 lib/hal/src/stm32f1xx_ll_usart.o
  .debug_line    0x00000000       0x44 lib/hal/src/stm32f1xx_ll_usart.o
- .debug_str     0x00000000     0x2d0f lib/hal/src/stm32f1xx_ll_usart.o
+ .debug_str     0x00000000     0x2cfb lib/hal/src/stm32f1xx_ll_usart.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_usart.o
  .ARM.attributes
                 0x00000000       0x33 lib/hal/src/stm32f1xx_ll_usart.o
@@ -14998,8 +14998,8 @@ Discarded input sections
  .debug_macro   0x00000000       0x50 lib/hal/src/stm32f1xx_ll_usb.o
  .debug_macro   0x00000000      0x26c lib/hal/src/stm32f1xx_ll_usb.o
  .debug_macro   0x00000000       0x83 lib/hal/src/stm32f1xx_ll_usb.o
- .debug_line    0x00000000      0xcce lib/hal/src/stm32f1xx_ll_usb.o
- .debug_str     0x00000000    0x7c31b lib/hal/src/stm32f1xx_ll_usb.o
+ .debug_line    0x00000000      0xc92 lib/hal/src/stm32f1xx_ll_usb.o
+ .debug_str     0x00000000    0x7c307 lib/hal/src/stm32f1xx_ll_usb.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_usb.o
  .debug_frame   0x00000000      0x23c lib/hal/src/stm32f1xx_ll_usb.o
  .ARM.attributes
@@ -15176,8 +15176,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x2b2 lib/hal/src/stm32f1xx_ll_utils.o
  .debug_macro   0x00000000       0x2a lib/hal/src/stm32f1xx_ll_utils.o
  .debug_macro   0x00000000       0x78 lib/hal/src/stm32f1xx_ll_utils.o
- .debug_line    0x00000000      0xaaa lib/hal/src/stm32f1xx_ll_utils.o
- .debug_str     0x00000000    0x7df3b lib/hal/src/stm32f1xx_ll_utils.o
+ .debug_line    0x00000000      0xa6e lib/hal/src/stm32f1xx_ll_utils.o
+ .debug_str     0x00000000    0x7df27 lib/hal/src/stm32f1xx_ll_utils.o
  .comment       0x00000000       0x80 lib/hal/src/stm32f1xx_ll_utils.o
  .debug_frame   0x00000000       0xd4 lib/hal/src/stm32f1xx_ll_utils.o
  .ARM.attributes
@@ -15330,8 +15330,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x26c lib/middleware/dialog.o
  .debug_macro   0x00000000       0x83 lib/middleware/dialog.o
  .debug_macro   0x00000000      0x1ad lib/middleware/dialog.o
- .debug_line    0x00000000      0x8e7 lib/middleware/dialog.o
- .debug_str     0x00000000    0x7c1e7 lib/middleware/dialog.o
+ .debug_line    0x00000000      0x897 lib/middleware/dialog.o
+ .debug_str     0x00000000    0x7c1d3 lib/middleware/dialog.o
  .comment       0x00000000       0x80 lib/middleware/dialog.o
  .ARM.attributes
                 0x00000000       0x33 lib/middleware/dialog.o
@@ -18088,126 +18088,126 @@ OUTPUT(flight_controller_v2.3.elf elf32-littlearm)
  .debug_macro   0x0001ecfb      0x3b9 lib/hal/src/stm32f1xx_hal_tim_ex.o
  .debug_macro   0x0001f0b4      0x3ba lib/hal/src/stm32f1xx_hal_uart.o
 
-.debug_line     0x00000000    0x1c338
- .debug_line    0x00000000      0xf3c appli/high_lvl_cases.o
- .debug_line    0x00000f3c      0xd98 appli/low_lvl_cases.o
- .debug_line    0x00001cd4      0xd52 appli/main.o
- .debug_line    0x00002a26      0xb98 appli/sub/sub_esc.o
- .debug_line    0x000035be      0xb8b appli/sub/sub_parachute.o
- .debug_line    0x00004149      0xba6 appli/sub/sub_receive_data.o
- .debug_line    0x00004cef      0xc49 appli/sub/sub_send_data.o
- .debug_line    0x00005938      0xaa9 lib/bsp/MPU6050/stm32f1_mpu6050.o
- .debug_line    0x000063e1      0xa69 lib/bsp/stm32f1_adc.o
- .debug_line    0x00006e4a      0x8d7 lib/bsp/stm32f1_gpio.o
- .debug_line    0x00007721      0xb1f lib/bsp/stm32f1_i2c.o
- .debug_line    0x00008240      0xd03 lib/bsp/stm32f1_sys.o
- .debug_line    0x00008f43      0xb81 lib/bsp/stm32f1_timer.o
- .debug_line    0x00009ac4      0xc62 lib/bsp/stm32f1_uart.o
- .debug_line    0x0000a726      0xc89 lib/bsp/stm32f1_weak_it.o
- .debug_line    0x0000b3af      0x8ed lib/bsp/system_stm32f1xx.o
- .debug_line    0x0000bc9c      0x967 lib/bsp/systick.o
- .debug_line    0x0000c603      0x986 lib/btm/DRONE_batterie.o
- .debug_line    0x0000cf89      0xab5 lib/btm/DRONE_gps.o
- .debug_line    0x0000da3e      0xa9d lib/btm/DRONE_mpu6050.o
- .debug_line    0x0000e4db      0x992 lib/btm/esc.o
- .debug_line    0x0000ee6d      0x45e lib/btm/pid.o
- .debug_line    0x0000f2cb      0xa74 lib/btm/ppm.o
- .debug_line    0x0000fd3f      0x969 lib/btm/sequence_led.o
- .debug_line    0x000106a8      0x442 lib/btm/state_machine.o
- .debug_line    0x00010aea      0xae5 lib/btm/telemetrie.o
- .debug_line    0x000115cf      0xb39 lib/btm/test_transition.o
- .debug_line    0x00012108      0x9e4 lib/btm/uart_lib.o
- .debug_line    0x00012aec      0xa57 lib/hal/src/stm32f1xx_hal.o
- .debug_line    0x00013543      0xde8 lib/hal/src/stm32f1xx_hal_adc.o
- .debug_line    0x0001432b      0xa6f lib/hal/src/stm32f1xx_hal_cortex.o
- .debug_line    0x00014d9a      0xc20 lib/hal/src/stm32f1xx_hal_dma.o
- .debug_line    0x000159ba      0xa54 lib/hal/src/stm32f1xx_hal_gpio.o
- .debug_line    0x0001640e     0x1b06 lib/hal/src/stm32f1xx_hal_i2c.o
- .debug_line    0x00017f14      0xb75 lib/hal/src/stm32f1xx_hal_rcc.o
- .debug_line    0x00018a89     0x186c lib/hal/src/stm32f1xx_hal_tim.o
- .debug_line    0x0001a2f5      0xe26 lib/hal/src/stm32f1xx_hal_tim_ex.o
- .debug_line    0x0001b11b     0x1188 lib/hal/src/stm32f1xx_hal_uart.o
- .debug_line    0x0001c2a3       0x95 lib/startup_stm32f103xb.o
+.debug_line     0x00000000    0x1b62c
+ .debug_line    0x00000000      0xe9c appli/high_lvl_cases.o
+ .debug_line    0x00000e9c      0xcf8 appli/low_lvl_cases.o
+ .debug_line    0x00001b94      0xcb2 appli/main.o
+ .debug_line    0x00002846      0xb0c appli/sub/sub_esc.o
+ .debug_line    0x00003352      0xaff appli/sub/sub_parachute.o
+ .debug_line    0x00003e51      0xb1a appli/sub/sub_receive_data.o
+ .debug_line    0x0000496b      0xbbd appli/sub/sub_send_data.o
+ .debug_line    0x00005528      0xa45 lib/bsp/MPU6050/stm32f1_mpu6050.o
+ .debug_line    0x00005f6d      0xa19 lib/bsp/stm32f1_adc.o
+ .debug_line    0x00006986      0x89b lib/bsp/stm32f1_gpio.o
+ .debug_line    0x00007221      0xacf lib/bsp/stm32f1_i2c.o
+ .debug_line    0x00007cf0      0xcb3 lib/bsp/stm32f1_sys.o
+ .debug_line    0x000089a3      0xb31 lib/bsp/stm32f1_timer.o
+ .debug_line    0x000094d4      0xc12 lib/bsp/stm32f1_uart.o
+ .debug_line    0x0000a0e6      0xc39 lib/bsp/stm32f1_weak_it.o
+ .debug_line    0x0000ad1f      0x8b1 lib/bsp/system_stm32f1xx.o
+ .debug_line    0x0000b5d0      0x92b lib/bsp/systick.o
+ .debug_line    0x0000befb      0x922 lib/btm/DRONE_batterie.o
+ .debug_line    0x0000c81d      0xa51 lib/btm/DRONE_gps.o
+ .debug_line    0x0000d26e      0xa25 lib/btm/DRONE_mpu6050.o
+ .debug_line    0x0000dc93      0x942 lib/btm/esc.o
+ .debug_line    0x0000e5d5      0x44a lib/btm/pid.o
+ .debug_line    0x0000ea1f      0xa10 lib/btm/ppm.o
+ .debug_line    0x0000f42f      0x919 lib/btm/sequence_led.o
+ .debug_line    0x0000fd48      0x42e lib/btm/state_machine.o
+ .debug_line    0x00010176      0xa81 lib/btm/telemetrie.o
+ .debug_line    0x00010bf7      0xac1 lib/btm/test_transition.o
+ .debug_line    0x000116b8      0x980 lib/btm/uart_lib.o
+ .debug_line    0x00012038      0xa1b lib/hal/src/stm32f1xx_hal.o
+ .debug_line    0x00012a53      0xdac lib/hal/src/stm32f1xx_hal_adc.o
+ .debug_line    0x000137ff      0xa33 lib/hal/src/stm32f1xx_hal_cortex.o
+ .debug_line    0x00014232      0xbe4 lib/hal/src/stm32f1xx_hal_dma.o
+ .debug_line    0x00014e16      0xa18 lib/hal/src/stm32f1xx_hal_gpio.o
+ .debug_line    0x0001582e     0x1aca lib/hal/src/stm32f1xx_hal_i2c.o
+ .debug_line    0x000172f8      0xb39 lib/hal/src/stm32f1xx_hal_rcc.o
+ .debug_line    0x00017e31     0x1830 lib/hal/src/stm32f1xx_hal_tim.o
+ .debug_line    0x00019661      0xdea lib/hal/src/stm32f1xx_hal_tim_ex.o
+ .debug_line    0x0001a44b     0x114c lib/hal/src/stm32f1xx_hal_uart.o
+ .debug_line    0x0001b597       0x95 lib/startup_stm32f103xb.o
 
-.debug_str      0x00000000    0x85c66
- .debug_str     0x00000000    0x7e54b appli/high_lvl_cases.o
-                              0x7ea0a (size before relaxing)
- .debug_str     0x0007e54b      0x1ac appli/low_lvl_cases.o
-                              0x7e910 (size before relaxing)
- .debug_str     0x0007e6f7      0x37d appli/main.o
-                              0x7eb1b (size before relaxing)
- .debug_str     0x0007ea74       0x49 appli/sub/sub_esc.o
-                              0x7db89 (size before relaxing)
- .debug_str     0x0007eabd       0x7f appli/sub/sub_parachute.o
-                              0x7e63f (size before relaxing)
- .debug_str     0x0007eb3c       0x5e appli/sub/sub_receive_data.o
-                              0x7e617 (size before relaxing)
- .debug_str     0x0007eb9a      0x1d8 appli/sub/sub_send_data.o
-                              0x7e78d (size before relaxing)
- .debug_str     0x0007ed72      0x1f5 lib/bsp/MPU6050/stm32f1_mpu6050.o
-                              0x7cedf (size before relaxing)
- .debug_str     0x0007ef67      0x8b7 lib/bsp/stm32f1_adc.o
-                              0x7d2a5 (size before relaxing)
- .debug_str     0x0007f81e       0xb2 lib/bsp/stm32f1_gpio.o
-                              0x7beef (size before relaxing)
- .debug_str     0x0007f8d0      0x4eb lib/bsp/stm32f1_i2c.o
-                              0x7ce02 (size before relaxing)
- .debug_str     0x0007fdbb     0x2027 lib/bsp/stm32f1_sys.o
-                              0x7e73f (size before relaxing)
- .debug_str     0x00081de2      0x30b lib/bsp/stm32f1_timer.o
-                              0x7d087 (size before relaxing)
- .debug_str     0x000820ed      0x43f lib/bsp/stm32f1_uart.o
-                              0x7d0fc (size before relaxing)
- .debug_str     0x0008252c      0x2a4 lib/bsp/stm32f1_weak_it.o
-                              0x7c983 (size before relaxing)
- .debug_str     0x000827d0       0x4f lib/bsp/system_stm32f1xx.o
-                              0x7beb9 (size before relaxing)
- .debug_str     0x0008281f       0xc5 lib/bsp/systick.o
-                              0x7c2a4 (size before relaxing)
- .debug_str     0x000828e4       0x1c lib/btm/DRONE_batterie.o
-                              0x7c6d0 (size before relaxing)
- .debug_str     0x00082900      0x2c8 lib/btm/DRONE_gps.o
-                              0x7d2a3 (size before relaxing)
- .debug_str     0x00082bc8       0x90 lib/btm/DRONE_mpu6050.o
-                              0x7d78e (size before relaxing)
- .debug_str     0x00082c58       0x29 lib/btm/esc.o
-                              0x7c496 (size before relaxing)
- .debug_str     0x00082c81       0x26 lib/btm/pid.o
-                               0x7784 (size before relaxing)
- .debug_str     0x00082ca7       0x69 lib/btm/ppm.o
-                              0x7c8c9 (size before relaxing)
- .debug_str     0x00082d10       0x2b lib/btm/sequence_led.o
-                              0x7c2b4 (size before relaxing)
- .debug_str     0x00082d3b       0x33 lib/btm/state_machine.o
-                               0x775d (size before relaxing)
- .debug_str     0x00082d6e       0x8c lib/btm/telemetrie.o
-                              0x7ccac (size before relaxing)
- .debug_str     0x00082dfa       0x43 lib/btm/test_transition.o
-                              0x7e22b (size before relaxing)
- .debug_str     0x00082e3d       0x40 lib/btm/uart_lib.o
-                              0x7c6d8 (size before relaxing)
- .debug_str     0x00082e7d      0x348 lib/hal/src/stm32f1xx_hal.o
-                              0x7c4e7 (size before relaxing)
- .debug_str     0x000831c5      0x36c lib/hal/src/stm32f1xx_hal_adc.o
-                              0x7c508 (size before relaxing)
- .debug_str     0x00083531      0x1c1 lib/hal/src/stm32f1xx_hal_cortex.o
-                              0x7c4b6 (size before relaxing)
- .debug_str     0x000836f2      0x1d7 lib/hal/src/stm32f1xx_hal_dma.o
-                              0x7c21a (size before relaxing)
- .debug_str     0x000838c9      0x29f lib/hal/src/stm32f1xx_hal_gpio.o
-                              0x7c1fd (size before relaxing)
- .debug_str     0x00083b68      0x9c8 lib/hal/src/stm32f1xx_hal_i2c.o
-                              0x7cd36 (size before relaxing)
- .debug_str     0x00084530      0x207 lib/hal/src/stm32f1xx_hal_rcc.o
-                              0x7c252 (size before relaxing)
- .debug_str     0x00084737      0xc49 lib/hal/src/stm32f1xx_hal_tim.o
-                              0x7cf52 (size before relaxing)
- .debug_str     0x00085380      0x457 lib/hal/src/stm32f1xx_hal_tim_ex.o
-                              0x7c7f4 (size before relaxing)
- .debug_str     0x000857d7      0x464 lib/hal/src/stm32f1xx_hal_uart.o
-                              0x7c76b (size before relaxing)
- .debug_str     0x00085c3b       0x2b lib/startup_stm32f103xb.o
-                                 0x6d (size before relaxing)
+.debug_str      0x00000000    0x85c52
+ .debug_str     0x00000000    0x7e537 appli/high_lvl_cases.o
+                              0x7e9f6 (size before relaxing)
+ .debug_str     0x0007e537      0x1ac appli/low_lvl_cases.o
+                              0x7e8fc (size before relaxing)
+ .debug_str     0x0007e6e3      0x37d appli/main.o
+                              0x7eb07 (size before relaxing)
+ .debug_str     0x0007ea60       0x49 appli/sub/sub_esc.o
+                              0x7db75 (size before relaxing)
+ .debug_str     0x0007eaa9       0x7f appli/sub/sub_parachute.o
+                              0x7e62b (size before relaxing)
+ .debug_str     0x0007eb28       0x5e appli/sub/sub_receive_data.o
+                              0x7e603 (size before relaxing)
+ .debug_str     0x0007eb86      0x1d8 appli/sub/sub_send_data.o
+                              0x7e779 (size before relaxing)
+ .debug_str     0x0007ed5e      0x1f5 lib/bsp/MPU6050/stm32f1_mpu6050.o
+                              0x7cecb (size before relaxing)
+ .debug_str     0x0007ef53      0x8b7 lib/bsp/stm32f1_adc.o
+                              0x7d291 (size before relaxing)
+ .debug_str     0x0007f80a       0xb2 lib/bsp/stm32f1_gpio.o
+                              0x7bedb (size before relaxing)
+ .debug_str     0x0007f8bc      0x4eb lib/bsp/stm32f1_i2c.o
+                              0x7cdee (size before relaxing)
+ .debug_str     0x0007fda7     0x2027 lib/bsp/stm32f1_sys.o
+                              0x7e72b (size before relaxing)
+ .debug_str     0x00081dce      0x30b lib/bsp/stm32f1_timer.o
+                              0x7d073 (size before relaxing)
+ .debug_str     0x000820d9      0x43f lib/bsp/stm32f1_uart.o
+                              0x7d0e8 (size before relaxing)
+ .debug_str     0x00082518      0x2a4 lib/bsp/stm32f1_weak_it.o
+                              0x7c96f (size before relaxing)
+ .debug_str     0x000827bc       0x4f lib/bsp/system_stm32f1xx.o
+                              0x7bea5 (size before relaxing)
+ .debug_str     0x0008280b       0xc5 lib/bsp/systick.o
+                              0x7c290 (size before relaxing)
+ .debug_str     0x000828d0       0x1c lib/btm/DRONE_batterie.o
+                              0x7c6bc (size before relaxing)
+ .debug_str     0x000828ec      0x2c8 lib/btm/DRONE_gps.o
+                              0x7d28f (size before relaxing)
+ .debug_str     0x00082bb4       0x90 lib/btm/DRONE_mpu6050.o
+                              0x7d77a (size before relaxing)
+ .debug_str     0x00082c44       0x29 lib/btm/esc.o
+                              0x7c482 (size before relaxing)
+ .debug_str     0x00082c6d       0x26 lib/btm/pid.o
+                               0x7770 (size before relaxing)
+ .debug_str     0x00082c93       0x69 lib/btm/ppm.o
+                              0x7c8b5 (size before relaxing)
+ .debug_str     0x00082cfc       0x2b lib/btm/sequence_led.o
+                              0x7c2a0 (size before relaxing)
+ .debug_str     0x00082d27       0x33 lib/btm/state_machine.o
+                               0x7749 (size before relaxing)
+ .debug_str     0x00082d5a       0x8c lib/btm/telemetrie.o
+                              0x7cc98 (size before relaxing)
+ .debug_str     0x00082de6       0x43 lib/btm/test_transition.o
+                              0x7e217 (size before relaxing)
+ .debug_str     0x00082e29       0x40 lib/btm/uart_lib.o
+                              0x7c6c4 (size before relaxing)
+ .debug_str     0x00082e69      0x348 lib/hal/src/stm32f1xx_hal.o
+                              0x7c4d3 (size before relaxing)
+ .debug_str     0x000831b1      0x36c lib/hal/src/stm32f1xx_hal_adc.o
+                              0x7c4f4 (size before relaxing)
+ .debug_str     0x0008351d      0x1c1 lib/hal/src/stm32f1xx_hal_cortex.o
+                              0x7c4a2 (size before relaxing)
+ .debug_str     0x000836de      0x1d7 lib/hal/src/stm32f1xx_hal_dma.o
+                              0x7c206 (size before relaxing)
+ .debug_str     0x000838b5      0x29f lib/hal/src/stm32f1xx_hal_gpio.o
+                              0x7c1e9 (size before relaxing)
+ .debug_str     0x00083b54      0x9c8 lib/hal/src/stm32f1xx_hal_i2c.o
+                              0x7cd22 (size before relaxing)
+ .debug_str     0x0008451c      0x207 lib/hal/src/stm32f1xx_hal_rcc.o
+                              0x7c23e (size before relaxing)
+ .debug_str     0x00084723      0xc49 lib/hal/src/stm32f1xx_hal_tim.o
+                              0x7cf3e (size before relaxing)
+ .debug_str     0x0008536c      0x457 lib/hal/src/stm32f1xx_hal_tim_ex.o
+                              0x7c7e0 (size before relaxing)
+ .debug_str     0x000857c3      0x464 lib/hal/src/stm32f1xx_hal_uart.o
+                              0x7c757 (size before relaxing)
+ .debug_str     0x00085c27       0x2b lib/startup_stm32f103xb.o
+                                 0x59 (size before relaxing)
 
 .comment        0x00000000       0x7f
  .comment       0x00000000       0x7f appli/high_lvl_cases.o

@@ -357,7 +357,7 @@ bool_e I2C_IsDeviceConnected(I2C_TypeDef* I2Cx, uint8_t address)
 {
 	assert(I2Cx == I2C1 || I2Cx == I2C2);
 	I2C_ID_e id = ((I2Cx == I2C2)?I2C2_ID:I2C1_ID);
-	return (HAL_I2C_IsDeviceReady(&hi2c[id],address,2,I2C_TIMEOUT) == HAL_OK)?TRUE:FALSE;
+	return (HAL_I2C_IsDeviceReady(&hi2c[id],address,2,100) == HAL_OK)?TRUE:FALSE;
 }
 
 #endif

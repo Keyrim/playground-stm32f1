@@ -1,3 +1,4 @@
+"appli/hmc5883.o"
 "appli/main.o"
 "appli/ms5611.o"
 "appli/stm32f1_i2c.o"

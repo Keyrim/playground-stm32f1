@@ -62,6 +62,9 @@ Id pour le pc :
 		ID_PC_PID_PITCH			169
 		ID_PC_PID_YAW			170
 		ID_PC_ALTITUDE			171
+		ID_PC_PID_ROLL_RATE		172
+		ID_PC_PID_PITCH_RATE		173
+		ID_PC_PID_YAW_RATE		174
 		
 	5 octects :
 

@@ -41,8 +41,8 @@ typedef enum{
 	TRAME_GPGGA				//Une trame GPGGA a été reçue
 }nmea_frame_e;
 
-nmea_frame_e DRONE_GPS_process_rx(uint8_t c, gps_datas_t * gps_datas);
-void DRONE_GPS_congif(uart_id_e id_uart);
+nmea_frame_e GPS_process_rx(uint8_t c, gps_datas_t * gps_datas);
+void GPS_congif(uart_id_e id_uart);
 
 #endif /* GPS_H_ */
 

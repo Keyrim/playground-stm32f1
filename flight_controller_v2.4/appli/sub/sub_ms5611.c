@@ -6,8 +6,10 @@
  */
 #include "sub_action.h"
 
-#define PERIODE_TEMP 15
+//On alterne entre 15(periode_temperature) mesure de la pression et une mesure de température car la température ne change vite
+#define PERIODE_TEMPERATURE 15
 
+//Gestion des requêtes de donnée, calcul de pression température et altitude pour le baromètre
 uint32_t sub_ms5611(State_drone_t * drone){
 	static int32_t read_state = 0 ;
 	static uint32_t wait_time = 0 ;
@@ -58,7 +60,7 @@ uint32_t sub_ms5611(State_drone_t * drone){
 
 
 				compteur_temp ++ ;
-				if(compteur_temp == PERIODE_TEMP){
+				if(compteur_temp == PERIODE_TEMPERATURE){
 					//Prochaine action prend 57 µs
 					to_return = 70 ;
 					compteur_temp = 0;

@@ -5,13 +5,13 @@
  *      Author: Théo
  */
 
-#include "DRONE_batterie.h"
+#include "Batterie.h"
 
-void DRONE_batterie_init(DRONE_batterie_t * batterie, adc_id_e adc, double voltage_coef){
+void Batterie_init(DRONE_batterie_t * batterie, adc_id_e adc, double voltage_coef){
 	ADC_init() ;
 	batterie->voltage_coef = voltage_coef ;
 	batterie->adc_voltage = adc ;
 }
-void DRONE_batterie_update(DRONE_batterie_t * batterie){
+void Batterie_update(DRONE_batterie_t * batterie){
 	batterie->voltage = (double)ADC_getValue(batterie->adc_voltage) * batterie->voltage_coef ;
 }

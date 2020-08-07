@@ -16,7 +16,7 @@
 
 void HIGH_LVL_On_The_Ground(State_drone_t * drone);
 void HIGH_LVL_Manual(State_drone_t * drone);
-void HIGH_LVL_Manual_Stylee(State_drone_t * drone, State_base_t * base);
+void HIGH_LVL_Manual_Hand_Control(State_drone_t * drone, State_base_t * base);
 void HIGH_LVL_Parachute(State_drone_t * drone);
 void HIGH_LVL_Calibrate_MPU(State_drone_t * drone);
 void HIGH_LVL_Manual_Pc(State_drone_t * drone);

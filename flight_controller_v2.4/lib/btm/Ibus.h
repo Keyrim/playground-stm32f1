@@ -17,6 +17,7 @@ typedef enum{
 	CHANNELS
 }state_ibus_t;
 
+///Structure pour l ibus
 typedef struct{
 	uart_id_e uart ;
 	uint8_t buffer[32] ;

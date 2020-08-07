@@ -10,22 +10,23 @@
 #include "settings.h"
 #include "macro_types.h"
 #include "MAE.h"
-#include "../lib/btm\esc.h"
-#include "../lib/btm/sequence_led.h"
-#include "../lib/btm/DRONE_gps.h"
-#include "../lib/btm/DRONE_mpu6050.h"
-#include "../lib/btm/pid.h"
-#include "../lib/btm/uart_lib.h"
-#include "../lib/btm/DRONE_batterie.h"
-#include "../lib/btm/DRONE_consigne.h"
-#include "../lib/btm/ibus.h"
-#include "../lib/btm/ms5611.h"
-#include "../lib/btm/channel_annalysis.h"
+
+#include "../lib/btm/Batterie.h"
+#include "../lib/btm/Channel_annalysis.h"
+#include "../lib/btm/Consigne.h"
+#include "../lib/btm/Esc.h"
+#include "../lib/btm/Gps2.h"
+#include "../lib/btm/Ibus.h"
+#include "../lib/btm/Mpu_imu.h"
+#include "../lib/btm/MS5611.h"
+#include "../lib/btm/Pid.h"
+#include "../lib/btm/Sequence_led.h"
+#include "../lib/btm/Uart_lib.h"
 
 #ifndef SYSTEM_D_H_
 #define SYSTEM_D_H_
 
-//Struct capteur
+//Structure capteurs
 typedef struct{
 	gps_datas_t gps ;
 	DRONE_batterie_t batterie ;
@@ -33,7 +34,7 @@ typedef struct{
 	ms5611_t ms5611 ;
 }DRONE_capteurs_t;
 
-//Struct stabilisation
+//Structure stabilisation
 typedef struct{
 	ESC_e escs[4];
 	//Pid for lvled mode
@@ -44,18 +45,18 @@ typedef struct{
 	PID_t pid_roll_rate ;
 	PID_t pid_pitch_rate ;
 	PID_t pid_yaw_rate ;
+	//Mode de stabilisation
 	Stabilisation_SM stab_mode ;
 }DRONE_stabilisation_t;
 
-//Struct communication
+//Structure communication
 typedef struct{
 	ibus_t ibus;
 	uart_struct_e uart_telem ;
 	channel_analysis_t ch_analysis ;
 }DRONE_communication_t;
 
-//Struct soft
-
+//Structure pour le code
 typedef struct{
 	Flight_Mode_SM state_flight_mode ;
 	bool_e entrance_flight_mode ;
@@ -67,14 +68,12 @@ typedef struct{
 	bool_e flags[NB_FLAGS];
 }DRONE_soft_t;
 
-//Struct ihm
+//Structure de l'ihm
 typedef struct{
 	sequence_led_t led_etat ;
 }DRONE_ihm_t;
 
-
-
-// Struct du drone
+//Structure principale du drone
 typedef struct{
 
 	DRONE_capteurs_t capteurs ;
@@ -86,6 +85,7 @@ typedef struct{
 
 }State_drone_t;
 
+//Structure de la base
 typedef struct{
 	double angle_x ;
 	double angle_y ;

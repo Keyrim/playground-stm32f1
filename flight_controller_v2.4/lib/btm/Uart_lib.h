@@ -12,6 +12,8 @@
 #include "systick.h"
 #define TX_BUFFER_SIZE 50
 
+
+//Structure pour l'uart
 typedef struct{
 	uint8_t tx_buffer [TX_BUFFER_SIZE];
 	uart_id_e uart_id ;

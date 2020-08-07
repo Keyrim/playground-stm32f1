@@ -11,13 +11,13 @@
 #include "MAE.h"
 #include "system_d.h"
 #include "systick.h"
-#include "../../btm/sequence_led.h"
 #include "../../ressources/sequences_led.h"
-#include "../../btm/telemetrie.h"
-#include "../../btm/state_machine.h"
 #include "MPU6050/stm32f1_mpu6050.h"
 #include "high_lvl_cases.h"
 #include "IDs.h"
+#include "../lib/btm/Sequence_led.h"
+#include "../lib/btm/State_machine.h"
+#include "../lib/btm/Telemetrie.h"
 
 void LOW_LVL_Wait_Loop(State_drone_t * drone);
 void LOW_LVL_Pwm_High(State_drone_t * drone);

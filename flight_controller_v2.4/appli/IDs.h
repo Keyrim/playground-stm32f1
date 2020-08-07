@@ -9,6 +9,8 @@
 #define IDS_H_
 
 //Def de tous ids pour la télémétrie
+//Voir le fichier "addressage com drone" dans le dossier STM32
+//L'appli sur le pc connait elle aussi tous ces id
 
 #define ID_NOMBRE_ID 							13
 

@@ -6,11 +6,11 @@
  */
 
 #include "high_lvl_cases.h"
-#include "../btm/telemetrie.h"
 #include "../../ressources/sequences_led.h"
-#include "../btm/test_transition.h"
+#include "../lib/btm/Telemetrie.h"
+#include "../lib/btm/Test_transition.h"
 
-//Private functions used to transit from one state to an other
+//Fonction de transition
 void transition_high_lvl(State_drone_t * drone);
 
 //Fonctions où on test des états
@@ -29,7 +29,7 @@ bool_e check_manual_accro_request(State_drone_t * drone);
 bool_e check_stop_motor_request(State_drone_t * drone);
 bool_e check_parachute_request(State_drone_t * drone);
 bool_e check_manual_request(State_drone_t * drone);
-bool_e check_manual_style_request(State_drone_t * drone);
+bool_e check_manual_hand_control_request(State_drone_t * drone);
 
 
 
@@ -124,10 +124,10 @@ bool_e check_parachute_request(State_drone_t * drone){
 	else
 		return FALSE;
 }
-bool_e check_manual_style_request(State_drone_t * drone){
+bool_e check_manual_hand_control_request(State_drone_t * drone){
 	return FALSE ;
 	if(drone->communication.ibus.channels[SWITCH_2] > 1350 && drone->communication.ibus.channels[SWITCH_2] < 1650){
-		drone->soft.state_flight_mode = MANUAL_STYLEE ;
+		drone->soft.state_flight_mode = MANUAL_HAND_CONTROL ;
 		TELEMETRIE_send_high_lvl_transi(SUB_ID_PC_HIGH_LVL_TRANSITION_SWITCH, &drone->communication.uart_telem);
 		return TRUE ;
 	}
@@ -185,7 +185,7 @@ bool_e check_stop_motor_request(State_drone_t * drone){
 
 
 
-//Transitions
+//Fonction de transitons qui devrait se faire remplacer prochainnement par "high_lvl_transition"
 test_t arm_switch_test ;
 test_t throttle_low_test ;
 test_t throttle_really_low_test ;
@@ -268,7 +268,7 @@ void transition_high_lvl(State_drone_t * drone){
 				break;
 			break;
 
-		case MANUAL_STYLEE:
+		case MANUAL_HAND_CONTROL:
 			break;
 
 		case PARACHUTE:
@@ -295,14 +295,16 @@ void transition_high_lvl(State_drone_t * drone){
 	}
 }
 
+/*
+ * Fonctionnement de la high lvl :
+ * 	->	Si on rentre dans un nouvel état on change la séquence de la led et on change le mode de stabilisation
+ * 	->	Chaque état fait ce qu'il à faire : changement des consignes etc
+ * 	->	Enfin on regarde avec la fonction de transition si on doit changer d'état
+ */
 
 
-
-
-
+//Mode "on_the_ground" : on arrête les moteurs
 void HIGH_LVL_On_The_Ground(State_drone_t * drone){
-
-	//On démarre par ici et on va en profiter pour init les transition
 
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stab_mode = STAB_OFF ;
@@ -318,6 +320,7 @@ void HIGH_LVL_On_The_Ground(State_drone_t * drone){
 
 }
 
+//Mode "manual" : stablisation "levelled" et on met à jour les consignes d'angles par rapport à la télécomande radio
 void HIGH_LVL_Manual(State_drone_t * drone){
 	//			---------------------------- 		MAIN PART 			----------------------------------------
 	if(drone->soft.entrance_flight_mode){
@@ -337,7 +340,7 @@ void HIGH_LVL_Manual(State_drone_t * drone){
 	transition_high_lvl(drone);
 }
 
-
+//Mode "manual_accro" : stabilisation "accro" et met à jour les consignes de vitesses angulaires par rapport à la télécomande radio
 void HIGH_LVL_Manual_Accro(State_drone_t * drone){
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stab_mode = ACCRO ;
@@ -355,7 +358,8 @@ void HIGH_LVL_Manual_Accro(State_drone_t * drone){
 	transition_high_lvl(drone);
 }
 
-void HIGH_LVL_Manual_Stylee(State_drone_t * drone, State_base_t * base){
+//Mode "manual_hand_control" : stabilisation "levelled", les consignes d'angles sont reçu par la base (base équipée d'un mpu6050 positioné sur la main)
+void HIGH_LVL_Manual_Hand_Control(State_drone_t * drone, State_base_t * base){
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stab_mode = LEVELLED ;
 		TELEMETRIE_send_consigne_base(SUB_ID_BASE_CONSIGNE_START_SENDING_ANGLES, &drone->communication.uart_telem);
@@ -372,6 +376,7 @@ void HIGH_LVL_Manual_Stylee(State_drone_t * drone, State_base_t * base){
 
 }
 
+//Mode "parachute" : stabilisation "levelled", on appel la sub parachute
 void HIGH_LVL_Parachute(State_drone_t * drone){
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stab_mode = LEVELLED ;
@@ -387,6 +392,8 @@ void HIGH_LVL_Parachute(State_drone_t * drone){
 		transition_high_lvl(drone);
 }
 
+
+//Mode "calibrate_mpu" :stabilisation off,  quand le drone est au sol on peut calibrer le mpu
 void HIGH_LVL_Calibrate_MPU(State_drone_t * drone){
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stab_mode = STAB_OFF ;
@@ -394,11 +401,12 @@ void HIGH_LVL_Calibrate_MPU(State_drone_t * drone){
 	}
 
 	//			---------------------------- 		MAIN PART 			----------------------------------------
-	if(mpu6050_calibrate(&drone->capteurs.mpu, 1000)){
+	if(Mpu_imu_calibrate(&drone->capteurs.mpu, 1000)){
 		drone->soft.state_flight_mode = ON_THE_GROUND ;
 	}
 }
 
+//Mode "manual_pc" : stabilisation levelled, on control le "throttle" depuis le pc
 void HIGH_LVL_Manual_Pc(State_drone_t * drone){
 	if(drone->soft.entrance_flight_mode){
 		drone->stabilisation.stab_mode = LEVELLED ;
@@ -406,18 +414,16 @@ void HIGH_LVL_Manual_Pc(State_drone_t * drone){
 		LED_SEQUENCE_set_sequence(&drone->ihm.led_etat, SEQUENCE_LED_5);
 	}
 
-	//Controle des consigne moteurs pas evenement dans la sub "receive_data" donc rien à faire à part check si on reste là ou pas
 	transition_high_lvl(drone);
 }
 
+//Mode "imu_failed_init" : stabilisation off,  si le mpu ne s'est pas init, on reste bloqué au sol en attente d'un reset hard
 void HIGH_LVL_IMU_Failed_Init(State_drone_t * drone){
 	if(drone->soft.entrance_flight_mode){
 			drone->stabilisation.stab_mode = STAB_OFF ;
 			LED_SEQUENCE_set_sequence(&drone->ihm.led_etat, SEQUENCE_LED_7);
 		}
-	//DRONE_mpu6050_init(&drone->capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
 	transition_high_lvl(drone);
-
 }
 
 

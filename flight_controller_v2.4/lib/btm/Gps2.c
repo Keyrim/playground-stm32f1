@@ -7,7 +7,7 @@
  */
 #include "config.h"
 #if USE_GPS
-#include "DRONE_gps.h"
+#include "Gps2.h"
 #include "stm32f1xx_hal.h"
 #include <math.h>
 #include <stdlib.h>
@@ -38,7 +38,7 @@ static uint8_t hextoint(char c);
 
 
 //Cette fonction configure le module
-void DRONE_GPS_congif(uart_id_e id_uart){
+void GPS_congif(uart_id_e id_uart){
 	UART_init(id_uart, 9600);
 	//Set the baud rate to 57600 b/s
 //	uint8_t Set_to_57kbps[28] = {0xB5, 0x62, 0x06, 0x00, 0x14, 0x00, 0x01, 0x00, 0x00, 0x00, 0xD0, 0x08, 0x00, 0x00,
@@ -72,7 +72,7 @@ void DRONE_GPS_congif(uart_id_e id_uart){
  * Lorsqu'on atteint la fin de la trame (détection d'un caractère '\n') -> on sous-traite le découpage de la trame au parser.
  * Une trame correctement lue donne lieu au remplissage de la structure gps_datas et au renvoi d'une valeur de retour différente de NO_TRAME_RECEIVED (0)
  */
-nmea_frame_e DRONE_GPS_process_rx(uint8_t c, gps_datas_t * gps_datas)
+nmea_frame_e GPS_process_rx(uint8_t c, gps_datas_t * gps_datas)
 {
 	static uint8_t buffer[BUFFER_SIZE];
 	static uint16_t index = 0;

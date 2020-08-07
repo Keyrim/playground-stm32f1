@@ -5,7 +5,7 @@
  *      Author: Theo
  */
 
-#include "telemetrie.h"
+#include "Telemetrie.h"
 
 #include "stm32f1_uart.h"
 #include "macro_types.h"

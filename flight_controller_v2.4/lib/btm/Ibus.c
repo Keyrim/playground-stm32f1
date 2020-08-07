@@ -5,9 +5,11 @@
  *      Author: Théo
  */
 
-#include "ibus.h"
+#include "Ibus.h"
 #include "systick.h"
 
+
+//Fonction privé qui test si le checsum est bon sur un buffer
 uint32_t check_sum_f(uint8_t * buffer);
 uint32_t check_sum_f(uint8_t * buffer){
 	uint32_t sum = 0 ;
@@ -16,11 +18,14 @@ uint32_t check_sum_f(uint8_t * buffer){
 	return sum ;
 }
 
+//Init de l'uart
 void IBUS_init(ibus_t * ibus, uart_id_e uart){
 	ibus->uart = uart ;
 	UART_init(ibus->uart, 115200);
 }
 
+//On lit un caractère si il y en a un de dispo et on l'ajoute au buffer
+//Quand on a tous noc caractère on met à jours les valeurs de du tableau radio
 bool_e IBUS_check_data(ibus_t * ibus){
 	bool_e to_return = FALSE ;
 	if(UART_data_ready(ibus->uart)){

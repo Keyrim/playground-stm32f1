@@ -5,13 +5,15 @@
  *      Author: Théo
  */
 
-#include "test_transition.h"
+#include "Test_transition.h"
 
+//On save la fonction
 void TRANSITION_init_test(test_t * test, int32_t (*test_function)(State_drone_t * drone, bool_e test)){
 	test->nb_test_succesfull = 0 ;
 	test->test_function = test_function ;
 }
 
+//On appelle la fonction de test qu'on a pour la structure de test, et on renvoit true si on atteint le nombre de test positif consécutif recquis
 bool_e TRANSITION_test(test_t * test_struct, State_drone_t * drone, bool_e test, int32_t nb_recquiered){
 	//Quand on call une fonction de test elle renvoit, oui, non ou j'ai rien à dire
 

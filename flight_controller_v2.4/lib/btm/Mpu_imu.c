@@ -5,7 +5,7 @@
  *      Author: Theo
  */
 
-#include "DRONE_mpu6050.h"
+#include "Mpu_imu.h"
 
 #include "systick.h"
 #include "stdio.h"
@@ -14,7 +14,7 @@
 
 
 
-//Private functions
+//Fonction valeur absolu pour usage privé
 static double absolu(double x);
 static double absolu(double x){
 	if( x > 0)
@@ -23,7 +23,9 @@ static double absolu(double x){
 		return -x ;
 }
 
-bool_e mpu6050_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch){
+//La fonction doit être appelé autant de fois que l'on souhaite d'epoch
+//Quand elle a été appelée epoch fois, elle renvoit vrai et met à jour les offset
+bool_e Mpu_imu_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch){
 	static uint16_t e = 0 ;
 	static double sum_ac_x = 0;
 	static double sum_ac_y = 0;
@@ -34,8 +36,8 @@ bool_e mpu6050_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch){
 
 	bool_e to_return = 0 ;
 
-	//Quand cette fonction est appelée, le drone est censé être au statique à l'horizontal
-	//on stocke donc l'erreur qui servira comme offset plus tard
+	//Quand cette fonction est appelée, le drone est censé être à l'horizontal
+	//on sauvegarde donc l'erreur qui servira comme offset plus tard
 	sum_ac_x += angles->x_acc + angles->x_acc_offset ;
 	sum_ac_y += angles->y_acc + angles->y_acc_offset ;
 	sum_ac_z += angles->z_acc - 1 + angles->z_acc_offset ;
@@ -43,10 +45,6 @@ bool_e mpu6050_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch){
 	sum_gyro_y += angles->y_gyro + angles->y_gyro_offset ;
 	sum_gyro_z += angles->z_gyro + angles->z_gyro_offset ;
 
-	//On met à jour la dernière fois où on a sommé
-
-
-	//On oublie pas qu'on vient de faire une epoche de plus
 	e ++ ;
 	if(e == epoch){
 		//On met à jour les offsets
@@ -74,125 +72,80 @@ bool_e mpu6050_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch){
 	return to_return ;
 }
 
-
-void DRONE_mpu6050_update_angles(DRONE_mpu6050_t * angles){
-	//Update mpu values
-	////////////////////////////////////////////////////////// = temps en micros
-	////////////////////////////////////////////////////////// 0
-	//volatile uint32_t time ;
-	//volatile uint32_t t0 ;
+//On lit les données brutes de l'accèléromètre puis on les filtres pour récupèrer l'angle
+void Mpu_imu_update_angles(DRONE_mpu6050_t * angles){
+	//Mis à jour des donnée brute
 	MPU6050_ReadAll(&angles->raw_data_mpu);
 
-	////////////////////////////////////////////////////////// 423
-
-
-	//DRONE_mpu6050_t acc_angles ;
+	//On déduit l'accélération sur chaques axes en tenant compte de la sensi choisie
 	angles->x_acc = ((double)angles->raw_data_mpu.Accelerometer_X / angles->acc_sensi) - angles->x_acc_offset ;
 	angles->y_acc = ((double)angles->raw_data_mpu.Accelerometer_Y / angles->acc_sensi) - angles->y_acc_offset ;
 	angles->z_acc = ((double)angles->raw_data_mpu.Accelerometer_Z / angles->acc_sensi) - angles->z_acc_offset ;
+
+	//On calcul l'accélération total
 	double acc_total = sqrt((angles->x_acc * angles->x_acc ) + (angles->y_acc * angles->y_acc) + (angles->z_acc * angles->z_acc));
 
-	////////////////////////////////////////////////////////// 465
-
-
-
+	//On divise par l'accélération plus tard donc pour éviter une divisions par zéro ..
 	if(acc_total != 0  ){
+		//On veut pas de asin (x) avec x >1
 		if(absolu(angles->x_acc) <= absolu(acc_total)){
 			angles->x_acc_angle = - asin(angles->x_acc / acc_total ) * (double)57.32;
-
-	////////////////////////////////////////////////////////// 548
-
-
-
-
 
 			//Permet de se repérer à peut près quand on à la tête à l'envers
 			double pie =  180 ;
 			if(angles->x_acc_angle < 0)
 				pie = - 180 ;
-
-
-	////////////////////////////////////////////////////////// 525
-
-
-
 			double angle_x_acc = pie - angles->x_acc_angle   ;
 			if(absolu(angles->x_acc_angle - angles->y) > absolu(angle_x_acc - angles->y))
 				 angles->x_acc_angle = angle_x_acc ;
 		}
 
-
-	////////////////////////////////////////////////////////// 569
-
+		//On veut pas de asin (y) avec y >1
 		if(absolu(angles->y_acc) <= absolu(acc_total)){
 			angles->y_acc_angle =   asin(angles->y_acc / acc_total ) * (double)57.32;
-			//Permet de se repérer à peut près quand on à la tête à l'envers
-
-	////////////////////////////////////////////////////////// 644
-
 
 			double pie =  180 ;
 			if(angles->y_acc_angle < 0)
 				pie = - 180 ;
-
-
-	////////////////////////////////////////////////////////// 649
-
 			double angle_y_acc = pie - angles->y_acc_angle   ;
 			if(absolu(angles->y_acc_angle - angles->x) > absolu(angle_y_acc - angles->x))
 				 angles->y_acc_angle = angle_y_acc ;
 		}
 	}
-	////////////////////////////////////////////////////////// 668
 
 
-
-	//If it is the first reading we do, we initialize
+	//Pour la première lecture on utilise juste l'accéléromètre pour déterminer l'angle de départ
 	if(angles->first_read){
 		angles->x = angles->x_acc_angle ;
 		angles->y = angles->y_acc_angle ;
 		angles->z = 0 ;
 		angles->first_read = FALSE ;
 	}
-	//Otherwise, we use the gyro
 	else{
-	////////////////////////////////////////////////////////// 622
-
-		//t0 = SYSTICK_get_time_us() ;
-
+		//On récupère la vitesse angulaire
 		angles->x_gyro = ((double)angles->raw_data_mpu.Gyroscope_X / angles->gyro_sensi) - angles->x_gyro_offset;
 		angles->y_gyro = ((double)angles->raw_data_mpu.Gyroscope_Y / angles->gyro_sensi) - angles->y_gyro_offset;
 		angles->z_gyro = ((double)angles->raw_data_mpu.Gyroscope_Z / angles->gyro_sensi) - angles->z_gyro_offset;
 
-		//time = SYSTICK_get_time_us() - t0 ; 	//56 sans fg 58/60 avec et 25 en float
-
-
-
-		////////////////////////////////////////////////////////// 729
+		//On intègre la vitesse sur les angles
 		angles->x += angles->x_gyro / (double)angles->frequency;
 		angles->y += angles->y_gyro / (double)angles->frequency;
 		angles->z += angles->z_gyro / (double)angles->frequency;
 
-
-		////////////////////////////////////////////////////////// 730
-
-		//Pour prendre en compte le transfert d'angle quand je fais une rotation sur le yaw
+		//On prend en compte le transfert d'angle causé par le yaw (axe vertical)
 		angles->x += sin(angles->z_gyro * 0.017 / (double)angles->frequency) * angles->y ;
 		angles->y -= sin(angles->z_gyro * 0.017 / (double)angles->frequency) * angles->x ;
 
-		////////////////////////////////////////////////////////// 770
-
-
 		//Complementary filter
-		//acc_x used with gyY makes sense dw (it really does btw)
+		//acc_x avec gyro_y c'est normal
 		angles->x = angles->alpha * angles->x + (angles->y_acc_angle ) * ((double)1 - angles->alpha);
 		angles->y = angles->alpha * angles->y + (angles->x_acc_angle ) * ((double)1 - angles->alpha);
 
 	}
-	//time = SYSTICK_get_time_us() - t0 ;
 }
 
-void DRONE_mpu6050_init(DRONE_mpu6050_t * angles, MPU6050_Accelerometer_t acc, MPU6050_Gyroscope_t gyro, double alpha, uint16_t frequency){
+//
+void Mpu_imu_init(DRONE_mpu6050_t * angles, MPU6050_Accelerometer_t acc, MPU6050_Gyroscope_t gyro, double alpha, uint16_t frequency){
 	//Init du mpu
 	angles->mpu_result =  MPU6050_Init(&angles->raw_data_mpu, NULL, GPIO_PIN_12, MPU6050_Device_0,acc, gyro);
 

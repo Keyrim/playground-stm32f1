@@ -16,7 +16,7 @@
 #include "low_lvl_cases.h"
 
 
-//Fichier de ref pour les configurations
+//Fichier de ref pour les configurations / branchements
 #include "branchement.h"
 #include "settings.h"
 #include "pid_config.h"
@@ -38,7 +38,7 @@ int main(void)
 
 	//	-------------------------------------------- Setup -----------------------------------------------------------
 	HAL_Init();
-	DRONE_batterie_init(&drone.capteurs.batterie, BATTERIE_ADC_VOLTAGE, BATTERIE_RESISTANCES_COEF);
+	Batterie_init(&drone.capteurs.batterie, BATTERIE_ADC_VOLTAGE, BATTERIE_RESISTANCES_COEF);
 
 
 	//Init sequence led
@@ -50,35 +50,35 @@ int main(void)
 	uart_init(&drone.communication.uart_telem, UART_TELEMETRIE, 57600, 8);
 	SYS_set_std_usart(UART_TELEMETRIE, UART_TELEMETRIE, UART_TELEMETRIE);
 
-	//Init du gps, on passe sur une fréquence de 5hz sur l'envoit de données et d'autre trucs
-	DRONE_GPS_congif(UART_GPS);
+	//Init du gps
+	GPS_congif(UART_GPS);
 
 	//------------------Init du MPU et du complementary filer
-	DRONE_mpu6050_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
+	Mpu_imu_init(&drone.capteurs.mpu,MPU6050_Accelerometer_16G, MPU6050_Gyroscope_500s, 0.998, 250 );
 	//Si le mpu ne s'est pas init on démarre dans la high lvl imu non init
 	if(drone.capteurs.mpu.mpu_result)
 		drone.soft.state_flight_mode = IMU_FAILED_INIT ;
 
-	//------------------Init ibus module
+	//------------------Init ibus
 	IBUS_init(&drone.communication.ibus, UART_IBUS);
-	//------------------Init channel analysis moduke
+	//------------------Init channel analysis
 	channel_analysis_init(&drone.communication.ch_analysis, 10, drone.communication.ibus.channels);
-	//------------------Init pwm escs module
+	//------------------Init pwm escs
 	ESC_init(&drone.stabilisation.escs[0], esc0_gpio, esc0_pin);
 	ESC_init(&drone.stabilisation.escs[1], esc1_gpio, esc1_pin);
 	ESC_init(&drone.stabilisation.escs[2], esc2_gpio, esc2_pin);
 	ESC_init(&drone.stabilisation.escs[3], esc3_gpio, esc3_pin);
 
-	//Init ms5611
+	//Init ms5611 baromètre
 	HAL_Delay(50);
 	MS5611_get_calibration_values(&drone.capteurs.ms5611, FALSE);
 
-	//Init pids angle
+	//Init pids pour le mode "angle / levelled "
 	PID_init(&drone.stabilisation.pid_roll, PID_SETTINGS_ROLL);
 	PID_init(&drone.stabilisation.pid_pitch,  PID_SETTINGS_PITCH);
 	PID_init(&drone.stabilisation.pid_yaw, PID_SETTINGS_YAW);
 
-	//Init pids angle rates
+	//Init pids pour le mode "accro / rate"
 	PID_init(&drone.stabilisation.pid_roll_rate, PID_SETTINGS_ROLL_ACCRO);
 	PID_init(&drone.stabilisation.pid_pitch_rate, PID_SETTINGS_PITCH_ACCRO);
 	PID_init(&drone.stabilisation.pid_yaw_rate, PID_SETTINGS_YAW_ACCRO);
@@ -89,6 +89,7 @@ int main(void)
 	//	--------------------------------------------- Main Loop	-----------------------------------------------------
 	while(1)
 	{
+		//On passe dans chacuns des case de la low lvl à 250 hertz
 		switch(drone.soft.state_low_level){
 			case WAIT_LOOP :
 				LOW_LVL_Wait_Loop(&drone);
@@ -129,7 +130,7 @@ int main(void)
 
 
 
-		//Cette fonction est appelé à chaque boucle et regarde si le drone à du temps dispo
+		//Cette fonction est appelée à chaque boucle et regarde si le drone à du temps dispo
 		//Si elle a du temps elle l'utilise (gestion led état, uart, ibus, etc)
 		sub_free_time(&drone, &base);
 

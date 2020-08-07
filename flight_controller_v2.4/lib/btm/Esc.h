@@ -10,6 +10,7 @@
 #include "macro_types.h"
 #include "stm32f103xb.h"
 
+//Structure pour un esc
 typedef struct{
 	uint16_t pulsation ;
 	GPIO_TypeDef* gpio;
@@ -17,7 +18,6 @@ typedef struct{
 	bool_e signal_state ;
 	uint32_t pulse_start_time ;
 }ESC_e;
-
 
 
 bool_e ESC_End_pulse(ESC_e * esc);

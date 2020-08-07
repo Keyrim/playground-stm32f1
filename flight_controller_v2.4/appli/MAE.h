@@ -7,10 +7,8 @@
 
 #ifndef MAE_H_
 #define MAE_H_
-#include "settings.h"
-#include "macro_types.h"
 
-//High Level State machine
+//état pour la high lvl
 typedef enum{
 	WAIT_LOOP,
 	PWM_HIGH,
@@ -23,12 +21,12 @@ typedef enum{
 	ERROR_HIGH_LEVEL
 }Low_Level_SM;
 
-//Flight mode state machine
+//état pour la low lvl
 typedef enum{
 	ON_THE_GROUND,
 	MANUAL,
 	PARACHUTE,
-	MANUAL_STYLEE,
+	MANUAL_HAND_CONTROL,
 	POSITION_HOLD,
 	ALTITUDE_HOLD,
 	CALIBRATE_MPU6050,
@@ -37,6 +35,7 @@ typedef enum{
 	IMU_FAILED_INIT
 }Flight_Mode_SM;
 
+//état pour la stabilisation
 typedef enum{
 	STAB_OFF,
 	LEVELLED,

@@ -5,8 +5,9 @@
  *      Author: Theo
  */
 
-#include "hmc5883.h"
+#include "Hmc5883.h"
 
+//Init de la sensi et de l'i2c si besoin
 void HMC5883_init(compas_struct_t * compas, bool_e init_i2c, uint8_t operating_mode, uint8_t measurement_rate, uint8_t gain_config, uint8_t sample_average){
 	if(init_i2c)
 		I2C_Init(I2C1, 400000);
@@ -52,7 +53,7 @@ void HMC5883_init(compas_struct_t * compas, bool_e init_i2c, uint8_t operating_m
 	I2C_Write(I2C1, HMC5883_I2C_ADRESSE, HMC5883_MODE , tmp);
 
 }
-
+//On lit les valeurs sur les trois axes
 void HMC5883_read(compas_struct_t * compas){
 	uint8_t data[6];
 	I2C_ReadMulti(I2C1, HMC5883_I2C_ADRESSE, HMC5883_X_MSB, data, 6);

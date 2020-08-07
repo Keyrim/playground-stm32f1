@@ -5,7 +5,7 @@
  *      Author: Theo
  */
 
-#include "channel_annalysis.h"
+#include "Channel_annalysis.h"
 
 
 bool_e channel_analysis_init(channel_analysis_t * channels, int32_t nb_channel, int32_t * channels_array){
@@ -21,7 +21,7 @@ bool_e channel_analysis_init(channel_analysis_t * channels, int32_t nb_channel, 
 		channels->channel_type[ch] = JOYSTICK ;
 		channels->analysis_mode[ch] = NO_ANALYSIS ;
 	}
-	//Les autres ont dit c'est des switch
+	//Les autres ont dit que c'est des switchs
 	for(uint8_t ch = 4 ; ch < 10; ch ++){
 		channels->channel_type[ch] = SWITCH_3_POS ;
 		channels->analysis_mode[ch] = NO_ANALYSIS ;
@@ -38,7 +38,7 @@ void channel_analysis_process(channel_analysis_t * channels){
 				//On fait R
 				break;
 			case SEQUENCE_ANALYSIS:
-				//..
+				//todo aanlyse de séquences sur les switchs
 				break;
 			case INSTANT_ANALYSIS:
 				if(channels->channels[ch] < 1300)

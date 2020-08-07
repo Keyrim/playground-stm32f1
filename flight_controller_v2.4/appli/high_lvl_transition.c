@@ -14,7 +14,7 @@
 //Nb de fonctions de test max pour chaque état possible
 #define NB_FUNCTION_TRANSITION 5
 
-//Tableaux pour les transition : fonction de tests, paramètre pour les fonctions, state suivant si condition validé
+//Tableaux pour les transitions : fonction de tests, paramètres pour les fonctions, state suivant si condition validée
 bool_e (* test_functions[NB_STATES][NB_FUNCTION_TRANSITION])(State_drone_t * drone, int32_t setting);
 int32_t function_parameter [NB_STATES][NB_FUNCTION_TRANSITION] ;
 Flight_Mode_SM next_states [NB_STATES][NB_FUNCTION_TRANSITION] ;

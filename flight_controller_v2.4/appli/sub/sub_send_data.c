@@ -6,7 +6,8 @@
  */
 
 #include "sub_action.h"
-#include "../btm/telemetrie.h"
+
+#include "../../lib/btm/Telemetrie.h"
 
 #define NB_OCTECT_MAX 20	//On envoit au plus 10 octect par loop
 static bool_e first_call = TRUE ;
@@ -38,6 +39,9 @@ Data_group pid_roll_d ;
 Data_group pid_roll_p ;
 Data_group altitude ;
 
+
+
+//Sub qui envoit des données par télémétrie à qui veut l'entendre ^^
 void sub_send_data(State_drone_t * drone){
 	if(first_call){
 

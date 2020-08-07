@@ -16,7 +16,7 @@ typedef struct{
 	double voltage_coef ;
 }DRONE_batterie_t;
 
-void DRONE_batterie_init(DRONE_batterie_t * batterie, adc_id_e adc, double voltage_coef);
-void DRONE_batterie_update(DRONE_batterie_t * batterie);
+void Batterie_init(DRONE_batterie_t * batterie, adc_id_e adc, double voltage_coef);
+void Batterie_update(DRONE_batterie_t * batterie);
 
 #endif /* LIB_PERSO_DRONE_BATTERIE_H_ */

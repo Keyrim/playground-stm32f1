@@ -52,9 +52,9 @@ typedef struct{
 
 }DRONE_mpu6050_t;
 
-void DRONE_mpu6050_init(DRONE_mpu6050_t * angles, MPU6050_Accelerometer_t acc_sensi, MPU6050_Gyroscope_t gyro_sensi, double alpha, uint16_t frequency);
-void DRONE_mpu6050_update_angles(DRONE_mpu6050_t * angles);
-bool_e mpu6050_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch);	//Return true si c fini, faux si il est en train de calibrer
+void Mpu_imu_init(DRONE_mpu6050_t * angles, MPU6050_Accelerometer_t acc_sensi, MPU6050_Gyroscope_t gyro_sensi, double alpha, uint16_t frequency);
+void Mpu_imu_update_angles(DRONE_mpu6050_t * angles);
+bool_e Mpu_imu_calibrate(DRONE_mpu6050_t * angles, uint16_t epoch);	//Return true si c fini, faux si il est en train de calibrer
 
 
 #endif /* COMPLEMENTARY_FILTER_H_ */

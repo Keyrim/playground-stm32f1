@@ -5,11 +5,12 @@
  *      Author: Théo
  */
 
-#include "sequence_led.h"
+#include "Sequence_led.h"
+
 #include "stm32f1_gpio.h"
 #include "systick.h"
 
-
+//On initialise les paramètre et on configure le pin de sortie
 void LED_SEQUENCE_init(sequence_led_t * seq_led, GPIO_TypeDef* gpio, uint16_t gpio_pin, int32_t init_seq, uint32_t periode, int8_t length_sequence, bool_e output_logic){
 	//Init des varaibles
 	seq_led->compteur = 0;
@@ -28,12 +29,16 @@ void LED_SEQUENCE_init(sequence_led_t * seq_led, GPIO_TypeDef* gpio, uint16_t gp
 
 
 }
+//On change la séquence active
 void LED_SEQUENCE_set_sequence(sequence_led_t * seq_led, int32_t seq){
 	if(seq_led->output_logic == 1)
 		//Si logique négative on inverse la séquence
 		seq = ~seq ;
+	seq_led->compteur = 0 ;
 	seq_led->sequence = seq ;
 }
+
+//On change la sortie de la led par rapport à la séquence active
 void LED_SEQUENCE_play(sequence_led_t * seq_led){
 	if(SYSTICK_get_time_us() / 1000 > seq_led->previous_time + seq_led->periode){
 		seq_led->previous_time += seq_led->periode ;
@@ -49,9 +54,6 @@ void LED_SEQUENCE_play(sequence_led_t * seq_led){
 		//TODO : verif à l'init si length > 0
 		if(seq_led->compteur == seq_led->length_sequence)
 			seq_led->compteur = 0 ;
-
-
-
 	}
 }
 

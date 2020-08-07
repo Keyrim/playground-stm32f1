@@ -4,9 +4,11 @@
  *  Created on: 11 juin 2020
  *      Author: Théo
  */
-#include "uart_lib.h"
+#include "Uart_lib.h"
 
 
+
+//On enregistre les différents paramète pour la structure donnée
 void uart_init(uart_struct_e * uart, uart_id_e uart_id_, uint32_t baud_rate_, uint32_t periode_){
 	//On init toutes les valeurs
 	uart->baud_rate = baud_rate_ ;
@@ -22,6 +24,7 @@ void uart_init(uart_struct_e * uart, uart_id_e uart_id_, uint32_t baud_rate_, ui
 
 }
 
+//On rajoute un caractère au buffer
 bool_e uart_add_one(uart_struct_e * uart, uint8_t c){
 	//Si on a dépasser le tableau, on va éviter d'écrire on ne sait pas où
 	if(uart->index_buffer < TX_BUFFER_SIZE){
@@ -33,6 +36,7 @@ bool_e uart_add_one(uart_struct_e * uart, uint8_t c){
 		return 0 ;
 }
 
+//On rajoute plusieur caractère au buffer
 bool_e uart_add_few(uart_struct_e * uart, uint8_t * str, uint16_t len){
 	//Si on a ou va dépasser le tableau, on va éviter d'écrire on ne sait pas où
 	if(uart->index_buffer + len - 1 < TX_BUFFER_SIZE){
@@ -47,6 +51,7 @@ bool_e uart_add_few(uart_struct_e * uart, uint8_t * str, uint16_t len){
 		return 0 ;
 }
 
+//On vide le buffer à intervalle de temps régulier de sorte de ne pas avoir d'overflow
 void uart_send(uart_struct_e * uart){
 	//On check si le temps recquis est passé et si le tableau n'est pas vide
 	if(SYSTICK_get_time_us() / 1000 > uart->last_time_sent + uart->periode_send && uart->index_buffer ){

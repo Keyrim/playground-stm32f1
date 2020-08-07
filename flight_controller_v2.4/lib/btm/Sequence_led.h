@@ -11,6 +11,7 @@
 #include "stm32f1_gpio.h"
 #include "macro_types.h"
 
+//Structure utilisé par les fonctions séquence led
 typedef struct{
 	GPIO_TypeDef* gpio;
 	uint16_t gpio_pin ;
@@ -19,8 +20,7 @@ typedef struct{
 	int8_t compteur ;
 	int8_t length_sequence ;
 	uint32_t previous_time ;
-	bool_e output_logic ;	// true means positive and 0 means positive
-
+	bool_e output_logic ;	//True si logique négative au niveau de la led
 }sequence_led_t;
 
 void LED_SEQUENCE_init(sequence_led_t * seq_led, GPIO_TypeDef* gpio, uint16_t gpio_pin, int32_t init_seq, uint32_t periode, int8_t length_sequence, bool_e output_logic);

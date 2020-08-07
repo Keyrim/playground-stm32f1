@@ -6,19 +6,21 @@
  */
 
 
-#include "esc.h"
+#include "Esc.h"
+
 #include "stm32f1_gpio.h"
 #include "systick.h"
 #include "../../appli/settings.h"
 
 
-
+//On met à jour la valeur pulsation en tenant compte des valeurs max et mini autorisées
 void ESC_Set_pulse(ESC_e * esc, uint16_t pulsation){
 	pulsation = MIN(PULSATION_MAX, pulsation);
 	pulsation = MAX(PULSATION_MIN, pulsation);
 	esc->pulsation = pulsation ;
 }
 
+//Init des ports
 void ESC_init(ESC_e * esc, GPIO_TypeDef* gpio, uint16_t gpio_pin){
 		esc->gpio = gpio ;
 		esc->gpio_pin = gpio_pin ;
@@ -28,6 +30,7 @@ void ESC_init(ESC_e * esc, GPIO_TypeDef* gpio, uint16_t gpio_pin){
 
 }
 
+//On met le signal à l'état haut
 void ESC_Start_pulse(ESC_e * esc){
 	esc->pulse_start_time = SYSTICK_get_time_us();
 	esc->gpio->BSRR = esc->gpio_pin ;
@@ -35,7 +38,8 @@ void ESC_Start_pulse(ESC_e * esc){
 
 }
 
-
+//Si le temps est écoulé on met le signal à l'état bas
+//On renvoit toujours l'état du signal
 bool_e ESC_End_pulse(ESC_e * esc){
 
 	if(SYSTICK_get_time_us() >= esc->pulsation + esc->pulse_start_time && esc->signal_state){

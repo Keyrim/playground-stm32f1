@@ -15,11 +15,11 @@ void transition_high_lvl(State_drone_t * drone);
 
 //Fonctions où on test des états
 //Ces fonctions ne font pas de changement d'état
-int32_t test_ppm(State_drone_t * drone, bool_e working);
-int32_t test_arm_switch(State_drone_t * drone, bool_e armed);
-int32_t test_throttle_really_low(State_drone_t * drone, bool_e superior);
-int32_t test_throttle_low(State_drone_t * drone, bool_e superior);
-int32_t test_imu_init(State_drone_t * drone, bool_e is_init);
+int32_t test_ppm(State_drone_t * drone, int32_t working);
+int32_t test_arm_switch(State_drone_t * drone, int32_t armed);
+int32_t test_throttle_really_low(State_drone_t * drone, int32_t superior);
+int32_t test_throttle_low(State_drone_t * drone, int32_t superior);
+int32_t test_imu_init(State_drone_t * drone, int32_t is_init);
 
 //Fonctions où on regarde si il ya une demande pour une action
 //Ces fonction effectues elles mêmes les changements d'état
@@ -34,7 +34,7 @@ bool_e check_manual_hand_control_request(State_drone_t * drone);
 
 
 
-int32_t test_ppm(State_drone_t * drone, bool_e working){
+int32_t test_ppm(State_drone_t * drone, int32_t working){
 	//exemple :
 	//ppm.is_ok = true
 	//test = ok = 1 ;
@@ -49,7 +49,7 @@ int32_t test_ppm(State_drone_t * drone, bool_e working){
 
 
 }
-int32_t test_arm_switch(State_drone_t * drone, bool_e armed){
+int32_t test_arm_switch(State_drone_t * drone, int32_t armed){
 	static uint32_t last_update = 0 ;
 	int32_t to_return = 0;
 
@@ -68,7 +68,7 @@ int32_t test_arm_switch(State_drone_t * drone, bool_e armed){
 
 	return to_return ;
 }
-int32_t test_throttle_low(State_drone_t * drone, bool_e superior){
+int32_t test_throttle_low(State_drone_t * drone, int32_t superior){
 
 	static uint32_t last_update = 0 ;
 	int32_t to_return = 0;
@@ -88,7 +88,7 @@ int32_t test_throttle_low(State_drone_t * drone, bool_e superior){
 
 	return to_return ;
 }
-int32_t test_throttle_really_low(State_drone_t * drone, bool_e superior){
+int32_t test_throttle_really_low(State_drone_t * drone, int32_t superior){
 	static uint32_t last_update = 0 ;
 	int32_t to_return = 0;
 

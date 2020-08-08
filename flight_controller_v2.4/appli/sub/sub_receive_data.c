@@ -133,7 +133,7 @@ void sub_receive_data(uint8_t c, State_drone_t * drone, State_base_t * base){
 					k += (int32_t)buffer[1] << 16;
 					k += (int32_t)buffer[2] << 8;
 					k += (int32_t)buffer[3] ;
-					pid_pitch->settings[PID_KD] = (double)k / (double)1000000;
+					pid_pitch->settings[PID_KI] = (double)k / (double)1000000;
 				}
 				break;
 			case ID_DRONE_PITCH_KD :
@@ -144,7 +144,7 @@ void sub_receive_data(uint8_t c, State_drone_t * drone, State_base_t * base){
 					k += (int32_t)buffer[1] << 16;
 					k += (int32_t)buffer[2] << 8;
 					k += (int32_t)buffer[3] ;
-					pid_pitch->settings[PID_KI] = (double)k / (double)1000000;
+					pid_pitch->settings[PID_KD] = (double)k / (double)1000000;
 				}
 				break;
 
